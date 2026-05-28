@@ -1,6 +1,6 @@
 # Painel Grazi
 
-Self-refreshing operational dashboards for the Professors Núcleo (Municipal + Estadual). The HTMLs in `dist/` are regenerated every day at 04:00 BRT by a GitHub Action that reads subtask data from ClickUp.
+Self-refreshing operational dashboards for the Professors Núcleo (Municipal + Estadual). The HTMLs in `docs/` are regenerated every day at 04:00 BRT by a GitHub Action that reads subtask data from ClickUp and served via GitHub Pages.
 
 ## Public URLs
 
@@ -14,10 +14,10 @@ Self-refreshing operational dashboards for the Professors Núcleo (Municipal + E
 cp .env.example .env   # fill in CLICKUP_TOKEN and CLICKUP_TEAM_ID
 npm install
 npm test
-npm run build          # writes dist/
+npm run build          # writes docs/
 ```
 
-Open `dist/municipal.html` in a browser to preview.
+Open `docs/municipal.html` in a browser to preview.
 
 ## Secrets (GitHub Actions)
 
@@ -28,7 +28,9 @@ In repo Settings → Secrets and variables → Actions:
 
 ## GitHub Pages
 
-Settings → Pages → Source: `Deploy from a branch` → Branch: `main` → Folder: `/dist`.
+Settings → Pages → Source: `Deploy from a branch` → Branch: `main` → Folder: `/docs`.
+
+The generated dashboards live at the root of `docs/` (`index.html`, `municipal.html`, `estadual.html`, plus `*-data.json` snapshots). Design specs under `docs/superpowers/` are unrelated and harmless to publish.
 
 ## Configuration
 
@@ -49,7 +51,7 @@ Status names are matched against the per-panel `statusComplexity` map after `.tr
 
 ## First-run probe
 
-Before the first daily build, run a one-off probe to confirm ClickUp pagination is 0-indexed and the `SUB-TASK` custom field is reachable:
+Before the first daily build, run a one-off probe to confirm ClickUp pagination is 0-indexed and the `SUBTASK` custom field is reachable:
 
 ```bash
 CLICKUP_TOKEN=pk_... CLICKUP_TEAM_ID=... node --import tsx scripts/probe-clickup.ts

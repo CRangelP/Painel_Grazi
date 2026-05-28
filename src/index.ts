@@ -18,8 +18,8 @@ async function main(): Promise<void> {
   const token = requireEnv('CLICKUP_TOKEN');
   const teamId = requireEnv('CLICKUP_TEAM_ID');
   const now = new Date();
-  const distDir = join(process.cwd(), 'dist');
-  mkdirSync(distDir, { recursive: true });
+  const outDir = join(process.cwd(), 'docs');
+  mkdirSync(outDir, { recursive: true });
 
   for (const panel of PANELS) {
     console.log(`[${panel.slug}] fetching folder ${panel.folderId}...`);
@@ -34,12 +34,12 @@ async function main(): Promise<void> {
       console.warn(`[${panel.slug}] ${nonCanon.count} non-canon status occurrences in day`);
     }
 
-    writeFileSync(join(distDir, panel.outputHtml), renderPanel(panel, data));
-    writeFileSync(join(distDir, panel.outputJson), JSON.stringify(data, null, 2));
+    writeFileSync(join(outDir, panel.outputHtml), renderPanel(panel, data));
+    writeFileSync(join(outDir, panel.outputJson), JSON.stringify(data, null, 2));
     console.log(`[${panel.slug}] wrote ${panel.outputHtml} and ${panel.outputJson}`);
   }
 
-  writeFileSync(join(distDir, 'index.html'), renderHub(PANELS, now));
+  writeFileSync(join(outDir, 'index.html'), renderHub(PANELS, now));
   console.log('hub index written, all done');
 }
 

@@ -34,11 +34,11 @@ jobs:
           CLICKUP_TEAM_ID: ${{ secrets.CLICKUP_TEAM_ID }}
         run: npm run build
 
-      - name: Commit dist/
+      - name: Commit docs/
         run: |
           git config user.name "dashboard-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add dist/
+          git add docs/
           if git diff --staged --quiet; then
             echo "no changes"
           else
