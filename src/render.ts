@@ -61,12 +61,14 @@ export function renderPanel(panel: PanelConfig, d: DashboardData): string {
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1920">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard | Abrão &amp; Silva | ${esc(panel.slug.toUpperCase())} | ${esc(d.header.dateLabel)}</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1920px;height:1080px;overflow:hidden;background:#0b0b0b;color:#f0ede4;font-family:"Segoe UI",Arial,sans-serif;}
-body{display:grid;grid-template-rows:auto auto 1fr;padding:0;gap:0;}
+html,body{width:100vw;height:100vh;overflow:hidden;background:#0b0b0b;color:#f0ede4;font-family:"Segoe UI",Arial,sans-serif;}
+body{display:flex;align-items:center;justify-content:center;}
+/* Fixed 1920x1080 stage, scaled to fit any viewport via JS (transform:scale). */
+#stage{width:1920px;height:1080px;flex:none;display:grid;grid-template-rows:auto auto 1fr;transform-origin:center center;}
 .hdr{display:grid;grid-template-columns:220px 1fr auto;align-items:center;background:#000;padding:10px 22px;border-bottom:2px solid #1a1a1a;}
 .logo-wrap{background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:7px 14px;display:flex;align-items:center;justify-content:center;}
 .logo-img{height:58px;width:auto;display:block}
@@ -136,6 +138,7 @@ body{display:grid;grid-template-rows:auto auto 1fr;padding:0;gap:0;}
 </style>
 </head>
 <body>
+<div id="stage">
 <div class="hdr">
   <div class="logo-wrap"><img class="logo-img" src="data:image/png;base64,${LOGO_BASE64}" alt="Logo"></div>
   <div class="hdr-center">
@@ -213,6 +216,19 @@ body{display:grid;grid-template-rows:auto auto 1fr;padding:0;gap:0;}
     </div>
   </div>
 </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById("stage");
+  function fit() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = "scale(" + s + ")";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+})();
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>

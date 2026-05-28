@@ -50,6 +50,14 @@ describe('renderPanel', () => {
     expect(html).toContain('chart.umd.js');
   });
 
+  it('wraps content in a scalable #stage and includes the fit script', () => {
+    const html = renderPanel(PANELS[0]!, SAMPLE);
+    expect(html).toContain('id="stage"');
+    expect(html).toContain('innerWidth / 1920');
+    expect(html).toContain('addEventListener("resize"');
+    expect(html).toContain('width=device-width');
+  });
+
   it('escapes HTML-special chars in status names', () => {
     const data: DashboardData = {
       ...SAMPLE,
