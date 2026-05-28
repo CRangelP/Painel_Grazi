@@ -2,8 +2,14 @@ import { clickupGet } from './clickup-client.js';
 import { SUBTASK_CUSTOM_FIELD_NAME, PAGE_SIZE, TIMEZONE } from './config.js';
 import type { PanelConfig, RawTask, FolderTotals } from './types.js';
 
+export interface FolderList {
+  id: string;
+  name: string;
+  task_count: number;
+}
+
 interface ListsResponse {
-  lists: Array<{ id: string; name: string }>;
+  lists: FolderList[];
 }
 
 interface FieldsResponse {
@@ -23,34 +29,49 @@ interface TasksResponse {
   last_page?: boolean;
 }
 
-export async function discoverSubtaskFilter(
+export async function fetchFolderLists(
   folderId: string,
   token: string
-): Promise<{ fieldId: string; simIndex: number }> {
+): Promise<FolderList[]> {
   const { lists } = await clickupGet<ListsResponse>(`/folder/${folderId}/list`, {}, token);
   if (lists.length === 0) {
     throw new Error(`Folder ${folderId} has no lists`);
   }
-  const firstList = lists[0]!;
-  const { fields } = await clickupGet<FieldsResponse>(
-    `/list/${firstList.id}/field`,
-    {},
-    token
-  );
+  return lists;
+}
+
+export async function discoverSubtaskFilter(
+  listId: string,
+  token: string
+): Promise<{ fieldId: string; simIndex: number }> {
+  const { fields } = await clickupGet<FieldsResponse>(`/list/${listId}/field`, {}, token);
   const field = fields.find((f) => f.name === SUBTASK_CUSTOM_FIELD_NAME);
   if (!field) {
     throw new Error(
-      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' not found in folder ${folderId}`
+      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' not found in list ${listId}`
     );
   }
   const options = field.type_config?.options ?? [];
   const simOption = options.find((o) => o.name === 'SIM');
   if (!simOption) {
     throw new Error(
-      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' has no 'SIM' option (folder ${folderId})`
+      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' has no 'SIM' option (list ${listId})`
     );
   }
   return { fieldId: field.id, simIndex: simOption.orderindex };
+}
+
+/** Portfolio counts from list metadata — no task pagination. */
+export function computeFolderTotals(panel: PanelConfig, lists: FolderList[]): FolderTotals {
+  let total = 0;
+  let adm = 0;
+  let cumpr = 0;
+  for (const l of lists) {
+    total += l.task_count;
+    if (panel.listPatterns.adm.test(l.name)) adm += l.task_count;
+    else if (panel.listPatterns.cumpr.test(l.name)) cumpr += l.task_count;
+  }
+  return { total, admJudicial: adm, cumprSentenca: cumpr };
 }
 
 export interface DueWindow {
@@ -115,42 +136,6 @@ export async function fetchSubtasksForFolder(
   return tasks;
 }
 
-export async function fetchFolderTotals(
-  panel: PanelConfig,
-  teamId: string,
-  token: string
-): Promise<FolderTotals> {
-  let total = 0;
-  let adm = 0;
-  let cumpr = 0;
-
-  let page = 0;
-  while (true) {
-    const res = await clickupGet<TasksResponse>(
-      `/team/${teamId}/task`,
-      {
-        project_ids: [panel.folderId],
-        include_closed: true,
-        subtasks: false,
-        include_timl: true,
-        page,
-      },
-      token
-    );
-    for (const t of res.tasks) {
-      if (t.parent !== null) continue;
-      total++;
-      const listName = t.list?.name ?? '';
-      if (panel.listPatterns.adm.test(listName)) adm++;
-      else if (panel.listPatterns.cumpr.test(listName)) cumpr++;
-    }
-    if (res.tasks.length < PAGE_SIZE || res.last_page) break;
-    page++;
-    if (page > 500) throw new Error('Folder totals pagination overflow (>500 pages)');
-  }
-  return { total, admJudicial: adm, cumprSentenca: cumpr };
-}
-
 export async function fetchClickUpData(
   panel: PanelConfig,
   teamId: string,
@@ -158,10 +143,9 @@ export async function fetchClickUpData(
   now: Date
 ): Promise<{ rawTasks: RawTask[]; folderTotals: FolderTotals; window: DueWindow }> {
   const window = computeWindow(now);
-  const filter = await discoverSubtaskFilter(panel.folderId, token);
-  const [rawTasks, folderTotals] = await Promise.all([
-    fetchSubtasksForFolder(panel, filter, window, teamId, token),
-    fetchFolderTotals(panel, teamId, token),
-  ]);
+  const lists = await fetchFolderLists(panel.folderId, token);
+  const filter = await discoverSubtaskFilter(lists[0]!.id, token);
+  const folderTotals = computeFolderTotals(panel, lists);
+  const rawTasks = await fetchSubtasksForFolder(panel, filter, window, teamId, token);
   return { rawTasks, folderTotals, window };
 }
