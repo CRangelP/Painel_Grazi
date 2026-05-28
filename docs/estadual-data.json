@@ -1,0 +1,93 @@
+{
+  "generatedAt": "2026-05-28T22:47:54.196Z",
+  "header": {
+    "dateLabel": "Quinta-feira, 28 de Maio de 2026",
+    "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
+  },
+  "kpis": {
+    "totalProcessos": 35810,
+    "admJudicial": 22612,
+    "cumprSentenca": 13198,
+    "subtarefasDia": 2390,
+    "subtarefasSemana": 6049,
+    "colaboradores": 18
+  },
+  "tasksDay": [
+    {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 764,
+      "complexity": "baixa",
+      "perPerson": 42
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 49,
+      "complexity": "media",
+      "perPerson": 3
+    },
+    {
+      "status": "EMENDAR INICIAL",
+      "count": 12,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "Outros",
+      "count": 1565,
+      "complexity": "neutra",
+      "perPerson": 87
+    }
+  ],
+  "tasksWeek": [
+    {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 1564,
+      "complexity": "baixa",
+      "perPerson": 87
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 194,
+      "complexity": "media",
+      "perPerson": 11
+    },
+    {
+      "status": "EMENDAR INICIAL",
+      "count": 48,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
+      "status": "MANIFESTAR SOBRE PROVAS",
+      "count": 13,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
+      "status": "Outros",
+      "count": 4230,
+      "complexity": "neutra",
+      "perPerson": 235
+    }
+  ],
+  "donutDay": {
+    "alta": 0,
+    "media": 49,
+    "baixa": 776,
+    "neutra": 1565,
+    "total": 2390
+  },
+  "donutWeek": {
+    "alta": 0,
+    "media": 207,
+    "baixa": 1612,
+    "neutra": 4230,
+    "total": 6049
+  },
+  "team": {
+    "perDay": 133,
+    "perWeek": 336,
+    "avgAssigneesPerTask": 1,
+    "load": "ALTA"
+  }
+}

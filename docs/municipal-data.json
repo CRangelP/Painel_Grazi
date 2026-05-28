@@ -1,0 +1,123 @@
+{
+  "generatedAt": "2026-05-28T22:47:54.196Z",
+  "header": {
+    "dateLabel": "Quinta-feira, 28 de Maio de 2026",
+    "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
+  },
+  "kpis": {
+    "totalProcessos": 3999,
+    "admJudicial": 1984,
+    "cumprSentenca": 2015,
+    "subtarefasDia": 578,
+    "subtarefasSemana": 1569,
+    "colaboradores": 17
+  },
+  "tasksDay": [
+    {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 104,
+      "complexity": "baixa",
+      "perPerson": 6
+    },
+    {
+      "status": "REPROTOCOLAR",
+      "count": 18,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "INICIAL",
+      "count": 15,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 11,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 9,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
+      "status": "MANIFESTAR HIPO",
+      "count": 3,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "Outros",
+      "count": 418,
+      "complexity": "neutra",
+      "perPerson": 25
+    }
+  ],
+  "tasksWeek": [
+    {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 261,
+      "complexity": "baixa",
+      "perPerson": 15
+    },
+    {
+      "status": "INICIAL",
+      "count": 33,
+      "complexity": "media",
+      "perPerson": 2
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 25,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 24,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
+      "status": "REPROTOCOLAR",
+      "count": 24,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "MANIFESTAR HIPO",
+      "count": 5,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "Outros",
+      "count": 1197,
+      "complexity": "neutra",
+      "perPerson": 70
+    }
+  ],
+  "donutDay": {
+    "alta": 9,
+    "media": 26,
+    "baixa": 125,
+    "neutra": 418,
+    "total": 578
+  },
+  "donutWeek": {
+    "alta": 24,
+    "media": 58,
+    "baixa": 290,
+    "neutra": 1197,
+    "total": 1569
+  },
+  "team": {
+    "perDay": 34,
+    "perWeek": 92,
+    "avgAssigneesPerTask": 1,
+    "load": "ALTA"
+  }
+}
