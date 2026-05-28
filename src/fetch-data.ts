@@ -7,7 +7,14 @@ interface ListsResponse {
 }
 
 interface FieldsResponse {
-  fields: Array<{ id: string; name: string }>;
+  fields: Array<{
+    id: string;
+    name: string;
+    type?: string;
+    type_config?: {
+      options?: Array<{ id: string; name: string; orderindex: number }>;
+    };
+  }>;
 }
 
 interface TasksResponse {
@@ -16,10 +23,10 @@ interface TasksResponse {
   last_page?: boolean;
 }
 
-export async function discoverSubtaskFieldId(
+export async function discoverSubtaskFilter(
   folderId: string,
   token: string
-): Promise<string> {
+): Promise<{ fieldId: string; simIndex: number }> {
   const { lists } = await clickupGet<ListsResponse>(`/folder/${folderId}/list`, {}, token);
   if (lists.length === 0) {
     throw new Error(`Folder ${folderId} has no lists`);
@@ -36,7 +43,14 @@ export async function discoverSubtaskFieldId(
       `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' not found in folder ${folderId}`
     );
   }
-  return field.id;
+  const options = field.type_config?.options ?? [];
+  const simOption = options.find((o) => o.name === 'SIM');
+  if (!simOption) {
+    throw new Error(
+      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' has no 'SIM' option (folder ${folderId})`
+    );
+  }
+  return { fieldId: field.id, simIndex: simOption.orderindex };
 }
 
 export interface DueWindow {
@@ -67,13 +81,13 @@ export function computeWindow(now: Date): DueWindow {
 
 export async function fetchSubtasksForFolder(
   panel: PanelConfig,
-  fieldId: string,
+  filter: { fieldId: string; simIndex: number },
   window: DueWindow,
   teamId: string,
   token: string
 ): Promise<RawTask[]> {
   const customFieldsParam = JSON.stringify([
-    { field_id: fieldId, operator: '=', value: 'true' },
+    { field_id: filter.fieldId, operator: '=', value: String(filter.simIndex) },
   ]);
 
   const tasks: RawTask[] = [];
@@ -144,9 +158,9 @@ export async function fetchClickUpData(
   now: Date
 ): Promise<{ rawTasks: RawTask[]; folderTotals: FolderTotals; window: DueWindow }> {
   const window = computeWindow(now);
-  const fieldId = await discoverSubtaskFieldId(panel.folderId, token);
+  const filter = await discoverSubtaskFilter(panel.folderId, token);
   const [rawTasks, folderTotals] = await Promise.all([
-    fetchSubtasksForFolder(panel, fieldId, window, teamId, token),
+    fetchSubtasksForFolder(panel, filter, window, teamId, token),
     fetchFolderTotals(panel, teamId, token),
   ]);
   return { rawTasks, folderTotals, window };

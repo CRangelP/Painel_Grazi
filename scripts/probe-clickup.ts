@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Probe ClickUp API to verify pagination indexing (0-indexed vs 1-indexed)
- * and confirm SUB-TASK custom field is reachable.
+ * and confirm SUBTASK custom field is reachable.
  *
  * Usage:
  *   CLICKUP_TOKEN=pk_... CLICKUP_TEAM_ID=... FOLDER_ID=... node --import tsx scripts/probe-clickup.ts
@@ -45,7 +45,7 @@ async function main(): Promise<void> {
     console.log('Both pages empty — folder may be empty or filter mismatch.');
   }
 
-  console.log('\n--- Probe 2: SUB-TASK custom field discovery ---');
+  console.log('\n--- Probe 2: SUBTASK custom field discovery ---');
   const { lists } = (await get(`/folder/${FOLDER_ID}/list`)) as {
     lists: Array<{ id: string; name: string }>;
   };
@@ -59,11 +59,15 @@ async function main(): Promise<void> {
   const { fields } = (await get(`/list/${firstList.id}/field`)) as {
     fields: Array<{ id: string; name: string; type?: string }>;
   };
-  const subtask = fields.find((f) => f.name === 'SUB-TASK');
+  const subtask = fields.find((f) => f.name === 'SUBTASK');
   if (subtask) {
-    console.log(`OK: SUB-TASK field id = ${subtask.id} (type=${subtask.type ?? 'n/a'})`);
+    console.log(`OK: SUBTASK field id = ${subtask.id} (type=${subtask.type ?? 'n/a'})`);
+    const opts = ((subtask as any).type_config?.options ?? []) as Array<{ name: string; orderindex: number }>;
+    for (const o of opts) {
+      console.log(`   ${o.name} orderindex = ${o.orderindex}`);
+    }
   } else {
-    console.error('!! SUB-TASK custom field NOT FOUND in first list.');
+    console.error('!! SUBTASK custom field NOT FOUND in first list.');
     console.error('Available custom fields:');
     for (const f of fields) console.error(`  - ${f.name}`);
   }
