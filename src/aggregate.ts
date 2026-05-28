@@ -53,6 +53,33 @@ function groupByStatus(tasks: RawTask[], panel: PanelConfig): StatusRow[] {
   return rows;
 }
 
+function donutFromRows(rows: StatusRow[]): DonutBreakdown {
+  const d = { alta: 0, media: 0, baixa: 0, neutra: 0, total: 0 };
+  for (const r of rows) {
+    d[r.complexity] += r.count;
+    d.total += r.count;
+  }
+  if (d.alta + d.media + d.baixa + d.neutra !== d.total) {
+    throw new Error('aggregate: donut breakdown sum diverges from total');
+  }
+  return d;
+}
+
+function computeLoad(perDay: number): 'BAIXA' | 'MÉDIA' | 'ALTA' {
+  if (perDay >= LOAD_THRESHOLDS.high) return 'ALTA';
+  if (perDay >= LOAD_THRESHOLDS.mid) return 'MÉDIA';
+  return 'BAIXA';
+}
+
+function computeTeam(panel: PanelConfig, dayTasks: RawTask[], weekTasks: RawTask[]) {
+  const perDay = Math.round(dayTasks.length / panel.teamSize);
+  const perWeek = Math.round(weekTasks.length / panel.teamSize);
+  const totalAssignees = dayTasks.reduce((sum, t) => sum + t.assignees.length, 0);
+  const avgAssigneesPerTask =
+    dayTasks.length > 0 ? Math.round((totalAssignees / dayTasks.length) * 10) / 10 : 0;
+  return { perDay, perWeek, avgAssigneesPerTask, load: computeLoad(perDay) };
+}
+
 export function aggregate(
   panel: PanelConfig,
   rawTasks: RawTask[],
@@ -63,6 +90,9 @@ export function aggregate(
   const valid = dedupeById(rawTasks).filter((t) => t.parent !== null);
   const dayTasks = valid.filter((t) => inRange(t, win.dayStart, win.dayEnd));
   const weekTasks = valid.filter((t) => inRange(t, win.weekStart, win.weekEnd));
+
+  const dayRows = groupByStatus(dayTasks, panel);
+  const weekRows = groupByStatus(weekTasks, panel);
 
   return {
     generatedAt: now.toISOString(),
@@ -75,10 +105,10 @@ export function aggregate(
       subtarefasSemana: weekTasks.length,
       colaboradores: panel.teamSize,
     },
-    tasksDay: groupByStatus(dayTasks, panel),
-    tasksWeek: groupByStatus(weekTasks, panel),
-    donutDay: { alta: 0, media: 0, baixa: 0, neutra: 0, total: dayTasks.length },
-    donutWeek: { alta: 0, media: 0, baixa: 0, neutra: 0, total: weekTasks.length },
-    team: { perDay: 0, perWeek: 0, avgAssigneesPerTask: 0, load: 'BAIXA' },
+    tasksDay: dayRows,
+    tasksWeek: weekRows,
+    donutDay: donutFromRows(dayRows),
+    donutWeek: donutFromRows(weekRows),
+    team: computeTeam(panel, dayTasks, weekTasks),
   };
 }

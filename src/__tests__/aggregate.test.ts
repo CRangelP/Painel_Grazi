@@ -46,4 +46,29 @@ describe('aggregate (municipal)', () => {
     // 2 / 17 = 0.117 -> 0
     expect(row!.perPerson).toBe(0);
   });
+
+  it('donut sums by complexity and total invariant holds', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // dayTasks = t1, t2, t4 → 2 baixa (VERIFICAR ANDAMENTO x2), 1 neutra (Outros from t4)
+    expect(data.donutDay.baixa).toBe(2);
+    expect(data.donutDay.neutra).toBe(1);
+    expect(data.donutDay.alta).toBe(0);
+    expect(data.donutDay.media).toBe(0);
+    const d = data.donutDay;
+    expect(d.alta + d.media + d.baixa + d.neutra).toBe(d.total);
+  });
+
+  it('team.perDay, perWeek and load with thresholds', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // subtarefasDia=3, team=17 → perDay = round(3/17) = 0 → BAIXA
+    expect(data.team.perDay).toBe(0);
+    expect(data.team.perWeek).toBe(0);
+    expect(data.team.load).toBe('BAIXA');
+  });
+
+  it('avgAssigneesPerTask averages over day subtasks', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // day tasks: t1(2), t2(1), t4(0) → avg = 3/3 = 1
+    expect(data.team.avgAssigneesPerTask).toBe(1);
+  });
 });
