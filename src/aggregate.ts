@@ -7,7 +7,25 @@ import type {
   RawTask,
   StatusRow,
 } from './types.js';
-import { LOAD_THRESHOLDS } from './config.js';
+import { LOAD_THRESHOLDS, TIMEZONE } from './config.js';
+
+function formatHeaderDate(now: Date): string {
+  const f = new Intl.DateTimeFormat('pt-BR', {
+    timeZone: TIMEZONE,
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+  const parts = f.formatToParts(now);
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '';
+  const weekday = get('weekday');
+  const day = get('day');
+  const month = get('month');
+  const year = get('year');
+  const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+  return `${cap(weekday)}, ${day} de ${cap(month)} de ${year}`;
+}
 
 function dedupeById(tasks: RawTask[]): RawTask[] {
   const seen = new Map<string, RawTask>();
@@ -96,7 +114,7 @@ export function aggregate(
 
   return {
     generatedAt: now.toISOString(),
-    header: { dateLabel: '', panelTitle: panel.title },
+    header: { dateLabel: formatHeaderDate(now), panelTitle: panel.title },
     kpis: {
       totalProcessos: folderTotals.total,
       admJudicial: folderTotals.admJudicial,

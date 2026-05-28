@@ -71,4 +71,10 @@ describe('aggregate (municipal)', () => {
     // day tasks: t1(2), t2(1), t4(0) → avg = 3/3 = 1
     expect(data.team.avgAssigneesPerTask).toBe(1);
   });
+
+  it('formats header.dateLabel in BRT, PT-BR long form', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // 2026-05-28 04:00 BRT = Thursday 28 de Maio de 2026
+    expect(data.header.dateLabel).toBe('Quinta-feira, 28 de Maio de 2026');
+  });
 });
