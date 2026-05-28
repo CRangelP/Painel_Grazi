@@ -1,0 +1,47 @@
+name: Daily Dashboard
+
+on:
+  schedule:
+    - cron: '0 7 * * *'    # 04:00 BRT
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm test
+
+      - name: Generate dashboards
+        env:
+          CLICKUP_TOKEN: ${{ secrets.CLICKUP_TOKEN }}
+          CLICKUP_TEAM_ID: ${{ secrets.CLICKUP_TEAM_ID }}
+        run: npm run build
+
+      - name: Commit dist/
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add dist/
+          if git diff --staged --quiet; then
+            echo "no changes"
+          else
+            git commit -m "chore(dashboard): daily refresh $(date -u +%F)"
+            git push
+          fi
