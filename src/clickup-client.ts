@@ -5,6 +5,7 @@ export type QueryValue = string | number | boolean | string[];
 let lastRequestAt = 0;
 
 const MAX_RETRIES_429 = 3;
+const RETRY_5XX_DELAY_MS = 5000;
 
 function buildUrl(path: string, query: Record<string, QueryValue>): string {
   const url = new URL(CLICKUP_API_BASE + path);
@@ -42,22 +43,32 @@ export async function clickupGet<T>(
   token: string
 ): Promise<T> {
   const url = buildUrl(path, query);
-  let lastStatus = 0;
-  let lastBody = '';
-  for (let attempt = 0; attempt <= MAX_RETRIES_429; attempt++) {
+  let attempt429 = 0;
+  let did5xxRetry = false;
+
+  while (true) {
     const res = await fetchOnce(url, token);
     lastRequestAt = Date.now();
+
     if (res.status === 429) {
-      lastStatus = 429;
-      lastBody = await res.text();
-      if (attempt < MAX_RETRIES_429) {
-        await sleep(1000 * 2 ** attempt);
+      if (attempt429 < MAX_RETRIES_429) {
+        await sleep(1000 * 2 ** attempt429);
+        attempt429++;
         continue;
       }
-      break;
+      throw new Error(`HTTP 429 after retries: ${await res.text()}`);
     }
+
+    if (res.status >= 500) {
+      if (!did5xxRetry) {
+        did5xxRetry = true;
+        await sleep(RETRY_5XX_DELAY_MS);
+        continue;
+      }
+      throw new Error(`HTTP ${res.status} after retry: ${await res.text()}`);
+    }
+
     if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);
     return (await res.json()) as T;
   }
-  throw new Error(`HTTP ${lastStatus} after retries: ${lastBody}`);
 }

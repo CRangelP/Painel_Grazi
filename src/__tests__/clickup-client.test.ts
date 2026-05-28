@@ -54,4 +54,23 @@ describe('clickupGet', () => {
     expect(err).toBeInstanceOf(Error);
     expect(String(err)).toMatch(/429/);
   });
+
+  it('retries once on 5xx, then succeeds', async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValueOnce(new Response('oops', { status: 502 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ ok: 1 }), { status: 200 }));
+    const promise = clickupGet<{ ok: number }>('/y', {}, 'pk');
+    await vi.advanceTimersByTimeAsync(5000);
+    expect(await promise).toEqual({ ok: 1 });
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('fails immediately on 401 without retry', async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValueOnce(new Response('bad', { status: 401 }));
+    await expect(clickupGet('/y', {}, 'pk')).rejects.toThrow(/401/);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
 });
