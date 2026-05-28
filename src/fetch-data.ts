@@ -100,3 +100,54 @@ export async function fetchSubtasksForFolder(
   }
   return tasks;
 }
+
+export async function fetchFolderTotals(
+  panel: PanelConfig,
+  teamId: string,
+  token: string
+): Promise<FolderTotals> {
+  let total = 0;
+  let adm = 0;
+  let cumpr = 0;
+
+  let page = 0;
+  while (true) {
+    const res = await clickupGet<TasksResponse>(
+      `/team/${teamId}/task`,
+      {
+        project_ids: [panel.folderId],
+        include_closed: true,
+        subtasks: false,
+        include_timl: true,
+        page,
+      },
+      token
+    );
+    for (const t of res.tasks) {
+      if (t.parent !== null) continue;
+      total++;
+      const listName = t.list?.name ?? '';
+      if (panel.listPatterns.adm.test(listName)) adm++;
+      else if (panel.listPatterns.cumpr.test(listName)) cumpr++;
+    }
+    if (res.tasks.length < PAGE_SIZE || res.last_page) break;
+    page++;
+    if (page > 500) throw new Error('Folder totals pagination overflow (>500 pages)');
+  }
+  return { total, admJudicial: adm, cumprSentenca: cumpr };
+}
+
+export async function fetchClickUpData(
+  panel: PanelConfig,
+  teamId: string,
+  token: string,
+  now: Date
+): Promise<{ rawTasks: RawTask[]; folderTotals: FolderTotals; window: DueWindow }> {
+  const window = computeWindow(now);
+  const fieldId = await discoverSubtaskFieldId(panel.folderId, token);
+  const [rawTasks, folderTotals] = await Promise.all([
+    fetchSubtasksForFolder(panel, fieldId, window, teamId, token),
+    fetchFolderTotals(panel, teamId, token),
+  ]);
+  return { rawTasks, folderTotals, window };
+}
