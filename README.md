@@ -46,3 +46,13 @@ Status names are matched against the per-panel `statusComplexity` map after `.tr
 2. Update `CLICKUP_TOKEN` in GitHub Secrets.
 3. Revoke the previous token.
 4. Trigger the workflow manually (Actions → Daily Dashboard → Run workflow) to confirm.
+
+## First-run probe
+
+Before the first daily build, run a one-off probe to confirm ClickUp pagination is 0-indexed and the `SUB-TASK` custom field is reachable:
+
+```bash
+CLICKUP_TOKEN=pk_... CLICKUP_TEAM_ID=... node --import tsx scripts/probe-clickup.ts
+```
+
+If output reports `1-INDEXED`, update `src/fetch-data.ts` (`fetchSubtasksForFolder` and `fetchFolderTotals`) to start `page` at 1 instead of 0.
