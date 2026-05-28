@@ -45,7 +45,9 @@ describe('clickupGet', () => {
   });
 
   it('throws after max retries on persistent 429', async () => {
-    vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response('rate', { status: 429 }));
+    vi.spyOn(globalThis, 'fetch').mockImplementation(
+      async () => new Response('rate', { status: 429 })
+    );
     const promise = clickupGet('/x', {}, 'pk').catch((e) => e);
     await vi.advanceTimersByTimeAsync(10_000);
     const err = await promise;

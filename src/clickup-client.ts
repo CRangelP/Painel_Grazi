@@ -49,7 +49,7 @@ export async function clickupGet<T>(
     lastRequestAt = Date.now();
     if (res.status === 429) {
       lastStatus = 429;
-      try { lastBody = await res.text(); } catch { lastBody = ''; }
+      lastBody = await res.text();
       if (attempt < MAX_RETRIES_429) {
         await sleep(1000 * 2 ** attempt);
         continue;
