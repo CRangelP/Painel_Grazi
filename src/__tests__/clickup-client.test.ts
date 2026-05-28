@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { clickupGet, resetThrottleState } from '../clickup-client.js';
+import { clickupGet, __resetThrottleStateForTest } from '../clickup-client.js';
 
 describe('clickupGet', () => {
   beforeEach(() => {
@@ -8,7 +8,7 @@ describe('clickupGet', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     vi.useRealTimers();
-    resetThrottleState();
+    __resetThrottleStateForTest();
   });
 
   it('parses 200 JSON response and sends auth header', async () => {

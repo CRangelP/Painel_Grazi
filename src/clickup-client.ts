@@ -23,8 +23,8 @@ async function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-/** Resets the throttle timestamp. Call in tests between isolated test cases. */
-export function resetThrottleState(): void {
+/** @internal Resets throttle timestamp. For use in tests only. */
+export function __resetThrottleStateForTest(): void {
   lastRequestAt = 0;
 }
 
