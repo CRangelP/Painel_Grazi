@@ -17,4 +17,33 @@ describe('aggregate (municipal)', () => {
     expect(data.kpis.subtarefasDia).toBe(3);
     expect(data.kpis.subtarefasSemana).toBe(4);
   });
+
+  it('groups by normalized status (trim + uppercase), maps complexity', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    const row = data.tasksDay.find((r) => r.status === 'VERIFICAR ANDAMENTO');
+    expect(row).toBeDefined();
+    expect(row!.count).toBe(2);
+    expect(row!.complexity).toBe('baixa');
+  });
+
+  it('puts non-canon status into Outros with neutra', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    const outros = data.tasksDay.find((r) => r.status === 'Outros');
+    expect(outros).toBeDefined();
+    expect(outros!.count).toBe(1);
+    expect(outros!.complexity).toBe('neutra');
+  });
+
+  it('orders tasksDay by count desc, Outros last', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    const lastRow = data.tasksDay[data.tasksDay.length - 1];
+    expect(lastRow?.status).toBe('Outros');
+  });
+
+  it('computes perPerson as round(count / teamSize)', () => {
+    const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    const row = data.tasksDay.find((r) => r.status === 'VERIFICAR ANDAMENTO');
+    // 2 / 17 = 0.117 -> 0
+    expect(row!.perPerson).toBe(0);
+  });
 });

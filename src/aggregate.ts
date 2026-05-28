@@ -21,6 +21,38 @@ function inRange(task: RawTask, start: number, end: number): boolean {
   return ts >= start && ts <= end;
 }
 
+function groupByStatus(tasks: RawTask[], panel: PanelConfig): StatusRow[] {
+  const canonCounts = new Map<string, number>();
+  let outrosCount = 0;
+  for (const t of tasks) {
+    const key = t.status.status.trim().toUpperCase();
+    if (key in panel.statusComplexity) {
+      canonCounts.set(key, (canonCounts.get(key) ?? 0) + 1);
+    } else {
+      outrosCount++;
+    }
+  }
+  const rows: StatusRow[] = [];
+  for (const [status, count] of canonCounts) {
+    rows.push({
+      status,
+      count,
+      complexity: panel.statusComplexity[status]!,
+      perPerson: Math.round(count / panel.teamSize),
+    });
+  }
+  rows.sort((a, b) => b.count - a.count);
+  if (outrosCount > 0) {
+    rows.push({
+      status: 'Outros',
+      count: outrosCount,
+      complexity: 'neutra',
+      perPerson: Math.round(outrosCount / panel.teamSize),
+    });
+  }
+  return rows;
+}
+
 export function aggregate(
   panel: PanelConfig,
   rawTasks: RawTask[],
@@ -43,8 +75,8 @@ export function aggregate(
       subtarefasSemana: weekTasks.length,
       colaboradores: panel.teamSize,
     },
-    tasksDay: [],
-    tasksWeek: [],
+    tasksDay: groupByStatus(dayTasks, panel),
+    tasksWeek: groupByStatus(weekTasks, panel),
     donutDay: { alta: 0, media: 0, baixa: 0, neutra: 0, total: dayTasks.length },
     donutWeek: { alta: 0, media: 0, baixa: 0, neutra: 0, total: weekTasks.length },
     team: { perDay: 0, perWeek: 0, avgAssigneesPerTask: 0, load: 'BAIXA' },
