@@ -1,4 +1,4 @@
-import { CLICKUP_API_BASE, FETCH_TIMEOUT_MS } from './config.js';
+import { CLICKUP_API_BASE, FETCH_TIMEOUT_MS, RATE_LIMIT_MS } from './config.js';
 
 export type QueryValue = string | number | boolean | string[];
 
@@ -23,6 +23,18 @@ async function sleep(ms: number): Promise<void> {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/** Resets the throttle timestamp. Call in tests between isolated test cases. */
+export function resetThrottleState(): void {
+  lastRequestAt = 0;
+}
+
+async function throttle(): Promise<void> {
+  const gap = Date.now() - lastRequestAt;
+  if (gap < RATE_LIMIT_MS && lastRequestAt > 0) {
+    await sleep(RATE_LIMIT_MS - gap);
+  }
+}
+
 async function fetchOnce(url: string, token: string): Promise<Response> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
@@ -42,6 +54,7 @@ export async function clickupGet<T>(
   query: Record<string, QueryValue>,
   token: string
 ): Promise<T> {
+  await throttle();
   const url = buildUrl(path, query);
   let attempt429 = 0;
   let did5xxRetry = false;

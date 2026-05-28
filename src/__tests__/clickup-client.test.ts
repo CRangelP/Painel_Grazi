@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { clickupGet } from '../clickup-client.js';
+import { clickupGet, resetThrottleState } from '../clickup-client.js';
 
 describe('clickupGet', () => {
   beforeEach(() => {
@@ -8,6 +8,7 @@ describe('clickupGet', () => {
   afterEach(() => {
     vi.restoreAllMocks();
     vi.useRealTimers();
+    resetThrottleState();
   });
 
   it('parses 200 JSON response and sends auth header', async () => {
@@ -72,5 +73,29 @@ describe('clickupGet', () => {
       .mockResolvedValueOnce(new Response('bad', { status: 401 }));
     await expect(clickupGet('/y', {}, 'pk')).rejects.toThrow(/401/);
     expect(fetchSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('throttles back-to-back calls by RATE_LIMIT_MS', async () => {
+    vi.spyOn(globalThis, 'fetch').mockImplementation(
+      async () => new Response(JSON.stringify({}), { status: 200 })
+    );
+    const p1 = clickupGet('/a', {}, 'pk');
+    await vi.advanceTimersByTimeAsync(0);
+    await p1;
+    const start = Date.now();
+    const p2 = clickupGet('/b', {}, 'pk');
+    await vi.advanceTimersByTimeAsync(700);
+    await p2;
+    expect(Date.now() - start).toBeGreaterThanOrEqual(700);
+  });
+
+  it('serializes array query params with [] suffix', async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValueOnce(new Response('{}', { status: 200 }));
+    await clickupGet('/z', { project_ids: ['1', '2'] }, 'pk');
+    const url = String(fetchSpy.mock.calls[0]![0]);
+    expect(url).toContain('project_ids%5B%5D=1');
+    expect(url).toContain('project_ids%5B%5D=2');
   });
 });
