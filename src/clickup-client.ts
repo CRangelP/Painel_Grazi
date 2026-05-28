@@ -6,6 +6,7 @@ let lastRequestAt = 0;
 
 const MAX_RETRIES_429 = 3;
 const RETRY_5XX_DELAY_MS = 5000;
+const RETRY_NETWORK_DELAY_MS = 3000;
 
 function buildUrl(path: string, query: Record<string, QueryValue>): string {
   const url = new URL(CLICKUP_API_BASE + path);
@@ -58,9 +59,23 @@ export async function clickupGet<T>(
   const url = buildUrl(path, query);
   let attempt429 = 0;
   let did5xxRetry = false;
+  let didNetworkRetry = false;
 
   while (true) {
-    const res = await fetchOnce(url, token);
+    let res: Response;
+    try {
+      res = await fetchOnce(url, token);
+    } catch (err) {
+      // Timeout (AbortError) or network failure. Retry once before giving up —
+      // across hundreds of paginated requests, a single slow response is common.
+      lastRequestAt = Date.now();
+      if (!didNetworkRetry) {
+        didNetworkRetry = true;
+        await sleep(RETRY_NETWORK_DELAY_MS);
+        continue;
+      }
+      throw new Error(`Network/timeout error after retry: ${String(err)}`);
+    }
     lastRequestAt = Date.now();
 
     if (res.status === 429) {

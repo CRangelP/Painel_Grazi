@@ -98,4 +98,26 @@ describe('clickupGet', () => {
     expect(url).toContain('project_ids%5B%5D=1');
     expect(url).toContain('project_ids%5B%5D=2');
   });
+
+  it('retries once on network/timeout error, then succeeds', async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockRejectedValueOnce(new DOMException('aborted', 'AbortError'))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ ok: 1 }), { status: 200 }));
+    const promise = clickupGet<{ ok: number }>('/n', {}, 'pk');
+    await vi.advanceTimersByTimeAsync(3000);
+    expect(await promise).toEqual({ ok: 1 });
+    expect(fetchSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it('throws after a second network/timeout error', async () => {
+    vi.spyOn(globalThis, 'fetch').mockRejectedValue(
+      new DOMException('aborted', 'AbortError')
+    );
+    const promise = clickupGet('/n', {}, 'pk').catch((e) => e);
+    await vi.advanceTimersByTimeAsync(5000);
+    const err = await promise;
+    expect(err).toBeInstanceOf(Error);
+    expect(String(err)).toMatch(/Network\/timeout/);
+  });
 });
