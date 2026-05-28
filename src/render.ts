@@ -183,6 +183,7 @@ body{display:grid;grid-template-rows:auto auto 1fr;padding:0;gap:0;}
           <div class="leg-row"><div class="ldot" style="background:#C4544A"></div><div class="lname">Alta</div><div class="lval">${fmtInt(d.donutDay.alta)}</div><div class="lpct" style="color:#C4544A">${fmtPct(d.donutDay.alta, d.donutDay.total)}</div></div>
           <div class="leg-row"><div class="ldot" style="background:#D4854A"></div><div class="lname">Média</div><div class="lval">${fmtInt(d.donutDay.media)}</div><div class="lpct" style="color:#D4854A">${fmtPct(d.donutDay.media, d.donutDay.total)}</div></div>
           <div class="leg-row"><div class="ldot" style="background:#5BAD75"></div><div class="lname">Baixa</div><div class="lval">${fmtInt(d.donutDay.baixa)}</div><div class="lpct" style="color:#5BAD75">${fmtPct(d.donutDay.baixa, d.donutDay.total)}</div></div>
+          ${d.donutDay.neutra > 0 ? `<div class="leg-row"><div class="ldot" style="background:#aaa"></div><div class="lname">Neutra</div><div class="lval">${fmtInt(d.donutDay.neutra)}</div><div class="lpct" style="color:#aaa">${fmtPct(d.donutDay.neutra, d.donutDay.total)}</div></div>` : ''}
         </div>
       </div>
     </div>
@@ -194,6 +195,7 @@ body{display:grid;grid-template-rows:auto auto 1fr;padding:0;gap:0;}
           <div class="leg-row"><div class="ldot" style="background:#C4544A"></div><div class="lname">Alta</div><div class="lval">${fmtInt(d.donutWeek.alta)}</div><div class="lpct" style="color:#C4544A">${fmtPct(d.donutWeek.alta, d.donutWeek.total)}</div></div>
           <div class="leg-row"><div class="ldot" style="background:#D4854A"></div><div class="lname">Média</div><div class="lval">${fmtInt(d.donutWeek.media)}</div><div class="lpct" style="color:#D4854A">${fmtPct(d.donutWeek.media, d.donutWeek.total)}</div></div>
           <div class="leg-row"><div class="ldot" style="background:#5BAD75"></div><div class="lname">Baixa</div><div class="lval">${fmtInt(d.donutWeek.baixa)}</div><div class="lpct" style="color:#5BAD75">${fmtPct(d.donutWeek.baixa, d.donutWeek.total)}</div></div>
+          ${d.donutWeek.neutra > 0 ? `<div class="leg-row"><div class="ldot" style="background:#aaa"></div><div class="lname">Neutra</div><div class="lval">${fmtInt(d.donutWeek.neutra)}</div><div class="lpct" style="color:#aaa">${fmtPct(d.donutWeek.neutra, d.donutWeek.total)}</div></div>` : ''}
         </div>
       </div>
     </div>

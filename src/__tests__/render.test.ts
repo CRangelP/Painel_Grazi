@@ -61,6 +61,25 @@ describe('renderPanel', () => {
     expect(html).not.toContain('<script>alert(1)</script>');
     expect(html).toContain('&lt;script&gt;');
   });
+
+  it('shows Neutra row in donut legend when neutra > 0', () => {
+    const dataWithNeutra: DashboardData = {
+      ...SAMPLE,
+      donutDay: { alta: 0, media: 0, baixa: 0, neutra: 5, total: 5 },
+    };
+    const html = renderPanel(PANELS[0]!, dataWithNeutra);
+    expect(html).toContain('Neutra');
+  });
+
+  it('hides Neutra row in donut legend when neutra == 0', () => {
+    const dataNoNeutra: DashboardData = {
+      ...SAMPLE,
+      donutDay: { alta: 5, media: 0, baixa: 0, neutra: 0, total: 5 },
+    };
+    const html = renderPanel(PANELS[0]!, dataNoNeutra);
+    // The Baixa row is always present, so we check that 'Neutra' label specifically isn't there
+    expect(html).not.toContain('>Neutra<');
+  });
 });
 
 describe('renderHub', () => {
