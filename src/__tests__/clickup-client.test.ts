@@ -27,4 +27,29 @@ describe('clickupGet', () => {
       'Content-Type': 'application/json',
     });
   });
+
+  it('retries 3 times on 429 with exponential backoff (1s, 2s, 4s)', async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockResolvedValueOnce(new Response('rate', { status: 429 }))
+      .mockResolvedValueOnce(new Response('rate', { status: 429 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ ok: 1 }), { status: 200 }));
+
+    const promise = clickupGet<{ ok: number }>('/x', {}, 'pk');
+    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(2000);
+    const result = await promise;
+
+    expect(result).toEqual({ ok: 1 });
+    expect(fetchSpy).toHaveBeenCalledTimes(3);
+  });
+
+  it('throws after max retries on persistent 429', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response('rate', { status: 429 }));
+    const promise = clickupGet('/x', {}, 'pk').catch((e) => e);
+    await vi.advanceTimersByTimeAsync(10_000);
+    const err = await promise;
+    expect(err).toBeInstanceOf(Error);
+    expect(String(err)).toMatch(/429/);
+  });
 });
