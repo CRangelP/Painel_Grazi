@@ -1,0 +1,68 @@
+[
+  {
+    "id": "t1",
+    "name": "sub1",
+    "status": { "status": "Verificar Andamento", "type": "open" },
+    "parent": "p1",
+    "due_date": "1780023600000",
+    "assignees": [{ "id": 10 }, { "id": 11 }],
+    "custom_fields": [],
+    "list": { "id": "L1", "name": "Adm/Judicial - Professores Munic." },
+    "folder": { "id": "90144366189" }
+  },
+  {
+    "id": "t2",
+    "name": "sub2",
+    "status": { "status": "  VERIFICAR ANDAMENTO  ", "type": "open" },
+    "parent": "p1",
+    "due_date": "1780023600000",
+    "assignees": [{ "id": 10 }],
+    "custom_fields": [],
+    "list": { "id": "L1", "name": "Adm/Judicial - Professores Munic." },
+    "folder": { "id": "90144366189" }
+  },
+  {
+    "id": "t3",
+    "name": "sub3",
+    "status": { "status": "CONTRARRAZOAR", "type": "open" },
+    "parent": "p2",
+    "due_date": "1780110000000",
+    "assignees": [{ "id": 12 }],
+    "custom_fields": [],
+    "list": { "id": "L2", "name": "Cumprimento de Sentença - Prof." },
+    "folder": { "id": "90144366189" }
+  },
+  {
+    "id": "t4",
+    "name": "sub4",
+    "status": { "status": "STATUS DESCONHECIDO", "type": "open" },
+    "parent": "p3",
+    "due_date": "1780023600000",
+    "assignees": [],
+    "custom_fields": [],
+    "list": { "id": "L2", "name": "Cumprimento de Sentença - Prof." },
+    "folder": { "id": "90144366189" }
+  },
+  {
+    "id": "t5",
+    "name": "should-be-dropped",
+    "status": { "status": "INICIAL", "type": "open" },
+    "parent": null,
+    "due_date": "1780023600000",
+    "assignees": [],
+    "custom_fields": [],
+    "list": { "id": "L1", "name": "Adm/Judicial - Professores Munic." },
+    "folder": { "id": "90144366189" }
+  },
+  {
+    "id": "t1",
+    "name": "duplicate-of-t1",
+    "status": { "status": "Verificar Andamento", "type": "open" },
+    "parent": "p1",
+    "due_date": "1780023600000",
+    "assignees": [{ "id": 10 }],
+    "custom_fields": [],
+    "list": { "id": "L1", "name": "Adm/Judicial - Professores Munic." },
+    "folder": { "id": "90144366189" }
+  }
+]
