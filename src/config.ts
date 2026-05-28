@@ -68,7 +68,7 @@ export const PANELS: PanelConfig[] = [
 ];
 
 export const TIMEZONE = 'America/Sao_Paulo';
-export const SUBTASK_CUSTOM_FIELD_NAME = 'SUB-TASK';
+export const SUBTASK_CUSTOM_FIELD_NAME = 'SUBTASK';
 export const LOAD_THRESHOLDS = { high: 30, mid: 15 } as const;
 export const CLICKUP_API_BASE = 'https://api.clickup.com/api/v2';
 export const RATE_LIMIT_MS = 700; // ~85 req/min, under the 100/min cap
