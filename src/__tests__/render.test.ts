@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { renderPanel } from '../render.js';
+import { renderPanel, renderHub } from '../render.js';
 import { PANELS } from '../config.js';
 import type { DashboardData } from '../types.js';
 
@@ -60,5 +60,15 @@ describe('renderPanel', () => {
     const html = renderPanel(PANELS[0]!, data);
     expect(html).not.toContain('<script>alert(1)</script>');
     expect(html).toContain('&lt;script&gt;');
+  });
+});
+
+describe('renderHub', () => {
+  it('lists both panels with links', () => {
+    const html = renderHub(PANELS, new Date('2026-05-28T07:00:00Z'));
+    expect(html).toContain('href="municipal.html"');
+    expect(html).toContain('href="estadual.html"');
+    expect(html).toContain('NÚCLEO PROFESSORES — MUNICIPAL');
+    expect(html).toContain('NÚCLEO PROFESSORES — ESTADUAL');
   });
 });

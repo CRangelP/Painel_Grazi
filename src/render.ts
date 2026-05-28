@@ -251,3 +251,51 @@ makeDonut("donutWeek", [${d.donutWeek.alta},${d.donutWeek.media},${d.donutWeek.b
 </body>
 </html>`;
 }
+
+export function renderHub(panels: PanelConfig[], now: Date): string {
+  const dateStr = new Intl.DateTimeFormat('pt-BR', {
+    timeZone: 'America/Sao_Paulo',
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+  }).format(now);
+
+  const cards = panels
+    .map(
+      (p) => `
+    <a class="card" href="${esc(p.outputHtml)}">
+      <div class="card-label">PAINEL</div>
+      <div class="card-title">${esc(p.title)}</div>
+      <div class="card-sub">Última geração: ${esc(dateStr)}</div>
+    </a>`
+    )
+    .join('');
+
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painéis | Abrão &amp; Silva</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
+body{background:#0b0b0b;color:#f0ede4;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px}
+.wrap{max-width:1100px;width:100%;text-align:center}
+h1{color:#C9A84C;letter-spacing:4px;font-size:32px;margin-bottom:8px}
+.sub{color:#666;letter-spacing:5px;font-size:12px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{display:block;text-decoration:none;background:#161616;border:1px solid #242424;border-radius:12px;padding:40px;color:inherit;transition:border-color .2s}
+.card:hover{border-color:#C9A84C}
+.card-label{font-size:10px;color:#555;letter-spacing:3px;margin-bottom:8px}
+.card-title{font-size:22px;color:#C9A84C;font-weight:700;margin-bottom:12px}
+.card-sub{font-size:12px;color:#888}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>ABRÃO &amp; SILVA</h1>
+  <div class="sub">ADVOGADOS ASSOCIADOS</div>
+  <div class="grid">${cards}</div>
+</div>
+</body>
+</html>`;
+}
