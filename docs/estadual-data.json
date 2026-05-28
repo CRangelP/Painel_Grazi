@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-05-28T22:47:54.196Z",
+  "generatedAt": "2026-05-28T23:46:53.428Z",
   "header": {
     "dateLabel": "Quinta-feira, 28 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 35810,
-    "admJudicial": 22612,
-    "cumprSentenca": 13198,
+    "totalProcessos": 35643,
+    "admJudicial": 22552,
+    "cumprSentenca": 13091,
     "subtarefasDia": 2390,
     "subtarefasSemana": 6049,
     "colaboradores": 18
@@ -41,7 +41,7 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 1564,
+      "count": 1563,
       "complexity": "baixa",
       "perPerson": 87
     },
@@ -65,7 +65,7 @@
     },
     {
       "status": "Outros",
-      "count": 4230,
+      "count": 4231,
       "complexity": "neutra",
       "perPerson": 235
     }
@@ -80,8 +80,8 @@
   "donutWeek": {
     "alta": 0,
     "media": 207,
-    "baixa": 1612,
-    "neutra": 4230,
+    "baixa": 1611,
+    "neutra": 4231,
     "total": 6049
   },
   "team": {

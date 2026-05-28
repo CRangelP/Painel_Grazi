@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-28T22:47:54.196Z",
+  "generatedAt": "2026-05-28T23:46:53.428Z",
   "header": {
     "dateLabel": "Quinta-feira, 28 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
-    "totalProcessos": 3999,
-    "admJudicial": 1984,
-    "cumprSentenca": 2015,
+    "totalProcessos": 6716,
+    "admJudicial": 3643,
+    "cumprSentenca": 3073,
     "subtarefasDia": 578,
-    "subtarefasSemana": 1569,
+    "subtarefasSemana": 1571,
     "colaboradores": 17
   },
   "tasksDay": [
@@ -95,9 +95,9 @@
     },
     {
       "status": "Outros",
-      "count": 1197,
+      "count": 1199,
       "complexity": "neutra",
-      "perPerson": 70
+      "perPerson": 71
     }
   ],
   "donutDay": {
@@ -111,8 +111,8 @@
     "alta": 24,
     "media": 58,
     "baixa": 290,
-    "neutra": 1197,
-    "total": 1569
+    "neutra": 1199,
+    "total": 1571
   },
   "team": {
     "perDay": 34,
