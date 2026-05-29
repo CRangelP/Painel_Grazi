@@ -1,64 +1,64 @@
 {
-  "generatedAt": "2026-05-29T17:25:28.066Z",
+  "generatedAt": "2026-05-29T21:05:32.744Z",
   "header": {
     "dateLabel": "Sexta-feira, 29 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
-    "totalProcessos": 6716,
-    "admJudicial": 3636,
+    "totalProcessos": 6717,
+    "admJudicial": 3637,
     "cumprSentenca": 3080,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1487,
+    "subtarefasSemana": 1687,
     "colaboradores": 17
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 311,
+      "count": 310,
       "complexity": "baixa",
       "perPerson": 18
     },
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 267,
+      "count": 262,
       "complexity": "media",
-      "perPerson": 16
+      "perPerson": 15
     },
     {
       "status": "PEDIR SEQUESTRO",
-      "count": 167,
+      "count": 156,
       "complexity": "media",
-      "perPerson": 10
-    },
-    {
-      "status": "PROSSEGUIMENTO",
-      "count": 100,
-      "complexity": "baixa",
-      "perPerson": 6
+      "perPerson": 9
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 99,
+      "count": 96,
       "complexity": "baixa",
       "perPerson": 6
     },
     {
+      "status": "PROSSEGUIMENTO",
+      "count": 88,
+      "complexity": "baixa",
+      "perPerson": 5
+    },
+    {
+      "status": "CUMPRIMENTO DE SENTENÇA",
+      "count": 73,
+      "complexity": "alta",
+      "perPerson": 4
+    },
+    {
       "status": "MANIFESTAR HIPO",
-      "count": 64,
+      "count": 71,
       "complexity": "baixa",
       "perPerson": 4
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 62,
-      "complexity": "alta",
-      "perPerson": 4
-    },
-    {
-      "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 58,
+      "count": 53,
       "complexity": "alta",
       "perPerson": 3
     },
@@ -70,38 +70,38 @@
     },
     {
       "status": "ANALISAR RPV / PRECATÓRIO",
-      "count": 38,
+      "count": 39,
       "complexity": "media",
       "perPerson": 2
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 31,
+      "count": 32,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
       "status": "CONTADORIA",
+      "count": 26,
+      "complexity": "baixa",
+      "perPerson": 2
+    },
+    {
+      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
       "count": 25,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
-      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 24,
-      "complexity": "baixa",
+      "status": "RECURSO",
+      "count": 20,
+      "complexity": "alta",
       "perPerson": 1
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 21,
+      "count": 20,
       "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "RECURSO",
-      "count": 19,
-      "complexity": "alta",
       "perPerson": 1
     },
     {
@@ -111,20 +111,20 @@
       "perPerson": 1
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 16,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
       "status": "REPROTOCOLAR",
-      "count": 13,
+      "count": 15,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
+      "status": "CONTRARRAZOAR",
+      "count": 14,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
       "status": "INICIAL",
-      "count": 9,
+      "count": 12,
       "complexity": "media",
       "perPerson": 1
     },
@@ -154,9 +154,9 @@
     },
     {
       "status": "Outros",
-      "count": 74,
+      "count": 286,
       "complexity": "neutra",
-      "perPerson": 4
+      "perPerson": 17
     }
   ],
   "donutDay": {
@@ -167,15 +167,15 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 155,
-    "media": 492,
-    "baixa": 766,
-    "neutra": 74,
-    "total": 1487
+    "alta": 160,
+    "media": 480,
+    "baixa": 761,
+    "neutra": 286,
+    "total": 1687
   },
   "team": {
     "perDay": 0,
-    "perWeek": 87,
+    "perWeek": 99,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }
