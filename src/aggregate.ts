@@ -1,5 +1,7 @@
 import { computeWindow } from './fetch-data.js';
 import type {
+  ActivityRule,
+  Complexity,
   DashboardData,
   DonutBreakdown,
   FolderTotals,
@@ -39,23 +41,42 @@ function inRange(task: RawTask, start: number, end: number): boolean {
   return ts >= start && ts <= end;
 }
 
-function groupByStatus(tasks: RawTask[], panel: PanelConfig): StatusRow[] {
-  const canonCounts = new Map<string, number>();
+function normalizeName(name: string): string {
+  return name
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toUpperCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function classifyActivity(name: string, panel: PanelConfig): ActivityRule | null {
+  const normalized = normalizeName(name);
+  for (const rule of panel.activities) {
+    if (rule.pattern.test(normalized)) return rule;
+  }
+  return null;
+}
+
+function groupByActivity(tasks: RawTask[], panel: PanelConfig): StatusRow[] {
+  const counts = new Map<string, { complexity: Complexity; count: number }>();
   let outrosCount = 0;
   for (const t of tasks) {
-    const key = t.status.status.trim().toUpperCase();
-    if (key in panel.statusComplexity) {
-      canonCounts.set(key, (canonCounts.get(key) ?? 0) + 1);
+    const rule = classifyActivity(t.name, panel);
+    if (rule) {
+      const entry = counts.get(rule.label) ?? { complexity: rule.complexity, count: 0 };
+      entry.count++;
+      counts.set(rule.label, entry);
     } else {
       outrosCount++;
     }
   }
   const rows: StatusRow[] = [];
-  for (const [status, count] of canonCounts) {
+  for (const [status, { complexity, count }] of counts) {
     rows.push({
       status,
       count,
-      complexity: panel.statusComplexity[status]!,
+      complexity,
       perPerson: Math.round(count / panel.teamSize),
     });
   }
@@ -109,8 +130,8 @@ export function aggregate(
   const dayTasks = valid.filter((t) => inRange(t, win.dayStart, win.dayEnd));
   const weekTasks = valid.filter((t) => inRange(t, win.weekStart, win.weekEnd));
 
-  const dayRows = groupByStatus(dayTasks, panel);
-  const weekRows = groupByStatus(weekTasks, panel);
+  const dayRows = groupByActivity(dayTasks, panel);
+  const weekRows = groupByActivity(weekTasks, panel);
 
   return {
     generatedAt: now.toISOString(),

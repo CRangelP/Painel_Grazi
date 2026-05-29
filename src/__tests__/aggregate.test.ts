@@ -18,16 +18,18 @@ describe('aggregate (municipal)', () => {
     expect(data.kpis.subtarefasSemana).toBe(4);
   });
 
-  it('groups by normalized status (trim + uppercase), maps complexity', () => {
+  it('classifies by subtask NAME (accent/case/space-insensitive keyword), maps complexity', () => {
     const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // t1 "Verificar Andamento" + t2 "  verificar  andamento PROAD " both match /ANDAMENTO/
     const row = data.tasksDay.find((r) => r.status === 'VERIFICAR ANDAMENTO');
     expect(row).toBeDefined();
     expect(row!.count).toBe(2);
     expect(row!.complexity).toBe('baixa');
   });
 
-  it('puts non-canon status into Outros with neutra', () => {
+  it('puts names matching no rule into Outros with neutra', () => {
     const data = aggregate(MUNICIPAL, fixture as RawTask[], TOTALS, NOW);
+    // t4 "tarefa fora do mapa" matches nothing
     const outros = data.tasksDay.find((r) => r.status === 'Outros');
     expect(outros).toBeDefined();
     expect(outros!.count).toBe(1);

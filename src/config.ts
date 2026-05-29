@@ -1,40 +1,58 @@
-import type { Complexity, PanelConfig } from './types.js';
+import type { ActivityRule, PanelConfig } from './types.js';
 
-const STATUS_MUNICIPAL: Record<string, Complexity> = {
-  'MANIFESTAR HIPO': 'baixa',
-  'REPROTOCOLAR': 'baixa',
-  'OBRIGAÇÃO DE FAZER': 'baixa',
-  'VERIFICAR ANDAMENTO': 'baixa',
-  'PEDIR SEQUESTRO': 'media',
-  'IMPUGNAR CONTESTAÇÃO': 'media',
-  'INICIAL': 'media',
-  'ACOMPANHAR PROCESSOS': 'media',
-  'ANALISAR TRANSITADO EM JULGADO': 'media',
-  'ANALISAR INTERPOSIÇÃO DE RECURSO SOBRE INDEFERIMENTO DE HIPO': 'media',
-  'ANALISAR SENTENÇA PROCEDENTE': 'media',
-  'ANALISAR SENTENÇA IMPROCEDENTE/VERIFICAR INTERPOSIÇÃO DE RECURSO': 'media',
-  'CONTRARRAZOAR': 'alta',
-  'RECURSO': 'alta',
-  'CUMPRIMENTO DE SENTENÇA': 'alta',
-  'ATUALIZAR CÁLCULOS': 'alta',
-};
+// Subtask names are free text classified by keyword against the team's "tarefas do dia".
+// Rules are evaluated top-to-bottom: specific keywords first, broad catch-alls last.
+// Patterns run on the NAME after it is uppercased and stripped of accents, so write
+// them accent-free (e.g. CALCUL matches "CÁLCULO"/"CALCULO").
+const ACTIVITIES_MUNICIPAL: ActivityRule[] = [
+  { label: 'CUMPRIMENTO DE SENTENÇA', complexity: 'alta', pattern: /CUMPRIMENTO|CUMPRIR SENTENCA/ },
+  { label: 'ATUALIZAR CÁLCULOS', complexity: 'alta', pattern: /CALCUL/ },
+  { label: 'CONTRARRAZOAR', complexity: 'alta', pattern: /CONTRARRAZ/ },
+  { label: 'RECURSO', complexity: 'alta', pattern: /RECURSO|EMBARGOS|AGRAVO/ },
+  { label: 'PEDIR SEQUESTRO', complexity: 'media', pattern: /SEQUESTRO/ },
+  { label: 'ANALISAR RPV / PRECATÓRIO', complexity: 'media', pattern: /RPV|PRECATORIO|PEQUENO VALOR/ },
+  { label: 'IMPUGNAR CONTESTAÇÃO', complexity: 'baixa', pattern: /CONTEST/ },
+  { label: 'MANIFESTAR HIPO', complexity: 'baixa', pattern: /HIPO/ },
+  { label: 'OBRIGAÇÃO DE FAZER', complexity: 'baixa', pattern: /OBRIGA/ },
+  { label: 'ANALISAR SENTENÇA PROC./IMPROC.', complexity: 'media', pattern: /PROCEDENTE|IMPROCED/ },
+  { label: 'ANALISAR TRANSITADO EM JULGADO', complexity: 'media', pattern: /TRANSIT/ },
+  { label: 'INICIAL', complexity: 'media', pattern: /INICIAL/ },
+  { label: 'REPROTOCOLAR', complexity: 'baixa', pattern: /PROTOCOL/ },
+  { label: 'VERIFICAR HOMOLOGAÇÃO', complexity: 'baixa', pattern: /HOMOLOGA/ },
+  { label: 'PROSSEGUIMENTO', complexity: 'baixa', pattern: /PROSSEGUIMENTO/ },
+  { label: 'LITISPENDÊNCIA', complexity: 'baixa', pattern: /LITISPEND/ },
+  { label: 'MANIFESTAR SOBRE PROVAS', complexity: 'media', pattern: /PROVAS/ },
+  { label: 'PAGAMENTO / ALVARÁ / CONTRACHEQUE', complexity: 'baixa', pattern: /PAGAMENTO|ALVARA|CONTRACHEQUE|GUIA/ },
+  { label: 'CONTADORIA', complexity: 'baixa', pattern: /CONTADORIA/ },
+  { label: 'DOCUMENTAÇÃO / PENDÊNCIA', complexity: 'baixa', pattern: /PROCURACAO|COMPROVANTE|DOCUMENTA|PENDENCIA COMERCIAL|SENHA|SAC|DADOS BANCARIOS|DESARQUIV/ },
+  { label: 'DECURSO DE PRAZO', complexity: 'baixa', pattern: /DECURSO/ },
+  { label: 'ACOMPANHAR PROCESSOS', complexity: 'media', pattern: /ACOMPANHAR/ },
+  { label: 'VERIFICAR ANDAMENTO', complexity: 'baixa', pattern: /ANDAMENTO/ },
+];
 
-const STATUS_ESTADUAL: Record<string, Complexity> = {
-  'VERIFICAR SENTENÇA': 'baixa',
-  'MANIFESTAR HIPOSSUFICIENCIA': 'baixa',
-  'MANIFESTAR LITISPENDENCIA': 'baixa',
-  'EMENDAR INICIAL': 'baixa',
-  'REVISAR PARA PROTOCOLAR': 'baixa',
-  'VERIFICAR ANDAMENTO': 'baixa',
-  'ANALISE EM GERAL': 'baixa',
-  'VERIFICAR DECISÃO MONO': 'media',
-  'MANIFESTAR SOBRE PROVAS': 'media',
-  'IMPUGNAR CONTESTAÇÃO': 'media',
-  'VERIFICAR POSS DE RECURSO': 'alta',
-  'CONTRARRAZOAR': 'alta',
-  'REALIZAR CÁLCULOS': 'alta',
-  'ANALISAR TRANSITO EM JULGADO': 'neutra',
-};
+const ACTIVITIES_ESTADUAL: ActivityRule[] = [
+  { label: 'REALIZAR CÁLCULOS', complexity: 'alta', pattern: /CALCUL/ },
+  { label: 'CONTRARRAZOAR', complexity: 'alta', pattern: /CONTRARRAZ/ },
+  { label: 'CUMPRIR SENTENÇA', complexity: 'alta', pattern: /CUMPRIMENTO|CUMPRIR SENTENCA/ },
+  { label: 'VERIFICAR POSS. DE RECURSO', complexity: 'alta', pattern: /RECURSO|EMBARGOS|AGRAVO|REPROTOCOLO/ },
+  { label: 'PEDIR SEQUESTRO', complexity: 'media', pattern: /SEQUESTRO/ },
+  { label: 'ANALISAR RPV', complexity: 'media', pattern: /RPV|PEQUENO VALOR/ },
+  { label: 'IMPUGNAR CONTESTAÇÃO', complexity: 'media', pattern: /CONTEST|IMPUGNA/ },
+  { label: 'MANIFESTAR SOBRE PROVAS', complexity: 'media', pattern: /PROVAS/ },
+  { label: 'VERIFICAR DECISÃO MONO', complexity: 'alta', pattern: /DECISAO|MONOCRATICA/ },
+  { label: 'VERIFICAR SENTENÇA', complexity: 'alta', pattern: /SENTENCA/ },
+  { label: 'MANIFESTAR HIPOSSUFICIÊNCIA', complexity: 'baixa', pattern: /HIPO/ },
+  { label: 'MANIFESTAR LITISPENDÊNCIA', complexity: 'baixa', pattern: /LITISPEND/ },
+  { label: 'EMENDAR INICIAL', complexity: 'baixa', pattern: /INICIAL/ },
+  { label: 'REVISAR PARA PROTOCOLAR', complexity: 'baixa', pattern: /PROTOCOL/ },
+  { label: 'ANALISAR TRÂNSITO EM JULGADO', complexity: 'baixa', pattern: /TRANSIT/ },
+  { label: 'PAGAMENTO / ALVARÁ / CONTRACHEQUE', complexity: 'baixa', pattern: /PAGAMENTO|ALVARA|CONTRACHEQUE/ },
+  { label: 'CONTADORIA', complexity: 'baixa', pattern: /CONTADORIA/ },
+  { label: 'DOCUMENTAÇÃO / PENDÊNCIA', complexity: 'baixa', pattern: /PROCURACAO|PROCURA|COMPROVANTE|DOCUMENTA|DOCUMENTO|ENDERECO|CESSAO|CUC|DESARQUIV|BLOQUEIO|REGULARIZAR/ },
+  { label: 'ANALISAR DESPACHO', complexity: 'baixa', pattern: /DESPACHO/ },
+  { label: 'VERIFICAR ANDAMENTO', complexity: 'baixa', pattern: /ANDAMENTO/ },
+  { label: 'ANÁLISE EM GERAL', complexity: 'baixa', pattern: /ANALISAD|ANALISE DE DIREITO|ANALISAR PROCESSO|HOUVE PAGAMENTO|ANALISAR PAGAMENTO/ },
+];
 
 export const PANELS: PanelConfig[] = [
   {
@@ -42,7 +60,7 @@ export const PANELS: PanelConfig[] = [
     title: 'NÚCLEO PROFESSORES — MUNICIPAL',
     folderId: '90144366189',
     teamSize: 17,
-    statusComplexity: STATUS_MUNICIPAL,
+    activities: ACTIVITIES_MUNICIPAL,
     listPatterns: {
       adm: /^Adm\/Judicial/i,
       cumpr: /^Cumprimento de Sentença/i,
@@ -55,7 +73,7 @@ export const PANELS: PanelConfig[] = [
     title: 'NÚCLEO PROFESSORES — ESTADUAL',
     folderId: '90101216715',
     teamSize: 18,
-    statusComplexity: STATUS_ESTADUAL,
+    activities: ACTIVITIES_ESTADUAL,
     // PLACEHOLDER — needs user confirmation per spec Open Question.
     // Until confirmed, ADM matches Adm/Judicial + Execução + RPV; Cumpr matches Cumprimento de Sentença.
     listPatterns: {

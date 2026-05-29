@@ -1,8 +1,8 @@
 [
   {
     "id": "t1",
-    "name": "sub1",
-    "status": { "status": "Verificar Andamento", "type": "open" },
+    "name": "Verificar Andamento",
+    "status": { "status": "EM ANÁLISE", "type": "open" },
     "parent": "p1",
     "due_date": "1780023600000",
     "assignees": [{ "id": 10 }, { "id": 11 }],
@@ -12,8 +12,8 @@
   },
   {
     "id": "t2",
-    "name": "sub2",
-    "status": { "status": "  VERIFICAR ANDAMENTO  ", "type": "open" },
+    "name": "  verificar  andamento PROAD ",
+    "status": { "status": "PENDENTE", "type": "open" },
     "parent": "p1",
     "due_date": "1780023600000",
     "assignees": [{ "id": 10 }],
@@ -23,8 +23,8 @@
   },
   {
     "id": "t3",
-    "name": "sub3",
-    "status": { "status": "CONTRARRAZOAR", "type": "open" },
+    "name": "Apresentar contrarrazões",
+    "status": { "status": "EM RECURSO", "type": "open" },
     "parent": "p2",
     "due_date": "1780110000000",
     "assignees": [{ "id": 12 }],
@@ -34,8 +34,8 @@
   },
   {
     "id": "t4",
-    "name": "sub4",
-    "status": { "status": "STATUS DESCONHECIDO", "type": "open" },
+    "name": "tarefa fora do mapa",
+    "status": { "status": "CONCLUÍDO", "type": "closed" },
     "parent": "p3",
     "due_date": "1780023600000",
     "assignees": [],

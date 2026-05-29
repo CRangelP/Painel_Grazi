@@ -31,7 +31,7 @@ async function main(): Promise<void> {
     const data = aggregate(panel, rawTasks, folderTotals, now);
     const nonCanon = data.tasksDay.find((r) => r.status === 'Outros');
     if (nonCanon) {
-      console.warn(`[${panel.slug}] ${nonCanon.count} non-canon status occurrences in day`);
+      console.warn(`[${panel.slug}] ${nonCanon.count} day subtasks unmatched by any activity rule (Outros)`);
     }
 
     writeFileSync(join(outDir, panel.outputHtml), renderPanel(panel, data));

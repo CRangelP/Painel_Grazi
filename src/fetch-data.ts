@@ -121,7 +121,7 @@ export async function fetchSubtasksForFolder(
         custom_fields: customFieldsParam,
         due_date_gt: String(window.weekStart - 1),
         due_date_lt: String(window.weekEnd + 1),
-        include_closed: true,
+        include_closed: false,
         subtasks: true,
         include_timl: true,
         page,

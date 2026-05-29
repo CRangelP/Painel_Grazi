@@ -12,6 +12,15 @@ export interface RawTask {
 
 export type Complexity = 'baixa' | 'media' | 'alta' | 'neutra';
 
+// A subtask is an activity ("tarefa do dia"); its NAME is what we classify, not its
+// ClickUp status. Names are free text, so each rule matches by keyword. Rules are
+// evaluated in order — put specific rules before broad catch-alls.
+export interface ActivityRule {
+  label: string;
+  complexity: Complexity;
+  pattern: RegExp;
+}
+
 export interface StatusRow {
   status: string;
   count: number;
@@ -58,7 +67,7 @@ export interface PanelConfig {
   title: string;
   folderId: string;
   teamSize: number;
-  statusComplexity: Record<string, Complexity>;
+  activities: ActivityRule[];
   listPatterns: {
     adm: RegExp;
     cumpr: RegExp;
