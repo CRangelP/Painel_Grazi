@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T23:46:53.428Z",
+  "generatedAt": "2026-05-28T23:54:24.442Z",
   "header": {
     "dateLabel": "Quinta-feira, 28 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22552,
     "cumprSentenca": 13091,
     "subtarefasDia": 2390,
-    "subtarefasSemana": 6049,
+    "subtarefasSemana": 6050,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -65,7 +65,7 @@
     },
     {
       "status": "Outros",
-      "count": 4231,
+      "count": 4232,
       "complexity": "neutra",
       "perPerson": 235
     }
@@ -81,8 +81,8 @@
     "alta": 0,
     "media": 207,
     "baixa": 1611,
-    "neutra": 4231,
-    "total": 6049
+    "neutra": 4232,
+    "total": 6050
   },
   "team": {
     "perDay": 133,
