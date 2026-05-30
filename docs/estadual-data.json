@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T09:22:42.926Z",
+  "generatedAt": "2026-05-30T14:29:33.177Z",
   "header": {
     "dateLabel": "Sábado, 30 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22537,
     "cumprSentenca": 13127,
     "subtarefasDia": 3,
-    "subtarefasSemana": 5026,
+    "subtarefasSemana": 5099,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -35,31 +35,31 @@
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 226,
+      "count": 238,
       "complexity": "baixa",
       "perPerson": 13
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 200,
+      "count": 201,
       "complexity": "media",
       "perPerson": 11
     },
     {
+      "status": "VERIFICAR SENTENÇA",
+      "count": 174,
+      "complexity": "alta",
+      "perPerson": 10
+    },
+    {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 171,
+      "count": 172,
       "complexity": "baixa",
       "perPerson": 10
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
       "count": 132,
-      "complexity": "alta",
-      "perPerson": 7
-    },
-    {
-      "status": "VERIFICAR SENTENÇA",
-      "count": 131,
       "complexity": "alta",
       "perPerson": 7
     },
@@ -76,15 +76,15 @@
       "perPerson": 5
     },
     {
-      "status": "REALIZAR CÁLCULOS",
+      "status": "EMENDAR INICIAL",
       "count": 80,
-      "complexity": "alta",
+      "complexity": "baixa",
       "perPerson": 4
     },
     {
-      "status": "EMENDAR INICIAL",
-      "count": 76,
-      "complexity": "baixa",
+      "status": "REALIZAR CÁLCULOS",
+      "count": 80,
+      "complexity": "alta",
       "perPerson": 4
     },
     {
@@ -95,7 +95,7 @@
     },
     {
       "status": "ANALISAR DESPACHO",
-      "count": 54,
+      "count": 58,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -118,15 +118,15 @@
       "perPerson": 1
     },
     {
-      "status": "VERIFICAR DECISÃO MONO",
-      "count": 14,
-      "complexity": "alta",
+      "status": "MANIFESTAR SOBRE PROVAS",
+      "count": 15,
+      "complexity": "media",
       "perPerson": 1
     },
     {
-      "status": "MANIFESTAR SOBRE PROVAS",
+      "status": "VERIFICAR DECISÃO MONO",
       "count": 14,
-      "complexity": "media",
+      "complexity": "alta",
       "perPerson": 1
     },
     {
@@ -137,7 +137,7 @@
     },
     {
       "status": "Outros",
-      "count": 17,
+      "count": 24,
       "complexity": "neutra",
       "perPerson": 1
     }
@@ -150,15 +150,15 @@
     "total": 3
   },
   "donutWeek": {
-    "alta": 449,
-    "media": 1828,
-    "baixa": 2732,
-    "neutra": 17,
-    "total": 5026
+    "alta": 492,
+    "media": 1830,
+    "baixa": 2753,
+    "neutra": 24,
+    "total": 5099
   },
   "team": {
     "perDay": 0,
-    "perWeek": 279,
+    "perWeek": 283,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
