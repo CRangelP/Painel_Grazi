@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-30T14:29:33.177Z",
+  "generatedAt": "2026-05-30T19:29:31.498Z",
   "header": {
     "dateLabel": "Sábado, 30 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 35664,
-    "admJudicial": 22537,
-    "cumprSentenca": 13127,
+    "totalProcessos": 35665,
+    "admJudicial": 22548,
+    "cumprSentenca": 13117,
     "subtarefasDia": 3,
-    "subtarefasSemana": 5099,
+    "subtarefasSemana": 5083,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -53,7 +53,7 @@
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 172,
+      "count": 173,
       "complexity": "baixa",
       "perPerson": 10
     },
@@ -83,21 +83,21 @@
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 80,
+      "count": 79,
       "complexity": "alta",
       "perPerson": 4
-    },
-    {
-      "status": "CUMPRIR SENTENÇA",
-      "count": 60,
-      "complexity": "alta",
-      "perPerson": 3
     },
     {
       "status": "ANALISAR DESPACHO",
       "count": 58,
       "complexity": "baixa",
       "perPerson": 3
+    },
+    {
+      "status": "CUMPRIR SENTENÇA",
+      "count": 44,
+      "complexity": "alta",
+      "perPerson": 2
     },
     {
       "status": "CONTRARRAZOAR",
@@ -150,15 +150,15 @@
     "total": 3
   },
   "donutWeek": {
-    "alta": 492,
+    "alta": 475,
     "media": 1830,
-    "baixa": 2753,
+    "baixa": 2754,
     "neutra": 24,
-    "total": 5099
+    "total": 5083
   },
   "team": {
     "perDay": 0,
-    "perWeek": 283,
+    "perWeek": 282,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
