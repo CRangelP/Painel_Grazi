@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-05-31T14:29:57.383Z",
+  "generatedAt": "2026-05-31T19:29:26.743Z",
   "header": {
     "dateLabel": "Domingo, 31 de Maio de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 35671,
-    "admJudicial": 22553,
-    "cumprSentenca": 13118,
-    "subtarefasDia": 2324,
-    "subtarefasSemana": 5370,
+    "totalProcessos": 35691,
+    "admJudicial": 22571,
+    "cumprSentenca": 13120,
+    "subtarefasDia": 2323,
+    "subtarefasSemana": 5359,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -57,7 +57,7 @@
     },
     {
       "status": "ANALISAR DESPACHO",
-      "count": 40,
+      "count": 39,
       "complexity": "baixa",
       "perPerson": 2
     },
@@ -149,9 +149,9 @@
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 234,
+      "count": 224,
       "complexity": "baixa",
-      "perPerson": 13
+      "perPerson": 12
     },
     {
       "status": "VERIFICAR SENTENÇA",
@@ -190,14 +190,14 @@
       "perPerson": 5
     },
     {
-      "status": "ANALISAR DESPACHO",
+      "status": "EMENDAR INICIAL",
       "count": 83,
       "complexity": "baixa",
       "perPerson": 5
     },
     {
-      "status": "EMENDAR INICIAL",
-      "count": 83,
+      "status": "ANALISAR DESPACHO",
+      "count": 82,
       "complexity": "baixa",
       "perPerson": 5
     },
@@ -253,16 +253,16 @@
   "donutDay": {
     "alta": 135,
     "media": 1168,
-    "baixa": 1016,
+    "baixa": 1015,
     "neutra": 5,
-    "total": 2324
+    "total": 2323
   },
   "donutWeek": {
     "alta": 580,
     "media": 1863,
-    "baixa": 2903,
+    "baixa": 2892,
     "neutra": 24,
-    "total": 5370
+    "total": 5359
   },
   "team": {
     "perDay": 129,
