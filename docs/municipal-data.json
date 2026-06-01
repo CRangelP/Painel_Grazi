@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-01T13:08:49.960Z",
+  "generatedAt": "2026-06-01T13:23:42.256Z",
   "header": {
     "dateLabel": "Segunda-feira, 1 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
-    "totalProcessos": 6718,
-    "admJudicial": 3636,
+    "totalProcessos": 6719,
+    "admJudicial": 3637,
     "cumprSentenca": 3082,
     "subtarefasDia": 1014,
-    "subtarefasSemana": 1887,
+    "subtarefasSemana": 1892,
     "colaboradores": 17
   },
   "tasksDay": [
@@ -27,7 +27,7 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 129,
+      "count": 128,
       "complexity": "baixa",
       "perPerson": 8
     },
@@ -159,7 +159,7 @@
     },
     {
       "status": "Outros",
-      "count": 15,
+      "count": 16,
       "complexity": "neutra",
       "perPerson": 1
     }
@@ -173,19 +173,19 @@
     },
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 371,
+      "count": 370,
       "complexity": "media",
       "perPerson": 22
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 288,
+      "count": 287,
       "complexity": "baixa",
       "perPerson": 17
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 171,
+      "count": 172,
       "complexity": "baixa",
       "perPerson": 10
     },
@@ -203,7 +203,7 @@
     },
     {
       "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 49,
+      "count": 50,
       "complexity": "alta",
       "perPerson": 3
     },
@@ -227,7 +227,7 @@
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 26,
+      "count": 28,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -239,7 +239,7 @@
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 19,
+      "count": 20,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -251,7 +251,7 @@
     },
     {
       "status": "REPROTOCOLAR",
-      "count": 14,
+      "count": 15,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -311,7 +311,7 @@
     },
     {
       "status": "Outros",
-      "count": 54,
+      "count": 55,
       "complexity": "neutra",
       "perPerson": 3
     }
@@ -319,16 +319,16 @@
   "donutDay": {
     "alta": 57,
     "media": 199,
-    "baixa": 743,
-    "neutra": 15,
+    "baixa": 742,
+    "neutra": 16,
     "total": 1014
   },
   "donutWeek": {
-    "alta": 96,
-    "media": 562,
-    "baixa": 1175,
-    "neutra": 54,
-    "total": 1887
+    "alta": 99,
+    "media": 561,
+    "baixa": 1177,
+    "neutra": 55,
+    "total": 1892
   },
   "team": {
     "perDay": 60,

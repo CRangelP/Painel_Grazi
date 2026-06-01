@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-06-01T13:08:49.960Z",
+  "generatedAt": "2026-06-01T13:23:42.256Z",
   "header": {
     "dateLabel": "Segunda-feira, 1 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
     "totalProcessos": 35703,
-    "admJudicial": 22583,
-    "cumprSentenca": 13120,
-    "subtarefasDia": 1303,
-    "subtarefasSemana": 3320,
+    "admJudicial": 22581,
+    "cumprSentenca": 13122,
+    "subtarefasDia": 1305,
+    "subtarefasSemana": 3329,
     "colaboradores": 18
   },
   "tasksDay": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 796,
+      "count": 798,
       "complexity": "baixa",
       "perPerson": 44
     },
@@ -119,9 +119,9 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 1303,
+      "count": 1305,
       "complexity": "baixa",
-      "perPerson": 72
+      "perPerson": 73
     },
     {
       "status": "ANALISAR RPV",
@@ -137,21 +137,21 @@
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 213,
+      "count": 214,
       "complexity": "baixa",
       "perPerson": 12
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 162,
+      "count": 164,
       "complexity": "baixa",
       "perPerson": 9
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 135,
+      "count": 134,
       "complexity": "alta",
-      "perPerson": 8
+      "perPerson": 7
     },
     {
       "status": "MANIFESTAR LITISPENDÊNCIA",
@@ -161,7 +161,7 @@
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 99,
+      "count": 101,
       "complexity": "alta",
       "perPerson": 6
     },
@@ -191,9 +191,9 @@
     },
     {
       "status": "CUMPRIR SENTENÇA",
-      "count": 43,
+      "count": 46,
       "complexity": "alta",
-      "perPerson": 2
+      "perPerson": 3
     },
     {
       "status": "CONTRARRAZOAR",
@@ -241,20 +241,20 @@
   "donutDay": {
     "alta": 131,
     "media": 145,
-    "baixa": 1021,
+    "baixa": 1023,
     "neutra": 6,
-    "total": 1303
+    "total": 1305
   },
   "donutWeek": {
-    "alta": 583,
+    "alta": 587,
     "media": 727,
-    "baixa": 1985,
+    "baixa": 1990,
     "neutra": 25,
-    "total": 3320
+    "total": 3329
   },
   "team": {
-    "perDay": 72,
-    "perWeek": 184,
+    "perDay": 73,
+    "perWeek": 185,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
