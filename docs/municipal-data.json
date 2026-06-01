@@ -1,27 +1,33 @@
 {
-  "generatedAt": "2026-06-01T12:27:47.984Z",
+  "generatedAt": "2026-06-01T13:08:49.960Z",
   "header": {
     "dateLabel": "Segunda-feira, 1 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
     "totalProcessos": 6718,
-    "admJudicial": 3637,
-    "cumprSentenca": 3081,
-    "subtarefasDia": 1027,
-    "subtarefasSemana": 1900,
+    "admJudicial": 3636,
+    "cumprSentenca": 3082,
+    "subtarefasDia": 1014,
+    "subtarefasSemana": 1887,
     "colaboradores": 17
   },
   "tasksDay": [
     {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 434,
+      "complexity": "baixa",
+      "perPerson": 26
+    },
+    {
       "status": "PEDIR SEQUESTRO",
-      "count": 138,
+      "count": 133,
       "complexity": "media",
       "perPerson": 8
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 131,
+      "count": 129,
       "complexity": "baixa",
       "perPerson": 8
     },
@@ -33,7 +39,7 @@
     },
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 54,
+      "count": 53,
       "complexity": "media",
       "perPerson": 3
     },
@@ -57,7 +63,7 @@
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 20,
+      "count": 19,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -98,15 +104,15 @@
       "perPerson": 0
     },
     {
-      "status": "LITISPENDÊNCIA",
-      "count": 6,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
       "status": "ANALISAR RPV / PRECATÓRIO",
       "count": 6,
       "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "LITISPENDÊNCIA",
+      "count": 5,
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -128,6 +134,12 @@
       "perPerson": 0
     },
     {
+      "status": "ANALISAR TRANSITADO EM JULGADO",
+      "count": 2,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
       "status": "MANIFESTAR SOBRE PROVAS",
       "count": 2,
       "complexity": "media",
@@ -140,12 +152,6 @@
       "perPerson": 0
     },
     {
-      "status": "ANALISAR TRANSITADO EM JULGADO",
-      "count": 1,
-      "complexity": "media",
-      "perPerson": 0
-    },
-    {
       "status": "ANALISAR SENTENÇA PROC./IMPROC.",
       "count": 1,
       "complexity": "media",
@@ -153,35 +159,41 @@
     },
     {
       "status": "Outros",
-      "count": 453,
+      "count": 15,
       "complexity": "neutra",
-      "perPerson": 27
+      "perPerson": 1
     }
   ],
   "tasksWeek": [
     {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 434,
+      "complexity": "baixa",
+      "perPerson": 26
+    },
+    {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 373,
+      "count": 371,
       "complexity": "media",
       "perPerson": 22
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 290,
+      "count": 288,
       "complexity": "baixa",
       "perPerson": 17
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 174,
+      "count": 171,
       "complexity": "baixa",
       "perPerson": 10
     },
     {
       "status": "PEDIR SEQUESTRO",
-      "count": 146,
+      "count": 143,
       "complexity": "media",
-      "perPerson": 9
+      "perPerson": 8
     },
     {
       "status": "PROSSEGUIMENTO",
@@ -191,7 +203,7 @@
     },
     {
       "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 48,
+      "count": 49,
       "complexity": "alta",
       "perPerson": 3
     },
@@ -215,7 +227,7 @@
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 27,
+      "count": 26,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -239,7 +251,7 @@
     },
     {
       "status": "REPROTOCOLAR",
-      "count": 13,
+      "count": 14,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -263,7 +275,7 @@
     },
     {
       "status": "LITISPENDÊNCIA",
-      "count": 10,
+      "count": 9,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -275,18 +287,18 @@
     },
     {
       "status": "ANALISAR TRANSITADO EM JULGADO",
-      "count": 2,
-      "complexity": "media",
-      "perPerson": 0
-    },
-    {
-      "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 2,
+      "count": 3,
       "complexity": "media",
       "perPerson": 0
     },
     {
       "status": "INICIAL",
+      "count": 3,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "MANIFESTAR SOBRE PROVAS",
       "count": 2,
       "complexity": "media",
       "perPerson": 0
@@ -299,28 +311,28 @@
     },
     {
       "status": "Outros",
-      "count": 493,
+      "count": 54,
       "complexity": "neutra",
-      "perPerson": 29
+      "perPerson": 3
     }
   ],
   "donutDay": {
-    "alta": 58,
-    "media": 204,
-    "baixa": 312,
-    "neutra": 453,
-    "total": 1027
+    "alta": 57,
+    "media": 199,
+    "baixa": 743,
+    "neutra": 15,
+    "total": 1014
   },
   "donutWeek": {
     "alta": 96,
-    "media": 565,
-    "baixa": 746,
-    "neutra": 493,
-    "total": 1900
+    "media": 562,
+    "baixa": 1175,
+    "neutra": 54,
+    "total": 1887
   },
   "team": {
     "perDay": 60,
-    "perWeek": 112,
+    "perWeek": 111,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
