@@ -26,6 +26,7 @@ const ACTIVITIES_MUNICIPAL: ActivityRule[] = [
   { label: 'CONTADORIA', complexity: 'baixa', pattern: /CONTADORIA/ },
   { label: 'DOCUMENTAÇÃO / PENDÊNCIA', complexity: 'baixa', pattern: /PROCURACAO|COMPROVANTE|DOCUMENTA|PENDENCIA COMERCIAL|SENHA|SAC|DADOS BANCARIOS|DESARQUIV/ },
   { label: 'DECURSO DE PRAZO', complexity: 'baixa', pattern: /DECURSO/ },
+  { label: 'ANALISAR PROCESSO PARADO (+40 DIAS)', complexity: 'baixa', pattern: /PROCESSO PARADO|40 DIAS/ },
   { label: 'ACOMPANHAR PROCESSOS', complexity: 'media', pattern: /ACOMPANHAR/ },
   { label: 'VERIFICAR ANDAMENTO', complexity: 'baixa', pattern: /ANDAMENTO/ },
 ];
@@ -50,6 +51,7 @@ const ACTIVITIES_ESTADUAL: ActivityRule[] = [
   { label: 'CONTADORIA', complexity: 'baixa', pattern: /CONTADORIA/ },
   { label: 'DOCUMENTAÇÃO / PENDÊNCIA', complexity: 'baixa', pattern: /PROCURACAO|PROCURA|COMPROVANTE|DOCUMENTA|DOCUMENTO|ENDERECO|CESSAO|CUC|DESARQUIV|BLOQUEIO|REGULARIZAR/ },
   { label: 'ANALISAR DESPACHO', complexity: 'baixa', pattern: /DESPACHO/ },
+  { label: 'ANALISAR PROCESSO PARADO (+40 DIAS)', complexity: 'baixa', pattern: /PROCESSO PARADO|40 DIAS/ },
   { label: 'VERIFICAR ANDAMENTO', complexity: 'baixa', pattern: /ANDAMENTO/ },
   { label: 'ANÁLISE EM GERAL', complexity: 'baixa', pattern: /ANALISAD|ANALISE DE DIREITO|ANALISAR PROCESSO|HOUVE PAGAMENTO|ANALISAR PAGAMENTO/ },
 ];
