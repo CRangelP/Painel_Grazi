@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T15:03:29.822Z",
+  "generatedAt": "2026-06-04T19:41:28.922Z",
   "header": {
     "dateLabel": "Quinta-feira, 4 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -9,7 +9,7 @@
     "admJudicial": 3617,
     "cumprSentenca": 3115,
     "subtarefasDia": 496,
-    "subtarefasSemana": 1446,
+    "subtarefasSemana": 1452,
     "colaboradores": 17
   },
   "tasksDay": [
@@ -179,7 +179,7 @@
     },
     {
       "status": "PROSSEGUIMENTO",
-      "count": 56,
+      "count": 55,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -232,6 +232,12 @@
       "perPerson": 1
     },
     {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 15,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
       "status": "REPROTOCOLAR",
       "count": 15,
       "complexity": "baixa",
@@ -257,12 +263,6 @@
     },
     {
       "status": "LITISPENDÊNCIA",
-      "count": 8,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
-      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
       "count": 8,
       "complexity": "baixa",
       "perPerson": 0
@@ -302,9 +302,9 @@
   "donutWeek": {
     "alta": 122,
     "media": 484,
-    "baixa": 784,
+    "baixa": 790,
     "neutra": 56,
-    "total": 1446
+    "total": 1452
   },
   "team": {
     "perDay": 29,
