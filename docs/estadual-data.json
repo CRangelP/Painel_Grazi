@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T14:59:15.229Z",
+  "generatedAt": "2026-06-05T19:32:43.929Z",
   "header": {
     "dateLabel": "Sexta-feira, 5 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22653,
     "cumprSentenca": 13113,
     "subtarefasDia": 12,
-    "subtarefasSemana": 2890,
+    "subtarefasSemana": 2930,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -55,6 +55,12 @@
       "status": "VERIFICAR SENTENÇA",
       "count": 60,
       "complexity": "alta",
+      "perPerson": 3
+    },
+    {
+      "status": "MANIFESTAR LITISPENDÊNCIA",
+      "count": 53,
+      "complexity": "baixa",
       "perPerson": 3
     },
     {
@@ -106,12 +112,6 @@
       "perPerson": 1
     },
     {
-      "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 12,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
       "status": "CONTRARRAZOAR",
       "count": 10,
       "complexity": "alta",
@@ -133,12 +133,6 @@
       "status": "VERIFICAR DECISÃO MONO",
       "count": 1,
       "complexity": "alta",
-      "perPerson": 0
-    },
-    {
-      "status": "REVISAR PARA PROTOCOLAR",
-      "count": 1,
-      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -164,13 +158,13 @@
   "donutWeek": {
     "alta": 134,
     "media": 1040,
-    "baixa": 1693,
+    "baixa": 1733,
     "neutra": 23,
-    "total": 2890
+    "total": 2930
   },
   "team": {
     "perDay": 1,
-    "perWeek": 161,
+    "perWeek": 163,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }

@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-05T14:59:15.229Z",
+  "generatedAt": "2026-06-05T19:32:43.929Z",
   "header": {
     "dateLabel": "Sexta-feira, 5 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
     "totalProcessos": 6732,
-    "admJudicial": 3617,
-    "cumprSentenca": 3115,
+    "admJudicial": 3615,
+    "cumprSentenca": 3117,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1145,
+    "subtarefasSemana": 1146,
     "colaboradores": 17
   },
   "tasksDay": [],
@@ -22,9 +22,9 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 180,
+      "count": 177,
       "complexity": "baixa",
-      "perPerson": 11
+      "perPerson": 10
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
@@ -34,7 +34,7 @@
     },
     {
       "status": "MANIFESTAR HIPO",
-      "count": 70,
+      "count": 69,
       "complexity": "baixa",
       "perPerson": 4
     },
@@ -69,20 +69,20 @@
       "perPerson": 2
     },
     {
+      "status": "CONTRARRAZOAR",
+      "count": 21,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
       "status": "CUMPRIMENTO DE SENTENÇA",
       "count": 21,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 20,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
       "status": "RECURSO",
-      "count": 17,
+      "count": 19,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -129,15 +129,15 @@
       "perPerson": 0
     },
     {
-      "status": "DECURSO DE PRAZO",
-      "count": 6,
-      "complexity": "baixa",
+      "status": "ANALISAR TRANSITADO EM JULGADO",
+      "count": 7,
+      "complexity": "media",
       "perPerson": 0
     },
     {
-      "status": "ANALISAR TRANSITADO EM JULGADO",
-      "count": 5,
-      "complexity": "media",
+      "status": "DECURSO DE PRAZO",
+      "count": 6,
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -173,11 +173,11 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 71,
-    "media": 405,
-    "baixa": 614,
+    "alta": 74,
+    "media": 407,
+    "baixa": 610,
     "neutra": 55,
-    "total": 1145
+    "total": 1146
   },
   "team": {
     "perDay": 0,
