@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-05T08:26:41.203Z",
+  "generatedAt": "2026-06-05T14:59:15.229Z",
   "header": {
     "dateLabel": "Sexta-feira, 5 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22653,
     "cumprSentenca": 13113,
     "subtarefasDia": 12,
-    "subtarefasSemana": 2808,
+    "subtarefasSemana": 2890,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -35,9 +35,9 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 830,
+      "count": 905,
       "complexity": "baixa",
-      "perPerson": 46
+      "perPerson": 50
     },
     {
       "status": "CONTADORIA",
@@ -58,15 +58,15 @@
       "perPerson": 3
     },
     {
-      "status": "EMENDAR INICIAL",
-      "count": 37,
-      "complexity": "baixa",
+      "status": "VERIFICAR POSS. DE RECURSO",
+      "count": 39,
+      "complexity": "alta",
       "perPerson": 2
     },
     {
-      "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 36,
-      "complexity": "alta",
+      "status": "EMENDAR INICIAL",
+      "count": 37,
+      "complexity": "baixa",
       "perPerson": 2
     },
     {
@@ -88,15 +88,15 @@
       "perPerson": 2
     },
     {
-      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 17,
-      "complexity": "baixa",
+      "status": "CUMPRIR SENTENÇA",
+      "count": 21,
+      "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "CUMPRIR SENTENÇA",
+      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
       "count": 17,
-      "complexity": "alta",
+      "complexity": "baixa",
       "perPerson": 1
     },
     {
@@ -162,15 +162,15 @@
     "total": 12
   },
   "donutWeek": {
-    "alta": 127,
+    "alta": 134,
     "media": 1040,
-    "baixa": 1618,
+    "baixa": 1693,
     "neutra": 23,
-    "total": 2808
+    "total": 2890
   },
   "team": {
     "perDay": 1,
-    "perWeek": 156,
+    "perWeek": 161,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
