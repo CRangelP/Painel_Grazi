@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-06T14:29:50.962Z",
+  "generatedAt": "2026-06-06T19:29:38.862Z",
   "header": {
     "dateLabel": "Sábado, 6 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
     "totalProcessos": 6732,
-    "admJudicial": 3615,
-    "cumprSentenca": 3117,
+    "admJudicial": 3612,
+    "cumprSentenca": 3120,
     "subtarefasDia": 12,
-    "subtarefasSemana": 1395,
+    "subtarefasSemana": 1343,
     "colaboradores": 17
   },
   "tasksDay": [
@@ -29,9 +29,9 @@
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 409,
+      "count": 385,
       "complexity": "media",
-      "perPerson": 24
+      "perPerson": 23
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
@@ -41,9 +41,9 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 194,
+      "count": 165,
       "complexity": "baixa",
-      "perPerson": 11
+      "perPerson": 10
     },
     {
       "status": "PROSSEGUIMENTO",
@@ -76,20 +76,20 @@
       "perPerson": 2
     },
     {
-      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
-      "count": 30,
-      "complexity": "baixa",
-      "perPerson": 2
-    },
-    {
       "status": "VERIFICAR HOMOLOGAÇÃO",
       "count": 30,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 27,
+      "complexity": "baixa",
+      "perPerson": 2
+    },
+    {
       "status": "CONTRARRAZOAR",
-      "count": 21,
+      "count": 23,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -136,16 +136,16 @@
       "perPerson": 1
     },
     {
+      "status": "ANALISAR TRANSITADO EM JULGADO",
+      "count": 10,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
       "status": "IMPUGNAR CONTESTAÇÃO",
       "count": 9,
       "complexity": "baixa",
       "perPerson": 1
-    },
-    {
-      "status": "ANALISAR TRANSITADO EM JULGADO",
-      "count": 7,
-      "complexity": "media",
-      "perPerson": 0
     },
     {
       "status": "DECURSO DE PRAZO",
@@ -154,15 +154,15 @@
       "perPerson": 0
     },
     {
-      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
+      "status": "LITISPENDÊNCIA",
       "count": 4,
-      "complexity": "media",
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
-      "status": "LITISPENDÊNCIA",
-      "count": 3,
-      "complexity": "baixa",
+      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
+      "count": 2,
+      "complexity": "media",
       "perPerson": 0
     },
     {
@@ -186,15 +186,15 @@
     "total": 12
   },
   "donutWeek": {
-    "alta": 75,
-    "media": 505,
-    "baixa": 741,
+    "alta": 77,
+    "media": 482,
+    "baixa": 710,
     "neutra": 74,
-    "total": 1395
+    "total": 1343
   },
   "team": {
     "perDay": 1,
-    "perWeek": 82,
+    "perWeek": 79,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
