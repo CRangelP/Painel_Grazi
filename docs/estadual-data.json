@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-06T07:59:35.537Z",
+  "generatedAt": "2026-06-06T14:29:50.962Z",
   "header": {
     "dateLabel": "Sábado, 6 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22653,
     "cumprSentenca": 13113,
     "subtarefasDia": 5,
-    "subtarefasSemana": 3053,
+    "subtarefasSemana": 3123,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -34,16 +34,16 @@
   ],
   "tasksWeek": [
     {
-      "status": "VERIFICAR ANDAMENTO",
-      "count": 1007,
-      "complexity": "baixa",
-      "perPerson": 56
+      "status": "ANALISAR RPV",
+      "count": 1031,
+      "complexity": "media",
+      "perPerson": 57
     },
     {
-      "status": "ANALISAR RPV",
-      "count": 985,
-      "complexity": "media",
-      "perPerson": 55
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 1016,
+      "complexity": "baixa",
+      "perPerson": 56
     },
     {
       "status": "CONTADORIA",
@@ -70,15 +70,15 @@
       "perPerson": 3
     },
     {
+      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
+      "count": 46,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
       "status": "VERIFICAR POSS. DE RECURSO",
       "count": 42,
       "complexity": "alta",
-      "perPerson": 2
-    },
-    {
-      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 35,
-      "complexity": "baixa",
       "perPerson": 2
     },
     {
@@ -113,7 +113,7 @@
     },
     {
       "status": "ANALISAR DESPACHO",
-      "count": 16,
+      "count": 20,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -169,14 +169,14 @@
   },
   "donutWeek": {
     "alta": 139,
-    "media": 1046,
-    "baixa": 1838,
+    "media": 1092,
+    "baixa": 1862,
     "neutra": 30,
-    "total": 3053
+    "total": 3123
   },
   "team": {
     "perDay": 0,
-    "perWeek": 170,
+    "perWeek": 174,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
