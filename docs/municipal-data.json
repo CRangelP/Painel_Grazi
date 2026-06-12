@@ -1,77 +1,83 @@
 {
-  "generatedAt": "2026-06-12T14:59:54.293Z",
+  "generatedAt": "2026-06-12T19:37:32.680Z",
   "header": {
     "dateLabel": "Sexta-feira, 12 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
     "totalProcessos": 6740,
-    "admJudicial": 3585,
-    "cumprSentenca": 3155,
+    "admJudicial": 3584,
+    "cumprSentenca": 3156,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1231,
+    "subtarefasSemana": 1196,
     "colaboradores": 17
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 331,
+      "count": 295,
       "complexity": "media",
-      "perPerson": 19
+      "perPerson": 17
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 254,
+      "count": 226,
       "complexity": "baixa",
-      "perPerson": 15
+      "perPerson": 13
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 137,
+      "count": 135,
       "complexity": "baixa",
       "perPerson": 8
     },
     {
-      "status": "VERIFICAR HOMOLOGAÇÃO",
-      "count": 58,
+      "status": "MANIFESTAR HIPO",
+      "count": 57,
       "complexity": "baixa",
       "perPerson": 3
     },
     {
-      "status": "MANIFESTAR HIPO",
-      "count": 56,
+      "status": "VERIFICAR HOMOLOGAÇÃO",
+      "count": 55,
       "complexity": "baixa",
       "perPerson": 3
     },
     {
       "status": "PEDIR SEQUESTRO",
-      "count": 45,
+      "count": 46,
       "complexity": "media",
       "perPerson": 3
     },
     {
-      "status": "PROSSEGUIMENTO",
-      "count": 42,
-      "complexity": "baixa",
-      "perPerson": 2
+      "status": "CUMPRIMENTO DE SENTENÇA",
+      "count": 45,
+      "complexity": "alta",
+      "perPerson": 3
     },
     {
-      "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 30,
-      "complexity": "alta",
+      "status": "PROSSEGUIMENTO",
+      "count": 40,
+      "complexity": "baixa",
       "perPerson": 2
     },
     {
       "status": "ANALISAR RPV / PRECATÓRIO",
-      "count": 26,
+      "count": 25,
       "complexity": "media",
-      "perPerson": 2
+      "perPerson": 1
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 22,
+      "count": 24,
       "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "INICIAL",
+      "count": 24,
+      "complexity": "media",
       "perPerson": 1
     },
     {
@@ -81,32 +87,26 @@
       "perPerson": 1
     },
     {
-      "status": "ATUALIZAR CÁLCULOS",
+      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
+      "count": 19,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTRARRAZOAR",
       "count": 19,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 16,
+      "status": "ATUALIZAR CÁLCULOS",
+      "count": 18,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "INICIAL",
-      "count": 15,
-      "complexity": "media",
-      "perPerson": 1
-    },
-    {
-      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 14,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
       "status": "REPROTOCOLAR",
-      "count": 12,
+      "count": 14,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -117,13 +117,13 @@
       "perPerson": 1
     },
     {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 10,
+      "status": "DECURSO DE PRAZO",
+      "count": 9,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
-      "status": "DECURSO DE PRAZO",
+      "status": "IMPUGNAR CONTESTAÇÃO",
       "count": 9,
       "complexity": "baixa",
       "perPerson": 1
@@ -135,20 +135,20 @@
       "perPerson": 0
     },
     {
-      "status": "ANALISAR TRANSITADO EM JULGADO",
-      "count": 3,
-      "complexity": "media",
-      "perPerson": 0
-    },
-    {
       "status": "LITISPENDÊNCIA",
       "count": 2,
       "complexity": "baixa",
       "perPerson": 0
     },
     {
+      "status": "ANALISAR TRANSITADO EM JULGADO",
+      "count": 2,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
       "status": "Outros",
-      "count": 95,
+      "count": 97,
       "complexity": "neutra",
       "perPerson": 6
     }
@@ -161,15 +161,15 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 76,
-    "media": 424,
-    "baixa": 636,
-    "neutra": 95,
-    "total": 1231
+    "alta": 93,
+    "media": 396,
+    "baixa": 610,
+    "neutra": 97,
+    "total": 1196
   },
   "team": {
     "perDay": 0,
-    "perWeek": 72,
+    "perWeek": 70,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }
