@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T14:43:42.691Z",
+  "generatedAt": "2026-06-14T19:31:08.398Z",
   "header": {
     "dateLabel": "Domingo, 14 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -8,22 +8,22 @@
     "totalProcessos": 35935,
     "admJudicial": 22824,
     "cumprSentenca": 13111,
-    "subtarefasDia": 2374,
-    "subtarefasSemana": 5507,
+    "subtarefasDia": 2207,
+    "subtarefasSemana": 5340,
     "colaboradores": 18
   },
   "tasksDay": [
     {
       "status": "ANALISAR RPV",
-      "count": 1100,
+      "count": 1009,
       "complexity": "media",
-      "perPerson": 61
+      "perPerson": 56
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 785,
+      "count": 709,
       "complexity": "baixa",
-      "perPerson": 44
+      "perPerson": 39
     },
     {
       "status": "VERIFICAR SENTENÇA",
@@ -143,15 +143,15 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 2551,
+      "count": 2475,
       "complexity": "baixa",
-      "perPerson": 142
+      "perPerson": 138
     },
     {
       "status": "ANALISAR RPV",
-      "count": 1588,
+      "count": 1497,
       "complexity": "media",
-      "perPerson": 88
+      "perPerson": 83
     },
     {
       "status": "VERIFICAR SENTENÇA",
@@ -276,21 +276,21 @@
   ],
   "donutDay": {
     "alta": 304,
-    "media": 1153,
-    "baixa": 901,
+    "media": 1062,
+    "baixa": 825,
     "neutra": 16,
-    "total": 2374
+    "total": 2207
   },
   "donutWeek": {
     "alta": 551,
-    "media": 1734,
-    "baixa": 3106,
+    "media": 1643,
+    "baixa": 3030,
     "neutra": 116,
-    "total": 5507
+    "total": 5340
   },
   "team": {
-    "perDay": 132,
-    "perWeek": 306,
+    "perDay": 123,
+    "perWeek": 297,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
