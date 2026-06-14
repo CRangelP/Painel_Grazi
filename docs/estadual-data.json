@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-14T08:26:26.338Z",
+  "generatedAt": "2026-06-14T14:43:42.691Z",
   "header": {
     "dateLabel": "Domingo, 14 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
     "totalProcessos": 35935,
-    "admJudicial": 22825,
-    "cumprSentenca": 13110,
+    "admJudicial": 22824,
+    "cumprSentenca": 13111,
     "subtarefasDia": 2374,
-    "subtarefasSemana": 5450,
+    "subtarefasSemana": 5507,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -143,9 +143,9 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 2505,
+      "count": 2551,
       "complexity": "baixa",
-      "perPerson": 139
+      "perPerson": 142
     },
     {
       "status": "ANALISAR RPV",
@@ -203,7 +203,7 @@
     },
     {
       "status": "CUMPRIR SENTENÇA",
-      "count": 56,
+      "count": 62,
       "complexity": "alta",
       "perPerson": 3
     },
@@ -221,15 +221,15 @@
     },
     {
       "status": "ANALISAR DESPACHO",
-      "count": 40,
+      "count": 44,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
       "status": "EMENDAR INICIAL",
-      "count": 26,
+      "count": 27,
       "complexity": "baixa",
-      "perPerson": 1
+      "perPerson": 2
     },
     {
       "status": "ANALISAR TRÂNSITO EM JULGADO",
@@ -282,15 +282,15 @@
     "total": 2374
   },
   "donutWeek": {
-    "alta": 545,
+    "alta": 551,
     "media": 1734,
-    "baixa": 3055,
+    "baixa": 3106,
     "neutra": 116,
-    "total": 5450
+    "total": 5507
   },
   "team": {
     "perDay": 132,
-    "perWeek": 303,
+    "perWeek": 306,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
