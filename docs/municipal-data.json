@@ -1,18 +1,157 @@
 {
-  "generatedAt": "2026-06-13T19:30:15.687Z",
+  "generatedAt": "2026-06-14T08:26:26.338Z",
   "header": {
-    "dateLabel": "Sábado, 13 de Junho de 2026",
+    "dateLabel": "Domingo, 14 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
     "totalProcessos": 6740,
     "admJudicial": 3584,
     "cumprSentenca": 3156,
-    "subtarefasDia": 0,
-    "subtarefasSemana": 1774,
+    "subtarefasDia": 493,
+    "subtarefasSemana": 1781,
     "colaboradores": 17
   },
-  "tasksDay": [],
+  "tasksDay": [
+    {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 118,
+      "complexity": "baixa",
+      "perPerson": 7
+    },
+    {
+      "status": "OBRIGAÇÃO DE FAZER",
+      "count": 44,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
+      "status": "ACOMPANHAR PROCESSOS",
+      "count": 41,
+      "complexity": "media",
+      "perPerson": 2
+    },
+    {
+      "status": "CUMPRIMENTO DE SENTENÇA",
+      "count": 33,
+      "complexity": "alta",
+      "perPerson": 2
+    },
+    {
+      "status": "VERIFICAR HOMOLOGAÇÃO",
+      "count": 29,
+      "complexity": "baixa",
+      "perPerson": 2
+    },
+    {
+      "status": "PEDIR SEQUESTRO",
+      "count": 28,
+      "complexity": "media",
+      "perPerson": 2
+    },
+    {
+      "status": "MANIFESTAR HIPO",
+      "count": 26,
+      "complexity": "baixa",
+      "perPerson": 2
+    },
+    {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 24,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "INICIAL",
+      "count": 23,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 15,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
+      "status": "PROSSEGUIMENTO",
+      "count": 15,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
+      "count": 13,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTADORIA",
+      "count": 13,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
+      "count": 10,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "ATUALIZAR CÁLCULOS",
+      "count": 8,
+      "complexity": "alta",
+      "perPerson": 0
+    },
+    {
+      "status": "RECURSO",
+      "count": 7,
+      "complexity": "alta",
+      "perPerson": 0
+    },
+    {
+      "status": "REPROTOCOLAR",
+      "count": 6,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "ANALISAR RPV / PRECATÓRIO",
+      "count": 6,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "DECURSO DE PRAZO",
+      "count": 4,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "LITISPENDÊNCIA",
+      "count": 2,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 2,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "ANALISAR TRANSITADO EM JULGADO",
+      "count": 1,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "Outros",
+      "count": 25,
+      "complexity": "neutra",
+      "perPerson": 1
+    }
+  ],
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
@@ -22,7 +161,7 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 379,
+      "count": 380,
       "complexity": "baixa",
       "perPerson": 22
     },
@@ -93,6 +232,12 @@
       "perPerson": 2
     },
     {
+      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
+      "count": 24,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
       "status": "CONTADORIA",
       "count": 24,
       "complexity": "baixa",
@@ -108,12 +253,6 @@
       "status": "CONTRARRAZOAR",
       "count": 20,
       "complexity": "alta",
-      "perPerson": 1
-    },
-    {
-      "status": "ANALISAR PROCESSO PARADO (+40 DIAS)",
-      "count": 18,
-      "complexity": "baixa",
       "perPerson": 1
     },
     {
@@ -160,23 +299,23 @@
     }
   ],
   "donutDay": {
-    "alta": 0,
-    "media": 0,
-    "baixa": 0,
-    "neutra": 0,
-    "total": 0
+    "alta": 63,
+    "media": 99,
+    "baixa": 306,
+    "neutra": 25,
+    "total": 493
   },
   "donutWeek": {
     "alta": 133,
     "media": 645,
-    "baixa": 887,
+    "baixa": 894,
     "neutra": 109,
-    "total": 1774
+    "total": 1781
   },
   "team": {
-    "perDay": 0,
-    "perWeek": 104,
-    "avgAssigneesPerTask": 0,
-    "load": "BAIXA"
+    "perDay": 29,
+    "perWeek": 105,
+    "avgAssigneesPerTask": 1,
+    "load": "MÉDIA"
   }
 }
