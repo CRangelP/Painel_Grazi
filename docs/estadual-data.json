@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-06-19T15:00:25.053Z",
+  "generatedAt": "2026-06-19T19:31:49.033Z",
   "header": {
     "dateLabel": "Sexta-feira, 19 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 36067,
-    "admJudicial": 22863,
-    "cumprSentenca": 13204,
-    "subtarefasDia": 15,
-    "subtarefasSemana": 4964,
+    "totalProcessos": 36066,
+    "admJudicial": 22864,
+    "cumprSentenca": 13202,
+    "subtarefasDia": 16,
+    "subtarefasSemana": 4953,
     "colaboradores": 18
   },
   "tasksDay": [
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 12,
+      "count": 13,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -35,67 +35,67 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 3442,
+      "count": 3443,
       "complexity": "baixa",
       "perPerson": 191
     },
     {
       "status": "ANALISAR RPV",
-      "count": 480,
+      "count": 451,
       "complexity": "media",
-      "perPerson": 27
+      "perPerson": 25
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 222,
+      "count": 225,
       "complexity": "alta",
-      "perPerson": 12
+      "perPerson": 13
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 143,
+      "count": 133,
       "complexity": "alta",
-      "perPerson": 8
+      "perPerson": 7
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 117,
+      "count": 123,
       "complexity": "alta",
       "perPerson": 7
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 101,
+      "count": 103,
       "complexity": "media",
       "perPerson": 6
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 82,
+      "count": 87,
       "complexity": "baixa",
       "perPerson": 5
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 69,
+      "count": 70,
       "complexity": "baixa",
       "perPerson": 4
     },
     {
+      "status": "EMENDAR INICIAL",
+      "count": 46,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
       "status": "CUMPRIR SENTENÇA",
-      "count": 43,
+      "count": 42,
       "complexity": "alta",
       "perPerson": 2
     },
     {
-      "status": "EMENDAR INICIAL",
-      "count": 41,
-      "complexity": "baixa",
-      "perPerson": 2
-    },
-    {
       "status": "ANALISAR DESPACHO",
-      "count": 39,
+      "count": 38,
       "complexity": "baixa",
       "perPerson": 2
     },
@@ -107,13 +107,13 @@
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 36,
+      "count": 34,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
       "status": "CONTRARRAZOAR",
-      "count": 28,
+      "count": 29,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -130,6 +130,12 @@
       "perPerson": 1
     },
     {
+      "status": "VERIFICAR DECISÃO MONO",
+      "count": 13,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
       "status": "MANIFESTAR SOBRE PROVAS",
       "count": 10,
       "complexity": "media",
@@ -137,19 +143,13 @@
     },
     {
       "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 9,
+      "count": 10,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
-      "status": "VERIFICAR DECISÃO MONO",
-      "count": 8,
-      "complexity": "alta",
-      "perPerson": 0
-    },
-    {
       "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 2,
+      "count": 3,
       "complexity": "baixa",
       "perPerson": 0
     },
@@ -161,28 +161,28 @@
     },
     {
       "status": "Outros",
-      "count": 17,
+      "count": 18,
       "complexity": "neutra",
       "perPerson": 1
     }
   ],
   "donutDay": {
-    "alta": 14,
+    "alta": 15,
     "media": 0,
     "baixa": 0,
     "neutra": 1,
-    "total": 15
+    "total": 16
   },
   "donutWeek": {
-    "alta": 561,
-    "media": 609,
-    "baixa": 3777,
-    "neutra": 17,
-    "total": 4964
+    "alta": 565,
+    "media": 582,
+    "baixa": 3788,
+    "neutra": 18,
+    "total": 4953
   },
   "team": {
     "perDay": 1,
-    "perWeek": 276,
+    "perWeek": 275,
     "avgAssigneesPerTask": 1.1,
     "load": "BAIXA"
   }
