@@ -1,198 +1,96 @@
 {
-  "generatedAt": "2026-06-18T19:42:34.382Z",
+  "generatedAt": "2026-06-19T08:51:03.324Z",
   "header": {
-    "dateLabel": "Quinta-feira, 18 de Junho de 2026",
+    "dateLabel": "Sexta-feira, 19 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 36044,
+    "totalProcessos": 36050,
     "admJudicial": 22859,
-    "cumprSentenca": 13185,
-    "subtarefasDia": 758,
-    "subtarefasSemana": 3562,
+    "cumprSentenca": 13191,
+    "subtarefasDia": 20,
+    "subtarefasSemana": 5533,
     "colaboradores": 18
   },
   "tasksDay": [
     {
-      "status": "VERIFICAR ANDAMENTO",
-      "count": 304,
-      "complexity": "baixa",
-      "perPerson": 17
-    },
-    {
-      "status": "ANALISAR RPV",
-      "count": 160,
-      "complexity": "media",
-      "perPerson": 9
-    },
-    {
-      "status": "VERIFICAR SENTENÇA",
-      "count": 51,
+      "status": "VERIFICAR POSS. DE RECURSO",
+      "count": 12,
       "complexity": "alta",
-      "perPerson": 3
-    },
-    {
-      "status": "CUMPRIR SENTENÇA",
-      "count": 33,
-      "complexity": "alta",
-      "perPerson": 2
+      "perPerson": 1
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 31,
-      "complexity": "alta",
-      "perPerson": 2
-    },
-    {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 30,
-      "complexity": "media",
-      "perPerson": 2
-    },
-    {
-      "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 21,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
-      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 21,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "EMENDAR INICIAL",
-      "count": 20,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 20,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 15,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 9,
-      "complexity": "media",
-      "perPerson": 1
-    },
-    {
-      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 8,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
-      "status": "VERIFICAR DECISÃO MONO",
       "count": 7,
       "complexity": "alta",
       "perPerson": 0
     },
     {
-      "status": "PEDIR SEQUESTRO",
-      "count": 6,
-      "complexity": "media",
-      "perPerson": 0
-    },
-    {
-      "status": "CONTADORIA",
-      "count": 5,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
-      "status": "ANALISAR TRÂNSITO EM JULGADO",
-      "count": 4,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
-      "status": "CONTRARRAZOAR",
-      "count": 3,
-      "complexity": "alta",
-      "perPerson": 0
-    },
-    {
       "status": "Outros",
-      "count": 10,
+      "count": 1,
       "complexity": "neutra",
-      "perPerson": 1
+      "perPerson": 0
     }
   ],
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 2076,
+      "count": 4305,
       "complexity": "baixa",
-      "perPerson": 115
+      "perPerson": 239
     },
     {
       "status": "ANALISAR RPV",
-      "count": 570,
+      "count": 442,
       "complexity": "media",
-      "perPerson": 32
+      "perPerson": 25
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 160,
+      "count": 157,
       "complexity": "alta",
       "perPerson": 9
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 152,
+      "count": 123,
       "complexity": "alta",
-      "perPerson": 8
-    },
-    {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 94,
-      "complexity": "media",
-      "perPerson": 5
+      "perPerson": 7
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 84,
+      "count": 80,
       "complexity": "alta",
-      "perPerson": 5
+      "perPerson": 4
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 81,
+      "count": 77,
       "complexity": "baixa",
-      "perPerson": 5
+      "perPerson": 4
     },
     {
-      "status": "CUMPRIR SENTENÇA",
-      "count": 62,
-      "complexity": "alta",
-      "perPerson": 3
-    },
-    {
-      "status": "EMENDAR INICIAL",
-      "count": 46,
-      "complexity": "baixa",
-      "perPerson": 3
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 64,
+      "complexity": "media",
+      "perPerson": 4
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 44,
+      "count": 63,
+      "complexity": "baixa",
+      "perPerson": 4
+    },
+    {
+      "status": "CONTADORIA",
+      "count": 41,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
-      "status": "CONTADORIA",
-      "count": 39,
-      "complexity": "baixa",
+      "status": "CUMPRIR SENTENÇA",
+      "count": 33,
+      "complexity": "alta",
       "perPerson": 2
     },
     {
@@ -202,20 +100,20 @@
       "perPerson": 2
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 16,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
-      "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 16,
+      "status": "EMENDAR INICIAL",
+      "count": 26,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
-      "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 15,
+      "status": "ANALISAR TRÂNSITO EM JULGADO",
+      "count": 18,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "PEDIR SEQUESTRO",
+      "count": 18,
       "complexity": "media",
       "perPerson": 1
     },
@@ -226,54 +124,66 @@
       "perPerson": 1
     },
     {
-      "status": "PEDIR SEQUESTRO",
+      "status": "CONTRARRAZOAR",
       "count": 13,
-      "complexity": "media",
-      "perPerson": 1
-    },
-    {
-      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 13,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "VERIFICAR DECISÃO MONO",
-      "count": 11,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "ANALISAR TRÂNSITO EM JULGADO",
+      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
+      "count": 8,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "MANIFESTAR SOBRE PROVAS",
       "count": 6,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "VERIFICAR DECISÃO MONO",
+      "count": 4,
+      "complexity": "alta",
+      "perPerson": 0
+    },
+    {
+      "status": "MANIFESTAR LITISPENDÊNCIA",
+      "count": 1,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
+      "status": "ANÁLISE EM GERAL",
+      "count": 1,
       "complexity": "baixa",
       "perPerson": 0
     },
     {
       "status": "Outros",
-      "count": 19,
+      "count": 8,
       "complexity": "neutra",
-      "perPerson": 1
+      "perPerson": 0
     }
   ],
   "donutDay": {
-    "alta": 146,
-    "media": 205,
-    "baixa": 397,
-    "neutra": 10,
-    "total": 758
+    "alta": 19,
+    "media": 0,
+    "baixa": 0,
+    "neutra": 1,
+    "total": 20
   },
   "donutWeek": {
-    "alta": 485,
-    "media": 692,
-    "baixa": 2366,
-    "neutra": 19,
-    "total": 3562
+    "alta": 410,
+    "media": 530,
+    "baixa": 4585,
+    "neutra": 8,
+    "total": 5533
   },
   "team": {
-    "perDay": 42,
-    "perWeek": 198,
-    "avgAssigneesPerTask": 1,
-    "load": "ALTA"
+    "perDay": 1,
+    "perWeek": 307,
+    "avgAssigneesPerTask": 1.1,
+    "load": "BAIXA"
   }
 }
