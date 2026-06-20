@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T14:43:17.501Z",
+  "generatedAt": "2026-06-20T19:30:08.747Z",
   "header": {
     "dateLabel": "Sábado, 20 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 22852,
     "cumprSentenca": 13215,
     "subtarefasDia": 2,
-    "subtarefasSemana": 5959,
+    "subtarefasSemana": 5960,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -35,7 +35,7 @@
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 282,
+      "count": 283,
       "complexity": "alta",
       "perPerson": 16
     },
@@ -162,11 +162,11 @@
     "total": 2
   },
   "donutWeek": {
-    "alta": 644,
+    "alta": 645,
     "media": 836,
     "baixa": 4460,
     "neutra": 19,
-    "total": 5959
+    "total": 5960
   },
   "team": {
     "perDay": 0,
