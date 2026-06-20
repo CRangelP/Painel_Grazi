@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T08:12:49.108Z",
+  "generatedAt": "2026-06-20T14:43:17.501Z",
   "header": {
     "dateLabel": "Sábado, 20 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -9,22 +9,22 @@
     "admJudicial": 3522,
     "cumprSentenca": 3234,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1635,
+    "subtarefasSemana": 1773,
     "colaboradores": 17
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 483,
+      "count": 484,
       "complexity": "media",
       "perPerson": 28
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 350,
+      "count": 428,
       "complexity": "baixa",
-      "perPerson": 21
+      "perPerson": 25
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
@@ -39,6 +39,18 @@
       "perPerson": 4
     },
     {
+      "status": "VERIFICAR HOMOLOGAÇÃO",
+      "count": 53,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
+      "status": "ATUALIZAR CÁLCULOS",
+      "count": 52,
+      "complexity": "alta",
+      "perPerson": 3
+    },
+    {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
       "count": 48,
       "complexity": "baixa",
@@ -46,43 +58,37 @@
     },
     {
       "status": "PEDIR SEQUESTRO",
-      "count": 43,
+      "count": 47,
       "complexity": "media",
       "perPerson": 3
     },
     {
-      "status": "VERIFICAR HOMOLOGAÇÃO",
+      "status": "MANIFESTAR HIPO",
       "count": 41,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
-      "status": "MANIFESTAR HIPO",
-      "count": 40,
-      "complexity": "baixa",
-      "perPerson": 2
-    },
-    {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 34,
+      "count": 35,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
       "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 32,
+      "count": 33,
       "complexity": "alta",
       "perPerson": 2
     },
     {
       "status": "CONTRARRAZOAR",
-      "count": 29,
+      "count": 30,
       "complexity": "alta",
       "perPerson": 2
     },
     {
-      "status": "ATUALIZAR CÁLCULOS",
-      "count": 26,
+      "status": "RECURSO",
+      "count": 28,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -93,14 +99,14 @@
       "perPerson": 2
     },
     {
-      "status": "RECURSO",
-      "count": 24,
-      "complexity": "alta",
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 22,
+      "complexity": "baixa",
       "perPerson": 1
     },
     {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 21,
+      "status": "DECURSO DE PRAZO",
+      "count": 18,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -117,12 +123,6 @@
       "perPerson": 1
     },
     {
-      "status": "DECURSO DE PRAZO",
-      "count": 11,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
       "status": "REPROTOCOLAR",
       "count": 8,
       "complexity": "baixa",
@@ -135,15 +135,15 @@
       "perPerson": 0
     },
     {
-      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
+      "status": "LITISPENDÊNCIA",
       "count": 5,
-      "complexity": "media",
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
-      "status": "LITISPENDÊNCIA",
-      "count": 4,
-      "complexity": "baixa",
+      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
+      "count": 5,
+      "complexity": "media",
       "perPerson": 0
     },
     {
@@ -167,15 +167,15 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 111,
-    "media": 571,
-    "baixa": 898,
+    "alta": 143,
+    "media": 576,
+    "baixa": 999,
     "neutra": 55,
-    "total": 1635
+    "total": 1773
   },
   "team": {
     "perDay": 0,
-    "perWeek": 96,
+    "perWeek": 104,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }

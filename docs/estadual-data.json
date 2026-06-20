@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-06-20T08:12:49.108Z",
+  "generatedAt": "2026-06-20T14:43:17.501Z",
   "header": {
     "dateLabel": "Sábado, 20 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 36066,
-    "admJudicial": 22864,
-    "cumprSentenca": 13202,
+    "totalProcessos": 36067,
+    "admJudicial": 22852,
+    "cumprSentenca": 13215,
     "subtarefasDia": 2,
-    "subtarefasSemana": 5501,
+    "subtarefasSemana": 5959,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -23,21 +23,39 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 3895,
+      "count": 4007,
       "complexity": "baixa",
-      "perPerson": 216
+      "perPerson": 223
     },
     {
       "status": "ANALISAR RPV",
-      "count": 461,
+      "count": 637,
       "complexity": "media",
-      "perPerson": 26
+      "perPerson": 35
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 248,
+      "count": 282,
       "complexity": "alta",
-      "perPerson": 14
+      "perPerson": 16
+    },
+    {
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 143,
+      "complexity": "media",
+      "perPerson": 8
+    },
+    {
+      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
+      "count": 133,
+      "complexity": "baixa",
+      "perPerson": 7
+    },
+    {
+      "status": "VERIFICAR POSS. DE RECURSO",
+      "count": 129,
+      "complexity": "alta",
+      "perPerson": 7
     },
     {
       "status": "REALIZAR CÁLCULOS",
@@ -46,45 +64,33 @@
       "perPerson": 7
     },
     {
-      "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 123,
-      "complexity": "alta",
-      "perPerson": 7
-    },
-    {
-      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 111,
-      "complexity": "baixa",
-      "perPerson": 6
-    },
-    {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 110,
-      "complexity": "media",
-      "perPerson": 6
-    },
-    {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 72,
+      "count": 104,
       "complexity": "baixa",
-      "perPerson": 4
+      "perPerson": 6
     },
     {
       "status": "EMENDAR INICIAL",
-      "count": 50,
+      "count": 54,
       "complexity": "baixa",
       "perPerson": 3
     },
     {
       "status": "CUMPRIR SENTENÇA",
-      "count": 42,
+      "count": 51,
       "complexity": "alta",
-      "perPerson": 2
+      "perPerson": 3
     },
     {
       "status": "ANALISAR DESPACHO",
-      "count": 38,
+      "count": 46,
       "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
+      "status": "PEDIR SEQUESTRO",
+      "count": 40,
+      "complexity": "media",
       "perPerson": 2
     },
     {
@@ -94,32 +100,26 @@
       "perPerson": 2
     },
     {
+      "status": "CONTRARRAZOAR",
+      "count": 34,
+      "complexity": "alta",
+      "perPerson": 2
+    },
+    {
       "status": "REVISAR PARA PROTOCOLAR",
       "count": 31,
       "complexity": "baixa",
       "perPerson": 2
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 30,
-      "complexity": "alta",
-      "perPerson": 2
-    },
-    {
-      "status": "PEDIR SEQUESTRO",
-      "count": 30,
-      "complexity": "media",
-      "perPerson": 2
-    },
-    {
       "status": "ANALISAR TRÂNSITO EM JULGADO",
-      "count": 18,
+      "count": 21,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 17,
+      "count": 19,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -131,7 +131,7 @@
     },
     {
       "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 13,
+      "count": 16,
       "complexity": "media",
       "perPerson": 1
     },
@@ -162,15 +162,15 @@
     "total": 2
   },
   "donutWeek": {
-    "alta": 589,
-    "media": 614,
-    "baixa": 4279,
+    "alta": 644,
+    "media": 836,
+    "baixa": 4460,
     "neutra": 19,
-    "total": 5501
+    "total": 5959
   },
   "team": {
     "perDay": 0,
-    "perWeek": 306,
+    "perWeek": 331,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
