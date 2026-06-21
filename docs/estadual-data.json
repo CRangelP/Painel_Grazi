@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T14:44:09.429Z",
+  "generatedAt": "2026-06-21T19:30:28.960Z",
   "header": {
     "dateLabel": "Domingo, 21 de Junho de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -8,8 +8,8 @@
     "totalProcessos": 36055,
     "admJudicial": 22838,
     "cumprSentenca": 13217,
-    "subtarefasDia": 3451,
-    "subtarefasSemana": 6173,
+    "subtarefasDia": 3450,
+    "subtarefasSemana": 6169,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -39,7 +39,7 @@
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 64,
+      "count": 63,
       "complexity": "media",
       "perPerson": 4
     },
@@ -167,7 +167,7 @@
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 148,
+      "count": 147,
       "complexity": "media",
       "perPerson": 8
     },
@@ -197,7 +197,7 @@
     },
     {
       "status": "EMENDAR INICIAL",
-      "count": 62,
+      "count": 61,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -209,7 +209,7 @@
     },
     {
       "status": "CONTRARRAZOAR",
-      "count": 44,
+      "count": 42,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -276,17 +276,17 @@
   ],
   "donutDay": {
     "alta": 303,
-    "media": 219,
+    "media": 218,
     "baixa": 2925,
     "neutra": 4,
-    "total": 3451
+    "total": 3450
   },
   "donutWeek": {
-    "alta": 762,
-    "media": 894,
-    "baixa": 4497,
+    "alta": 760,
+    "media": 893,
+    "baixa": 4496,
     "neutra": 20,
-    "total": 6173
+    "total": 6169
   },
   "team": {
     "perDay": 192,
