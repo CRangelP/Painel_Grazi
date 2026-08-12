@@ -75,7 +75,13 @@ export async function clickupGet<T>(
         await sleep(RETRY_NETWORK_DELAY_MS);
         continue;
       }
-      throw new Error(`Network/timeout error after retry: ${String(err)}`);
+      const kind =
+        err instanceof Error && err.name === 'AbortError'
+          ? 'timeout (AbortError)'
+          : 'network';
+      throw new Error(
+        `[throttle/API/timeout] ${kind} after retry on ${path}: ${String(err)}`
+      );
     }
     lastRequestAt = Date.now();
 
@@ -85,7 +91,9 @@ export async function clickupGet<T>(
         attempt429++;
         continue;
       }
-      throw new Error(`HTTP 429 after retries: ${await res.text()}`);
+      throw new Error(
+        `[throttle/API/timeout] HTTP 429 after retries on ${path}: ${await res.text()}`
+      );
     }
 
     if (res.status >= 500) {
@@ -94,7 +102,15 @@ export async function clickupGet<T>(
         await sleep(RETRY_5XX_DELAY_MS);
         continue;
       }
-      throw new Error(`HTTP ${res.status} after retry: ${await res.text()}`);
+      throw new Error(
+        `[throttle/API/timeout] HTTP ${res.status} after retry on ${path}: ${await res.text()}`
+      );
+    }
+
+    if (res.status === 401 || res.status === 403) {
+      throw new Error(
+        `[auth] HTTP ${res.status}: token inválido ou revogado (ClickUp). Atualize CLICKUP_TOKEN. Body: ${await res.text()}`
+      );
     }
 
     if (!res.ok) throw new Error(`HTTP ${res.status}: ${await res.text()}`);

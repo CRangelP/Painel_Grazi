@@ -1,6 +1,21 @@
 # Painel Grazi
 
-Self-refreshing operational dashboards for the Professors Núcleo (Municipal + Estadual). The HTMLs in `docs/` are regenerated every day at 04:00 BRT by a GitHub Action that reads subtask data from ClickUp and served via GitHub Pages.
+Self-refreshing operational dashboards for the Professors Núcleo (Municipal + Estadual). The HTMLs in `docs/` are regenerated several times a day (04:00 / 11:00 / 16:00 BRT) by a GitHub Action that reads subtask data from ClickUp and served via GitHub Pages.
+
+## Saúde do painel (dois sinais)
+
+Olhar só o site engana: GitHub Pages continua servindo HTML antigo se o refresh falhar. Painel saudável = **os dois**:
+
+1. Workflow **Daily Dashboard** verde em Actions (última execução bem-sucedida).
+2. `generatedAt` recente em `docs/municipal-data.json` e `docs/estadual-data.json` (máx. **36h** — constante em `src/check-freshness.ts`).
+
+O workflow **Dashboard Health** roda diariamente só para checar esse `generatedAt` (sem chamar o ClickUp). Em falha, abre (ou comenta) uma Issue com label `alerta`.
+
+### Alertas por e-mail (`cleberrangelp@gmail.com`)
+
+Sem SMTP extra: em falha do Daily Dashboard ou do Health, a Action cria/atualiza uma GitHub Issue `[alerta] …`. Contas que observam o repositório (watch) recebem e-mail de Issue — tipicamente o owner nesse endereço.
+
+Além disso, no GitHub: **Settings → Notifications → Actions** → ative *Send notifications for failed workflows* na conta que deve receber o e-mail de falha de workflow.
 
 ## Public URLs
 
@@ -15,6 +30,7 @@ cp .env.example .env   # fill in CLICKUP_TOKEN and CLICKUP_TEAM_ID
 npm install
 npm test
 npm run build          # writes docs/
+npm run check-freshness  # fails if docs/*-data.json generatedAt > 36h
 ```
 
 Open `docs/municipal.html` in a browser to preview.

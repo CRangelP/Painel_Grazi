@@ -44,6 +44,14 @@ async function main(): Promise<void> {
 }
 
 main().catch((e: unknown) => {
-  console.error('[FATAL]', e);
+  const msg = e instanceof Error ? e.message : String(e);
+  let category = 'unknown';
+  if (/\[auth\]|HTTP 401|HTTP 403/.test(msg)) category = 'auth (token inválido/revogado)';
+  else if (/\[throttle\/API\/timeout\]|AbortError|Network\/timeout|HTTP 429|HTTP 5\d\d/.test(msg))
+    category = 'throttle/API/timeout';
+  else if (/\[discoverSubtaskFilter\]|SUBTASK|'SIM'/.test(msg))
+    category = 'campo ClickUp (SUBTASK/SIM renomeados?)';
+  else if (/\[freshness\]/.test(msg)) category = 'snapshot stale (generatedAt)';
+  console.error(`[FATAL][${category}]`, e);
   process.exit(1);
 });

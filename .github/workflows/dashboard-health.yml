@@ -1,25 +1,24 @@
-name: Daily Dashboard
+name: Dashboard Health
 
+# Catches prolonged outages (skipped builds, commit/push skipped, Pages serving old HTML).
+# Does not call ClickUp — only checks generatedAt in docs/*-data.json on main.
 on:
   schedule:
-    - cron: '0 7 * * *'     # 04:00 BRT
-    - cron: '0 14 * * *'    # 11:00 BRT
-    - cron: '0 19 * * *'    # 16:00 BRT
+    - cron: '30 8 * * *'   # 05:30 BRT — after the 04:00 refresh window
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   issues: write
 
 concurrency:
-  group: daily-dashboard
+  group: dashboard-health
   cancel-in-progress: false
 
 jobs:
-  build:
+  freshness:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
-    environment: github-pages
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
@@ -30,47 +29,23 @@ jobs:
 
       - run: npm ci
 
-      - run: npm test
-
-      - name: Generate dashboards
-        env:
-          CLICKUP_TOKEN: ${{ secrets.CLICKUP_TOKEN }}
-          CLICKUP_TEAM_ID: ${{ secrets.CLICKUP_TEAM_ID }}
-        run: npm run build
-
-      - name: Check snapshot freshness
-        run: node dist-js/check-freshness.js
-
-      - name: Commit docs/
-        run: |
-          git config user.name "dashboard-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add docs/
-          if git diff --staged --quiet; then
-            echo "no changes"
-          else
-            git commit -m "chore(dashboard): daily refresh $(date -u +%F)"
-            git push
-          fi
+      - name: Check snapshot freshness (max 36h)
+        run: npm run check-freshness
 
       - name: Alert on failure
         if: failure()
         uses: actions/github-script@v7
         with:
           script: |
-            const title = '[alerta] Daily Dashboard falhou';
+            const title = '[alerta] Dashboard Health — snapshot stale';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const body = [
               `**Workflow:** ${context.workflow}`,
-              `**Job:** ${context.job}`,
               `**Run:** ${runUrl}`,
               `**Quando (UTC):** ${new Date().toISOString()}`,
               '',
-              'Causas comuns (ver logs):',
-              '- `[auth]` — token ClickUp inválido/revogado',
-              '- `[throttle/API/timeout]` — AbortError, 429 ou 5xx',
-              '- `[discoverSubtaskFilter]` — campo SUBTASK ou opção SIM renomeados',
-              '- `[freshness]` — generatedAt nos JSON de docs/ acima de 36h',
+              '`generatedAt` em `docs/municipal-data.json` e/ou `docs/estadual-data.json` passou de 36h.',
+              'O site em GitHub Pages pode ainda mostrar HTML antigo — confira também o workflow **Daily Dashboard**.',
             ].join('\n');
 
             const label = 'alerta';

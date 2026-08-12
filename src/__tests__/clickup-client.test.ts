@@ -72,7 +72,9 @@ describe('clickupGet', () => {
     const fetchSpy = vi
       .spyOn(globalThis, 'fetch')
       .mockResolvedValueOnce(new Response('bad', { status: 401 }));
-    await expect(clickupGet('/y', {}, 'pk')).rejects.toThrow(/401/);
+    await expect(clickupGet('/y', {}, 'pk')).rejects.toThrow(
+      /\[auth\].*401.*token inválido/
+    );
     expect(fetchSpy).toHaveBeenCalledTimes(1);
   });
 
@@ -119,6 +121,6 @@ describe('clickupGet', () => {
     await vi.advanceTimersByTimeAsync(15_000);
     const err = await promise;
     expect(err).toBeInstanceOf(Error);
-    expect(String(err)).toMatch(/Network\/timeout/);
+    expect(String(err)).toMatch(/\[throttle\/API\/timeout\].*AbortError/);
   });
 });

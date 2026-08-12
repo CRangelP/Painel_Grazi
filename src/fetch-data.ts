@@ -48,14 +48,14 @@ export async function discoverSubtaskFilter(
   const field = fields.find((f) => f.name === SUBTASK_CUSTOM_FIELD_NAME);
   if (!field) {
     throw new Error(
-      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' not found in list ${listId}`
+      `[discoverSubtaskFilter] campo customizado '${SUBTASK_CUSTOM_FIELD_NAME}' não encontrado na list ${listId} — campo ou opção renomeados no ClickUp?`
     );
   }
   const options = field.type_config?.options ?? [];
   const simOption = options.find((o) => o.name === 'SIM');
   if (!simOption) {
     throw new Error(
-      `Custom field '${SUBTASK_CUSTOM_FIELD_NAME}' has no 'SIM' option (list ${listId})`
+      `[discoverSubtaskFilter] campo '${SUBTASK_CUSTOM_FIELD_NAME}' sem opção 'SIM' (list ${listId}) — campo ou opção renomeados no ClickUp?`
     );
   }
   return { fieldId: field.id, simIndex: simOption.orderindex };
