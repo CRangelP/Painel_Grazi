@@ -5,8 +5,9 @@ export type QueryValue = string | number | boolean | string[];
 let lastRequestAt = 0;
 
 const MAX_RETRIES_429 = 3;
+const MAX_RETRIES_NETWORK = 2;
 const RETRY_5XX_DELAY_MS = 5000;
-const RETRY_NETWORK_DELAY_MS = 3000;
+const RETRY_NETWORK_DELAY_MS = 5000;
 
 function buildUrl(path: string, query: Record<string, QueryValue>): string {
   const url = new URL(CLICKUP_API_BASE + path);
@@ -59,18 +60,18 @@ export async function clickupGet<T>(
   const url = buildUrl(path, query);
   let attempt429 = 0;
   let did5xxRetry = false;
-  let didNetworkRetry = false;
+  let attemptNetwork = 0;
 
   while (true) {
     let res: Response;
     try {
       res = await fetchOnce(url, token);
     } catch (err) {
-      // Timeout (AbortError) or network failure. Retry once before giving up —
-      // across hundreds of paginated requests, a single slow response is common.
+      // Timeout (AbortError) or network failure. Retry a few times —
+      // large folder queries can stall under ClickUp load.
       lastRequestAt = Date.now();
-      if (!didNetworkRetry) {
-        didNetworkRetry = true;
+      if (attemptNetwork < MAX_RETRIES_NETWORK) {
+        attemptNetwork++;
         await sleep(RETRY_NETWORK_DELAY_MS);
         continue;
       }

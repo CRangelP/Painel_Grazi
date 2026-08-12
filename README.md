@@ -38,7 +38,7 @@ The generated dashboards live at the root of `docs/` (`index.html`, `municipal.h
 
 - `PANELS` — folder ids, team sizes, list regex patterns, status→complexity maps.
 - `LOAD_THRESHOLDS` — perDay ≥ 30 → ALTA, 15..29 → MÉDIA, < 15 → BAIXA.
-- `RATE_LIMIT_MS` — minimum gap between ClickUp requests (default 700ms).
+- `RATE_LIMIT_MS` — minimum gap between ClickUp requests (default 1000ms).
 
 Status names are matched against the per-panel `statusComplexity` map after `.trim().toUpperCase()`. Anything outside the map is aggregated into a single "Outros" row.
 

@@ -1,5 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { clickupGet, __resetThrottleStateForTest } from '../clickup-client.js';
+import { RATE_LIMIT_MS } from '../config.js';
 
 describe('clickupGet', () => {
   beforeEach(() => {
@@ -84,9 +85,9 @@ describe('clickupGet', () => {
     await p1;
     const start = Date.now();
     const p2 = clickupGet('/b', {}, 'pk');
-    await vi.advanceTimersByTimeAsync(700);
+    await vi.advanceTimersByTimeAsync(RATE_LIMIT_MS);
     await p2;
-    expect(Date.now() - start).toBeGreaterThanOrEqual(700);
+    expect(Date.now() - start).toBeGreaterThanOrEqual(RATE_LIMIT_MS);
   });
 
   it('serializes array query params with [] suffix', async () => {
@@ -99,23 +100,23 @@ describe('clickupGet', () => {
     expect(url).toContain('project_ids%5B%5D=2');
   });
 
-  it('retries once on network/timeout error, then succeeds', async () => {
+  it('retries on network/timeout error, then succeeds', async () => {
     const fetchSpy = vi
       .spyOn(globalThis, 'fetch')
       .mockRejectedValueOnce(new DOMException('aborted', 'AbortError'))
       .mockResolvedValueOnce(new Response(JSON.stringify({ ok: 1 }), { status: 200 }));
     const promise = clickupGet<{ ok: number }>('/n', {}, 'pk');
-    await vi.advanceTimersByTimeAsync(3000);
+    await vi.advanceTimersByTimeAsync(5000);
     expect(await promise).toEqual({ ok: 1 });
     expect(fetchSpy).toHaveBeenCalledTimes(2);
   });
 
-  it('throws after a second network/timeout error', async () => {
+  it('throws after exhausting network/timeout retries', async () => {
     vi.spyOn(globalThis, 'fetch').mockRejectedValue(
       new DOMException('aborted', 'AbortError')
     );
     const promise = clickupGet('/n', {}, 'pk').catch((e) => e);
-    await vi.advanceTimersByTimeAsync(5000);
+    await vi.advanceTimersByTimeAsync(15_000);
     const err = await promise;
     expect(err).toBeInstanceOf(Error);
     expect(String(err)).toMatch(/Network\/timeout/);
