@@ -1,4 +1,5 @@
-import { computeWindow } from './fetch-data.js';
+import { LOAD_THRESHOLDS, TIMEZONE } from "./config.js";
+import { computeWindow } from "./fetch-data.js";
 import type {
   ActivityRule,
   Complexity,
@@ -8,23 +9,22 @@ import type {
   PanelConfig,
   RawTask,
   StatusRow,
-} from './types.js';
-import { LOAD_THRESHOLDS, TIMEZONE } from './config.js';
+} from "./types.js";
 
 function formatHeaderDate(now: Date): string {
-  const f = new Intl.DateTimeFormat('pt-BR', {
+  const f = new Intl.DateTimeFormat("pt-BR", {
     timeZone: TIMEZONE,
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
   const parts = f.formatToParts(now);
-  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '';
-  const weekday = get('weekday');
-  const day = get('day');
-  const month = get('month');
-  const year = get('year');
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? "";
+  const weekday = get("weekday");
+  const day = get("day");
+  const month = get("month");
+  const year = get("year");
   const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
   return `${cap(weekday)}, ${day} de ${cap(month)} de ${year}`;
 }
@@ -42,12 +42,7 @@ function inRange(task: RawTask, start: number, end: number): boolean {
 }
 
 function normalizeName(name: string): string {
-  return name
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toUpperCase()
-    .replace(/\s+/g, ' ')
-    .trim();
+  return name.normalize("NFD").replace(/[̀-ͯ]/g, "").toUpperCase().replace(/\s+/g, " ").trim();
 }
 
 function classifyActivity(name: string, panel: PanelConfig): ActivityRule | null {
@@ -83,9 +78,9 @@ function groupByActivity(tasks: RawTask[], panel: PanelConfig): StatusRow[] {
   rows.sort((a, b) => b.count - a.count);
   if (outrosCount > 0) {
     rows.push({
-      status: 'Outros',
+      status: "Outros",
       count: outrosCount,
-      complexity: 'neutra',
+      complexity: "neutra",
       perPerson: Math.round(outrosCount / panel.teamSize),
     });
   }
@@ -99,15 +94,15 @@ function donutFromRows(rows: StatusRow[]): DonutBreakdown {
     d.total += r.count;
   }
   if (d.alta + d.media + d.baixa + d.neutra !== d.total) {
-    throw new Error('aggregate: donut breakdown sum diverges from total');
+    throw new Error("aggregate: donut breakdown sum diverges from total");
   }
   return d;
 }
 
-function computeLoad(perDay: number): 'BAIXA' | 'MÉDIA' | 'ALTA' {
-  if (perDay >= LOAD_THRESHOLDS.high) return 'ALTA';
-  if (perDay >= LOAD_THRESHOLDS.mid) return 'MÉDIA';
-  return 'BAIXA';
+function computeLoad(perDay: number): "BAIXA" | "MÉDIA" | "ALTA" {
+  if (perDay >= LOAD_THRESHOLDS.high) return "ALTA";
+  if (perDay >= LOAD_THRESHOLDS.mid) return "MÉDIA";
+  return "BAIXA";
 }
 
 function computeTeam(panel: PanelConfig, dayTasks: RawTask[], weekTasks: RawTask[]) {
@@ -123,7 +118,7 @@ export function aggregate(
   panel: PanelConfig,
   rawTasks: RawTask[],
   folderTotals: FolderTotals,
-  now: Date
+  now: Date,
 ): DashboardData {
   const win = computeWindow(now);
   const valid = dedupeById(rawTasks).filter((t) => t.parent !== null);

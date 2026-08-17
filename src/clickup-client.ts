@@ -1,4 +1,4 @@
-import { CLICKUP_API_BASE, FETCH_TIMEOUT_MS, RATE_LIMIT_MS } from './config.js';
+import { CLICKUP_API_BASE, FETCH_TIMEOUT_MS, RATE_LIMIT_MS } from "./config.js";
 
 export type QueryValue = string | number | boolean | string[];
 
@@ -42,8 +42,8 @@ async function fetchOnce(url: string, token: string): Promise<Response> {
   const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
     return await fetch(url, {
-      method: 'GET',
-      headers: { Authorization: token, 'Content-Type': 'application/json' },
+      method: "GET",
+      headers: { Authorization: token, "Content-Type": "application/json" },
       signal: controller.signal,
     });
   } finally {
@@ -54,7 +54,7 @@ async function fetchOnce(url: string, token: string): Promise<Response> {
 export async function clickupGet<T>(
   path: string,
   query: Record<string, QueryValue>,
-  token: string
+  token: string,
 ): Promise<T> {
   await throttle();
   const url = buildUrl(path, query);
@@ -76,12 +76,8 @@ export async function clickupGet<T>(
         continue;
       }
       const kind =
-        err instanceof Error && err.name === 'AbortError'
-          ? 'timeout (AbortError)'
-          : 'network';
-      throw new Error(
-        `[throttle/API/timeout] ${kind} after retry on ${path}: ${String(err)}`
-      );
+        err instanceof Error && err.name === "AbortError" ? "timeout (AbortError)" : "network";
+      throw new Error(`[throttle/API/timeout] ${kind} after retry on ${path}: ${String(err)}`);
     }
     lastRequestAt = Date.now();
 
@@ -92,7 +88,7 @@ export async function clickupGet<T>(
         continue;
       }
       throw new Error(
-        `[throttle/API/timeout] HTTP 429 after retries on ${path}: ${await res.text()}`
+        `[throttle/API/timeout] HTTP 429 after retries on ${path}: ${await res.text()}`,
       );
     }
 
@@ -103,13 +99,13 @@ export async function clickupGet<T>(
         continue;
       }
       throw new Error(
-        `[throttle/API/timeout] HTTP ${res.status} after retry on ${path}: ${await res.text()}`
+        `[throttle/API/timeout] HTTP ${res.status} after retry on ${path}: ${await res.text()}`,
       );
     }
 
     if (res.status === 401 || res.status === 403) {
       throw new Error(
-        `[auth] HTTP ${res.status}: token inválido ou revogado (ClickUp). Atualize CLICKUP_TOKEN. Body: ${await res.text()}`
+        `[auth] HTTP ${res.status}: token inválido ou revogado (ClickUp). Atualize CLICKUP_TOKEN. Body: ${await res.text()}`,
       );
     }
 

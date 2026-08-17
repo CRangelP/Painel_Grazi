@@ -10,7 +10,7 @@ export interface RawTask {
   folder: { id: string };
 }
 
-export type Complexity = 'baixa' | 'media' | 'alta' | 'neutra';
+export type Complexity = "baixa" | "media" | "alta" | "neutra";
 
 // A subtask is an activity ("tarefa do dia"); its NAME is what we classify, not its
 // ClickUp status. Names are free text, so each rule matches by keyword. Rules are
@@ -58,12 +58,12 @@ export interface DashboardData {
     perDay: number;
     perWeek: number;
     avgAssigneesPerTask: number;
-    load: 'BAIXA' | 'MÉDIA' | 'ALTA';
+    load: "BAIXA" | "MÉDIA" | "ALTA";
   };
 }
 
 export interface PanelConfig {
-  slug: 'municipal' | 'estadual';
+  slug: "municipal" | "estadual";
   title: string;
   folderId: string;
   teamSize: number;

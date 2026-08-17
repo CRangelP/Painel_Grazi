@@ -307,7 +307,7 @@ body{display:flex;align-items:center;justify-content:center;}
 </div>
 
 <script>
-(function () {
+(() => {
   var stage = document.getElementById("stage");
   function fit() {
     var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
@@ -340,15 +340,15 @@ function makeDonut(id, data, value, label) {
     data: { labels:["Alta","Média","Baixa","—"], datasets:[{ data:data, backgroundColor:["#C4544A","#D4854A","#5BAD75","#555"], borderColor:"#161616", borderWidth:3, hoverOffset:2 }] },
     options: {
       responsive:false, cutout:"70%",
-      animation:{ onComplete:function(){ drawCenter(ctx,canvas.width,canvas.height,value,label); } },
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:function(c){
+      animation:{ onComplete:()=> { drawCenter(ctx,canvas.width,canvas.height,value,label); } },
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:(c)=> {
         const t=c.dataset.data.reduce((a,b)=>a+b,0);
         return " "+c.label+": "+c.parsed.toLocaleString("pt-BR")+" ("+(t?Math.round(c.parsed/t*100):0)+"%)";
       }}}}
     }
   });
-  canvas.addEventListener("mouseleave",function(){
-    setTimeout(function(){ drawCenter(ctx,canvas.width,canvas.height,value,label); },60);
+  canvas.addEventListener("mouseleave",()=> {
+    setTimeout(()=> { drawCenter(ctx,canvas.width,canvas.height,value,label); },60);
   });
 }
 makeDonut("donutDay",  [70,72,310,17],  "469",   "subtarefas");

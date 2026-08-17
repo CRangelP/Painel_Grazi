@@ -1,6 +1,6 @@
-import { clickupGet } from './clickup-client.js';
-import { SUBTASK_CUSTOM_FIELD_NAME, PAGE_SIZE, TIMEZONE } from './config.js';
-import type { PanelConfig, RawTask, FolderTotals } from './types.js';
+import { clickupGet } from "./clickup-client.js";
+import { PAGE_SIZE, SUBTASK_CUSTOM_FIELD_NAME, TIMEZONE } from "./config.js";
+import type { FolderTotals, PanelConfig, RawTask } from "./types.js";
 
 export interface FolderList {
   id: string;
@@ -29,10 +29,7 @@ interface TasksResponse {
   last_page?: boolean;
 }
 
-export async function fetchFolderLists(
-  folderId: string,
-  token: string
-): Promise<FolderList[]> {
+export async function fetchFolderLists(folderId: string, token: string): Promise<FolderList[]> {
   const { lists } = await clickupGet<ListsResponse>(`/folder/${folderId}/list`, {}, token);
   if (lists.length === 0) {
     throw new Error(`Folder ${folderId} has no lists`);
@@ -42,20 +39,20 @@ export async function fetchFolderLists(
 
 export async function discoverSubtaskFilter(
   listId: string,
-  token: string
+  token: string,
 ): Promise<{ fieldId: string; simIndex: number }> {
   const { fields } = await clickupGet<FieldsResponse>(`/list/${listId}/field`, {}, token);
   const field = fields.find((f) => f.name === SUBTASK_CUSTOM_FIELD_NAME);
   if (!field) {
     throw new Error(
-      `[discoverSubtaskFilter] campo customizado '${SUBTASK_CUSTOM_FIELD_NAME}' não encontrado na list ${listId} — campo ou opção renomeados no ClickUp?`
+      `[discoverSubtaskFilter] campo customizado '${SUBTASK_CUSTOM_FIELD_NAME}' não encontrado na list ${listId} — campo ou opção renomeados no ClickUp?`,
     );
   }
   const options = field.type_config?.options ?? [];
-  const simOption = options.find((o) => o.name === 'SIM');
+  const simOption = options.find((o) => o.name === "SIM");
   if (!simOption) {
     throw new Error(
-      `[discoverSubtaskFilter] campo '${SUBTASK_CUSTOM_FIELD_NAME}' sem opção 'SIM' (list ${listId}) — campo ou opção renomeados no ClickUp?`
+      `[discoverSubtaskFilter] campo '${SUBTASK_CUSTOM_FIELD_NAME}' sem opção 'SIM' (list ${listId}) — campo ou opção renomeados no ClickUp?`,
     );
   }
   return { fieldId: field.id, simIndex: simOption.orderindex };
@@ -82,16 +79,16 @@ export interface DueWindow {
 }
 
 export function computeWindow(now: Date): DueWindow {
-  const f = new Intl.DateTimeFormat('en-CA', {
+  const f = new Intl.DateTimeFormat("en-CA", {
     timeZone: TIMEZONE,
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
   });
   const parts = f.formatToParts(now);
-  const y = Number(parts.find((p) => p.type === 'year')!.value);
-  const m = Number(parts.find((p) => p.type === 'month')!.value);
-  const d = Number(parts.find((p) => p.type === 'day')!.value);
+  const y = Number(parts.find((p) => p.type === "year")!.value);
+  const m = Number(parts.find((p) => p.type === "month")!.value);
+  const d = Number(parts.find((p) => p.type === "day")!.value);
 
   const tomorrowMidnightUtc = Date.UTC(y, m - 1, d + 1, 3, 0, 0, 0);
   const dayStart = tomorrowMidnightUtc;
@@ -105,10 +102,10 @@ export async function fetchSubtasksForFolder(
   filter: { fieldId: string; simIndex: number },
   window: DueWindow,
   teamId: string,
-  token: string
+  token: string,
 ): Promise<RawTask[]> {
   const customFieldsParam = JSON.stringify([
-    { field_id: filter.fieldId, operator: '=', value: String(filter.simIndex) },
+    { field_id: filter.fieldId, operator: "=", value: String(filter.simIndex) },
   ]);
 
   const tasks: RawTask[] = [];
@@ -126,12 +123,12 @@ export async function fetchSubtasksForFolder(
         include_timl: true,
         page,
       },
-      token
+      token,
     );
     tasks.push(...res.tasks);
     if (res.tasks.length < PAGE_SIZE || res.last_page) break;
     page++;
-    if (page > 200) throw new Error('Pagination overflow (>200 pages)');
+    if (page > 200) throw new Error("Pagination overflow (>200 pages)");
   }
   return tasks;
 }
@@ -140,7 +137,7 @@ export async function fetchClickUpData(
   panel: PanelConfig,
   teamId: string,
   token: string,
-  now: Date
+  now: Date,
 ): Promise<{ rawTasks: RawTask[]; folderTotals: FolderTotals; window: DueWindow }> {
   const window = computeWindow(now);
   const lists = await fetchFolderLists(panel.folderId, token);

@@ -1,13 +1,13 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { pathToFileURL } from "node:url";
 
 /** Max age for docs/*-data.json `generatedAt` before the snapshot is considered stale. */
 export const MAX_AGE_MS = 36 * 60 * 60 * 1000;
 
 export const DEFAULT_SNAPSHOT_PATHS = [
-  'docs/municipal-data.json',
-  'docs/estadual-data.json',
+  "docs/municipal-data.json",
+  "docs/estadual-data.json",
 ] as const;
 
 export interface SnapshotCheck {
@@ -16,11 +16,11 @@ export interface SnapshotCheck {
 }
 
 export function parseGeneratedAt(raw: unknown, path: string): string {
-  if (typeof raw !== 'object' || raw === null || !('generatedAt' in raw)) {
+  if (typeof raw !== "object" || raw === null || !("generatedAt" in raw)) {
     throw new Error(`[freshness] ${path}: missing generatedAt`);
   }
   const value = (raw as { generatedAt: unknown }).generatedAt;
-  if (typeof value !== 'string' || value.trim() === '') {
+  if (typeof value !== "string" || value.trim() === "") {
     throw new Error(`[freshness] ${path}: generatedAt must be a non-empty string`);
   }
   if (Number.isNaN(Date.parse(value))) {
@@ -32,7 +32,7 @@ export function parseGeneratedAt(raw: unknown, path: string): string {
 export function assertFresh(
   snapshots: SnapshotCheck[],
   now: Date = new Date(),
-  maxAgeMs: number = MAX_AGE_MS
+  maxAgeMs: number = MAX_AGE_MS,
 ): void {
   for (const { path, generatedAt } of snapshots) {
     const age = now.getTime() - Date.parse(generatedAt);
@@ -40,7 +40,7 @@ export function assertFresh(
       const ageHours = (age / (60 * 60 * 1000)).toFixed(1);
       const maxHours = maxAgeMs / (60 * 60 * 1000);
       throw new Error(
-        `[freshness] ${path}: generatedAt=${generatedAt} is ${ageHours}h old (max ${maxHours}h)`
+        `[freshness] ${path}: generatedAt=${generatedAt} is ${ageHours}h old (max ${maxHours}h)`,
       );
     }
   }
@@ -50,11 +50,11 @@ export function checkSnapshotFiles(
   cwd: string,
   paths: readonly string[] = DEFAULT_SNAPSHOT_PATHS,
   now: Date = new Date(),
-  maxAgeMs: number = MAX_AGE_MS
+  maxAgeMs: number = MAX_AGE_MS,
 ): void {
   const snapshots = paths.map((rel) => {
     const full = join(cwd, rel);
-    const raw = JSON.parse(readFileSync(full, 'utf8')) as unknown;
+    const raw = JSON.parse(readFileSync(full, "utf8")) as unknown;
     return { path: rel, generatedAt: parseGeneratedAt(raw, rel) };
   });
   assertFresh(snapshots, now, maxAgeMs);
