@@ -1,7 +1,13 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.8/schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-  "files": { "ignoreUnknown": true },
+  "files": {
+    "ignoreUnknown": true,
+    // docs/ e o dashboard na raiz sao saida do pipeline (src/index.ts escreve
+    // outputHtml/outputJson). Formata-los poe o Biome para brigar com o gerador
+    // a cada execucao.
+    "includes": ["**", "!docs", "!dashboard_MUNICIPAL_atualizado_v2.html"]
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
