@@ -50,7 +50,11 @@ jobs:
             echo "no changes"
           else
             git commit -m "chore(dashboard): daily refresh $(date -u +%F)"
-            git push
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push || {
+              git pull --rebase origin "${GITHUB_REF_NAME}"
+              git push
+            }
           fi
 
       - name: Alert on failure
