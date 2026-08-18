@@ -5,8 +5,9 @@ export type QueryValue = string | number | boolean | string[];
 let lastRequestAt = 0;
 
 const MAX_RETRIES_429 = 3;
+const MAX_RETRIES_5XX = 4;
 const MAX_RETRIES_NETWORK = 2;
-const RETRY_5XX_DELAY_MS = 5000;
+const RETRY_5XX_BASE_MS = 1000;
 const RETRY_NETWORK_DELAY_MS = 5000;
 
 function buildUrl(path: string, query: Record<string, QueryValue>): string {
@@ -59,7 +60,7 @@ export async function clickupGet<T>(
   await throttle();
   const url = buildUrl(path, query);
   let attempt429 = 0;
-  let did5xxRetry = false;
+  let attempt5xx = 0;
   let attemptNetwork = 0;
 
   while (true) {
@@ -97,13 +98,13 @@ export async function clickupGet<T>(
     }
 
     if (res.status >= 500) {
-      if (!did5xxRetry) {
-        did5xxRetry = true;
-        await sleep(RETRY_5XX_DELAY_MS);
+      if (attempt5xx < MAX_RETRIES_5XX) {
+        await sleep(RETRY_5XX_BASE_MS * 2 ** attempt5xx);
+        attempt5xx++;
         continue;
       }
       throw new Error(
-        `[throttle/API/timeout] HTTP ${res.status} after retry on ${path}: ${await res.text()}`
+        `[throttle/API/timeout] HTTP ${res.status} after retries on ${path}: ${await res.text()}`
       );
     }
 
