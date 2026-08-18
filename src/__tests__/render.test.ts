@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest';
-import { renderPanel, renderHub } from '../render.js';
-import { PANELS } from '../config.js';
-import type { DashboardData } from '../types.js';
+import { describe, expect, it } from "vitest";
+import { PANELS } from "../config.js";
+import { renderHub, renderPanel } from "../render.js";
+import type { DashboardData } from "../types.js";
 
 const SAMPLE: DashboardData = {
-  generatedAt: '2026-05-28T07:00:00.000Z',
-  header: { dateLabel: 'Quinta-feira, 28 de Maio de 2026', panelTitle: 'TEST PANEL' },
+  generatedAt: "2026-05-28T07:00:00.000Z",
+  header: { dateLabel: "Quinta-feira, 28 de Maio de 2026", panelTitle: "TEST PANEL" },
   kpis: {
     totalProcessos: 6710,
     admJudicial: 3643,
@@ -15,87 +15,87 @@ const SAMPLE: DashboardData = {
     colaboradores: 17,
   },
   tasksDay: [
-    { status: 'CONTRARRAZOAR', count: 10, complexity: 'alta', perPerson: 1 },
-    { status: 'Outros', count: 5, complexity: 'neutra', perPerson: 0 },
+    { status: "CONTRARRAZOAR", count: 10, complexity: "alta", perPerson: 1 },
+    { status: "Outros", count: 5, complexity: "neutra", perPerson: 0 },
   ],
   tasksWeek: [],
   donutDay: { alta: 10, media: 0, baixa: 0, neutra: 5, total: 15 },
   donutWeek: { alta: 0, media: 0, baixa: 0, neutra: 0, total: 0 },
-  team: { perDay: 6, perWeek: 29, avgAssigneesPerTask: 1.2, load: 'BAIXA' },
+  team: { perDay: 6, perWeek: 29, avgAssigneesPerTask: 1.2, load: "BAIXA" },
 };
 
-describe('renderPanel', () => {
-  it('produces HTML with no leftover placeholders', () => {
+describe("renderPanel", () => {
+  it("produces HTML with no leftover placeholders", () => {
     const html = renderPanel(PANELS[0]!, SAMPLE);
     expect(html).not.toMatch(/\{\{.*?\}\}/);
     expect(html).not.toMatch(/TODO|TBD|FIXME/);
   });
 
-  it('embeds the panel title in the header', () => {
+  it("embeds the panel title in the header", () => {
     const html = renderPanel(PANELS[0]!, SAMPLE);
-    expect(html).toContain('TEST PANEL');
-    expect(html).toContain('Quinta-feira, 28 de Maio de 2026');
+    expect(html).toContain("TEST PANEL");
+    expect(html).toContain("Quinta-feira, 28 de Maio de 2026");
   });
 
-  it('embeds KPI values', () => {
+  it("embeds KPI values", () => {
     const html = renderPanel(PANELS[0]!, SAMPLE);
-    expect(html).toContain('6.710');
-    expect(html).toContain('3.643');
+    expect(html).toContain("6.710");
+    expect(html).toContain("3.643");
   });
 
-  it('embeds the donut canvas IDs and Chart.js script', () => {
+  it("embeds the donut canvas IDs and Chart.js script", () => {
     const html = renderPanel(PANELS[0]!, SAMPLE);
     expect(html).toContain('id="donutDay"');
     expect(html).toContain('id="donutWeek"');
-    expect(html).toContain('chart.umd.js');
+    expect(html).toContain("chart.umd.js");
   });
 
-  it('wraps content in a scalable #stage and includes the fit script', () => {
+  it("wraps content in a scalable #stage and includes the fit script", () => {
     const html = renderPanel(PANELS[0]!, SAMPLE);
     expect(html).toContain('id="stage"');
-    expect(html).toContain('innerWidth / 1920');
+    expect(html).toContain("innerWidth / 1920");
     expect(html).toContain('addEventListener("resize"');
-    expect(html).toContain('width=device-width');
+    expect(html).toContain("width=device-width");
   });
 
-  it('escapes HTML-special chars in status names', () => {
+  it("escapes HTML-special chars in status names", () => {
     const data: DashboardData = {
       ...SAMPLE,
       tasksDay: [
-        { status: '<script>alert(1)</script>', count: 1, complexity: 'baixa', perPerson: 0 },
+        { status: "<script>alert(1)</script>", count: 1, complexity: "baixa", perPerson: 0 },
       ],
     };
     const html = renderPanel(PANELS[0]!, data);
-    expect(html).not.toContain('<script>alert(1)</script>');
-    expect(html).toContain('&lt;script&gt;');
+    expect(html).not.toContain("<script>alert(1)</script>");
+    expect(html).toContain("&lt;script&gt;");
   });
 
-  it('shows Neutra row in donut legend when neutra > 0', () => {
+  it("shows Neutra row in donut legend when neutra > 0", () => {
     const dataWithNeutra: DashboardData = {
       ...SAMPLE,
       donutDay: { alta: 0, media: 0, baixa: 0, neutra: 5, total: 5 },
     };
     const html = renderPanel(PANELS[0]!, dataWithNeutra);
-    expect(html).toContain('Neutra');
+    expect(html).toContain("Neutra");
   });
 
-  it('hides Neutra row in donut legend when neutra == 0', () => {
+  it("hides Neutra row in donut legend when neutra == 0", () => {
     const dataNoNeutra: DashboardData = {
       ...SAMPLE,
       donutDay: { alta: 5, media: 0, baixa: 0, neutra: 0, total: 5 },
     };
     const html = renderPanel(PANELS[0]!, dataNoNeutra);
     // The Baixa row is always present, so we check that 'Neutra' label specifically isn't there
-    expect(html).not.toContain('>Neutra<');
+    expect(html).not.toContain(">Neutra<");
   });
 });
 
-describe('renderHub', () => {
-  it('lists both panels with links', () => {
-    const html = renderHub(PANELS, new Date('2026-05-28T07:00:00Z'));
+describe("renderHub", () => {
+  it("lists both panels with links", () => {
+    const html = renderHub(PANELS, new Date("2026-05-28T07:00:00Z"));
     expect(html).toContain('href="municipal.html"');
     expect(html).toContain('href="estadual.html"');
-    expect(html).toContain('NÚCLEO PROFESSORES — MUNICIPAL');
-    expect(html).toContain('NÚCLEO PROFESSORES — ESTADUAL');
+    expect(html).toContain("NÚCLEO PROFESSORES — MUNICIPAL");
+    expect(html).toContain("NÚCLEO PROFESSORES — ESTADUAL");
   });
 });
