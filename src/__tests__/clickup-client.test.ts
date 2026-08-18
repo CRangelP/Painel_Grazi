@@ -57,15 +57,44 @@ describe("clickupGet", () => {
     expect(String(err)).toMatch(/429/);
   });
 
-  it("retries once on 5xx, then succeeds", async () => {
+  it("retries 5xx with exponential backoff (1s, 2s, 4s, 8s), then succeeds", async () => {
     const fetchSpy = vi
       .spyOn(globalThis, "fetch")
-      .mockResolvedValueOnce(new Response("oops", { status: 502 }))
+      .mockResolvedValueOnce(new Response("oops", { status: 500 }))
+      .mockResolvedValueOnce(new Response("oops", { status: 500 }))
       .mockResolvedValueOnce(new Response(JSON.stringify({ ok: 1 }), { status: 200 }));
-    const promise = clickupGet<{ ok: number }>("/y", {}, "pk");
-    await vi.advanceTimersByTimeAsync(5000);
+    const promise = clickupGet<{ ok: number }>("/team/1/task", {}, "pk");
+    await vi.advanceTimersByTimeAsync(1000);
+    await vi.advanceTimersByTimeAsync(2000);
     expect(await promise).toEqual({ ok: 1 });
-    expect(fetchSpy).toHaveBeenCalledTimes(2);
+    expect(fetchSpy).toHaveBeenCalledTimes(3);
+  });
+
+  it("throws after max retries on persistent 5xx", async () => {
+    const fetchSpy = vi.spyOn(globalThis, "fetch").mockImplementation(
+      async () =>
+        new Response(JSON.stringify({ err: "Internal Server Error", ECODE: "ITEMV2_003" }), {
+          status: 500,
+        }),
+    );
+    const promise = clickupGet("/team/1/task", {}, "pk").catch((e) => e);
+    // 1s + 2s + 4s + 8s = 15s of backoff for 4 retries, then the 5th failure throws
+    await vi.advanceTimersByTimeAsync(20_000);
+    const err = await promise;
+    expect(err).toBeInstanceOf(Error);
+    expect(String(err)).toMatch(
+      /\[throttle\/API\/timeout\].*HTTP 500 after retries on \/team\/1\/task/,
+    );
+    expect(String(err)).toMatch(/ITEMV2_003/);
+    expect(fetchSpy).toHaveBeenCalledTimes(5);
+  });
+
+  it("does not retry non-retryable 4xx", async () => {
+    const fetchSpy = vi
+      .spyOn(globalThis, "fetch")
+      .mockResolvedValueOnce(new Response("bad request", { status: 400 }));
+    await expect(clickupGet("/team/1/task", {}, "pk")).rejects.toThrow(/HTTP 400/);
+    expect(fetchSpy).toHaveBeenCalledTimes(1);
   });
 
   it("fails immediately on 401 without retry", async () => {
