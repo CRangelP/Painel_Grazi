@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T14:22:07.768Z",
+  "generatedAt": "2026-08-21T19:19:11.840Z",
   "header": {
     "dateLabel": "Sexta-feira, 21 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -9,20 +9,20 @@
     "admJudicial": 3342,
     "cumprSentenca": 3471,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1284,
+    "subtarefasSemana": 1295,
     "colaboradores": 17
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 249,
+      "count": 225,
       "complexity": "baixa",
-      "perPerson": 15
+      "perPerson": 13
     },
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 189,
+      "count": 181,
       "complexity": "media",
       "perPerson": 11
     },
@@ -33,8 +33,14 @@
       "perPerson": 7
     },
     {
+      "status": "ATUALIZAR CÁLCULOS",
+      "count": 87,
+      "complexity": "alta",
+      "perPerson": 5
+    },
+    {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 82,
+      "count": 84,
       "complexity": "baixa",
       "perPerson": 5
     },
@@ -45,14 +51,14 @@
       "perPerson": 5
     },
     {
-      "status": "ATUALIZAR CÁLCULOS",
-      "count": 76,
+      "status": "CONTRARRAZOAR",
+      "count": 74,
       "complexity": "alta",
       "perPerson": 4
     },
     {
       "status": "PEDIR SEQUESTRO",
-      "count": 63,
+      "count": 60,
       "complexity": "media",
       "perPerson": 4
     },
@@ -63,14 +69,8 @@
       "perPerson": 3
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 53,
-      "complexity": "alta",
-      "perPerson": 3
-    },
-    {
       "status": "MANIFESTAR HIPO",
-      "count": 44,
+      "count": 46,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -82,7 +82,7 @@
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 38,
+      "count": 39,
       "complexity": "baixa",
       "perPerson": 2
     },
@@ -94,14 +94,26 @@
     },
     {
       "status": "VERIFICAR HOMOLOGAÇÃO",
-      "count": 26,
+      "count": 25,
       "complexity": "baixa",
-      "perPerson": 2
+      "perPerson": 1
     },
     {
       "status": "RECURSO",
-      "count": 18,
+      "count": 19,
       "complexity": "alta",
+      "perPerson": 1
+    },
+    {
+      "status": "REPROTOCOLAR",
+      "count": 17,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "DECURSO DE PRAZO",
+      "count": 15,
+      "complexity": "baixa",
       "perPerson": 1
     },
     {
@@ -111,20 +123,8 @@
       "perPerson": 1
     },
     {
-      "status": "DECURSO DE PRAZO",
-      "count": 14,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "REPROTOCOLAR",
-      "count": 14,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
       "status": "INICIAL",
-      "count": 13,
+      "count": 14,
       "complexity": "media",
       "perPerson": 1
     },
@@ -160,9 +160,9 @@
     },
     {
       "status": "Outros",
-      "count": 40,
+      "count": 44,
       "complexity": "neutra",
-      "perPerson": 2
+      "perPerson": 3
     }
   ],
   "donutDay": {
@@ -173,11 +173,11 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 227,
-    "media": 316,
-    "baixa": 701,
-    "neutra": 40,
-    "total": 1284
+    "alta": 260,
+    "media": 306,
+    "baixa": 685,
+    "neutra": 44,
+    "total": 1295
   },
   "team": {
     "perDay": 0,
