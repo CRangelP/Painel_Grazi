@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T07:36:55.886Z",
+  "generatedAt": "2026-08-23T14:11:41.036Z",
   "header": {
     "dateLabel": "Domingo, 23 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -9,7 +9,7 @@
     "admJudicial": 3341,
     "cumprSentenca": 3472,
     "subtarefasDia": 441,
-    "subtarefasSemana": 1816,
+    "subtarefasSemana": 1824,
     "colaboradores": 17
   },
   "tasksDay": [
@@ -167,7 +167,7 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 405,
+      "count": 412,
       "complexity": "baixa",
       "perPerson": 24
     },
@@ -287,7 +287,7 @@
     },
     {
       "status": "ANALISAR SENTENÇA PROC./IMPROC.",
-      "count": 5,
+      "count": 6,
       "complexity": "media",
       "perPerson": 0
     },
@@ -325,10 +325,10 @@
   },
   "donutWeek": {
     "alta": 323,
-    "media": 428,
-    "baixa": 1003,
+    "media": 429,
+    "baixa": 1010,
     "neutra": 62,
-    "total": 1816
+    "total": 1824
   },
   "team": {
     "perDay": 26,

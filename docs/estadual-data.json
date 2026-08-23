@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T07:36:55.886Z",
+  "generatedAt": "2026-08-23T14:11:41.036Z",
   "header": {
     "dateLabel": "Domingo, 23 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 27673,
     "cumprSentenca": 13694,
     "subtarefasDia": 560,
-    "subtarefasSemana": 4142,
+    "subtarefasSemana": 4151,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -137,7 +137,7 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 1127,
+      "count": 1136,
       "complexity": "baixa",
       "perPerson": 63
     },
@@ -266,13 +266,13 @@
   "donutWeek": {
     "alta": 808,
     "media": 1629,
-    "baixa": 1597,
+    "baixa": 1606,
     "neutra": 108,
-    "total": 4142
+    "total": 4151
   },
   "team": {
     "perDay": 31,
-    "perWeek": 230,
+    "perWeek": 231,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
