@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-08-23T14:11:41.036Z",
+  "generatedAt": "2026-08-23T19:15:28.399Z",
   "header": {
     "dateLabel": "Domingo, 23 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 41368,
-    "admJudicial": 27673,
-    "cumprSentenca": 13694,
+    "totalProcessos": 41382,
+    "admJudicial": 27685,
+    "cumprSentenca": 13696,
     "subtarefasDia": 560,
-    "subtarefasSemana": 4151,
+    "subtarefasSemana": 4217,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -137,7 +137,7 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 1136,
+      "count": 1135,
       "complexity": "baixa",
       "perPerson": 63
     },
@@ -155,14 +155,20 @@
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 152,
+      "count": 154,
       "complexity": "baixa",
-      "perPerson": 8
+      "perPerson": 9
     },
     {
       "status": "VERIFICAR SENTENÇA",
       "count": 134,
       "complexity": "alta",
+      "perPerson": 7
+    },
+    {
+      "status": "REVISAR PARA PROTOCOLAR",
+      "count": 125,
+      "complexity": "baixa",
       "perPerson": 7
     },
     {
@@ -184,21 +190,15 @@
       "perPerson": 4
     },
     {
+      "status": "REALIZAR CÁLCULOS",
+      "count": 72,
+      "complexity": "alta",
+      "perPerson": 4
+    },
+    {
       "status": "CONTRARRAZOAR",
       "count": 67,
       "complexity": "alta",
-      "perPerson": 4
-    },
-    {
-      "status": "REALIZAR CÁLCULOS",
-      "count": 67,
-      "complexity": "alta",
-      "perPerson": 4
-    },
-    {
-      "status": "REVISAR PARA PROTOCOLAR",
-      "count": 66,
-      "complexity": "baixa",
       "perPerson": 4
     },
     {
@@ -209,7 +209,7 @@
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 33,
+      "count": 34,
       "complexity": "baixa",
       "perPerson": 2
     },
@@ -264,15 +264,15 @@
     "total": 560
   },
   "donutWeek": {
-    "alta": 808,
+    "alta": 813,
     "media": 1629,
-    "baixa": 1606,
+    "baixa": 1667,
     "neutra": 108,
-    "total": 4151
+    "total": 4217
   },
   "team": {
     "perDay": 31,
-    "perWeek": 231,
+    "perWeek": 234,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
