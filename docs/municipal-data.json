@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T18:09:55.591Z",
+  "generatedAt": "2026-08-27T23:17:54.641Z",
   "header": {
     "dateLabel": "Quinta-feira, 27 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -8,27 +8,39 @@
     "totalProcessos": 6815,
     "admJudicial": 3337,
     "cumprSentenca": 3478,
-    "subtarefasDia": 412,
-    "subtarefasSemana": 1167,
+    "subtarefasDia": 472,
+    "subtarefasSemana": 1202,
     "colaboradores": 17
   },
   "tasksDay": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 120,
+      "count": 121,
       "complexity": "baixa",
       "perPerson": 7
     },
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 59,
+      "count": 58,
       "complexity": "media",
       "perPerson": 3
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 40,
+      "count": 42,
       "complexity": "baixa",
+      "perPerson": 2
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 41,
+      "complexity": "alta",
+      "perPerson": 2
+    },
+    {
+      "status": "RECURSO",
+      "count": 37,
+      "complexity": "alta",
       "perPerson": 2
     },
     {
@@ -38,22 +50,10 @@
       "perPerson": 2
     },
     {
-      "status": "RECURSO",
-      "count": 31,
-      "complexity": "alta",
-      "perPerson": 2
-    },
-    {
-      "status": "CONTRARRAZOAR",
-      "count": 21,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 18,
+      "count": 26,
       "complexity": "baixa",
-      "perPerson": 1
+      "perPerson": 2
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
@@ -74,8 +74,20 @@
       "perPerson": 1
     },
     {
+      "status": "REPROTOCOLAR",
+      "count": 12,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
+      "status": "INICIAL",
+      "count": 11,
+      "complexity": "media",
+      "perPerson": 1
+    },
+    {
       "status": "MANIFESTAR HIPO",
-      "count": 7,
+      "count": 8,
       "complexity": "baixa",
       "perPerson": 0
     },
@@ -92,14 +104,14 @@
       "perPerson": 0
     },
     {
-      "status": "PROSSEGUIMENTO",
-      "count": 5,
+      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
+      "count": 6,
       "complexity": "baixa",
       "perPerson": 0
     },
     {
-      "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 4,
+      "status": "PROSSEGUIMENTO",
+      "count": 5,
       "complexity": "baixa",
       "perPerson": 0
     },
@@ -110,15 +122,15 @@
       "perPerson": 0
     },
     {
-      "status": "INICIAL",
-      "count": 3,
+      "status": "MANIFESTAR SOBRE PROVAS",
+      "count": 1,
       "complexity": "media",
       "perPerson": 0
     },
     {
-      "status": "REPROTOCOLAR",
+      "status": "CUMPRIMENTO DE SENTENÇA",
       "count": 1,
-      "complexity": "baixa",
+      "complexity": "alta",
       "perPerson": 0
     },
     {
@@ -131,21 +143,27 @@
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 279,
+      "count": 273,
       "complexity": "media",
       "perPerson": 16
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 182,
+      "count": 179,
       "complexity": "baixa",
       "perPerson": 11
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 157,
+      "count": 159,
       "complexity": "baixa",
       "perPerson": 9
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 71,
+      "complexity": "alta",
+      "perPerson": 4
     },
     {
       "status": "PROSSEGUIMENTO",
@@ -160,28 +178,22 @@
       "perPerson": 3
     },
     {
+      "status": "RECURSO",
+      "count": 48,
+      "complexity": "alta",
+      "perPerson": 3
+    },
+    {
       "status": "MANIFESTAR HIPO",
-      "count": 47,
+      "count": 48,
       "complexity": "baixa",
       "perPerson": 3
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 47,
-      "complexity": "alta",
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 46,
+      "complexity": "baixa",
       "perPerson": 3
-    },
-    {
-      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
-      "count": 42,
-      "complexity": "media",
-      "perPerson": 2
-    },
-    {
-      "status": "RECURSO",
-      "count": 40,
-      "complexity": "alta",
-      "perPerson": 2
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
@@ -190,14 +202,14 @@
       "perPerson": 2
     },
     {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 38,
-      "complexity": "baixa",
+      "status": "ANALISAR SENTENÇA PROC./IMPROC.",
+      "count": 40,
+      "complexity": "media",
       "perPerson": 2
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 35,
+      "count": 37,
       "complexity": "baixa",
       "perPerson": 2
     },
@@ -215,14 +227,14 @@
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 22,
+      "count": 24,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "INICIAL",
-      "count": 17,
-      "complexity": "media",
+      "status": "REPROTOCOLAR",
+      "count": 18,
+      "complexity": "baixa",
       "perPerson": 1
     },
     {
@@ -232,20 +244,20 @@
       "perPerson": 1
     },
     {
-      "status": "REPROTOCOLAR",
-      "count": 7,
-      "complexity": "baixa",
-      "perPerson": 0
+      "status": "INICIAL",
+      "count": 16,
+      "complexity": "media",
+      "perPerson": 1
     },
     {
       "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 5,
+      "count": 6,
       "complexity": "alta",
       "perPerson": 0
     },
     {
       "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 1,
+      "count": 2,
       "complexity": "media",
       "perPerson": 0
     },
@@ -263,28 +275,28 @@
     },
     {
       "status": "Outros",
-      "count": 34,
+      "count": 21,
       "complexity": "neutra",
-      "perPerson": 2
+      "perPerson": 1
     }
   ],
   "donutDay": {
-    "alta": 58,
-    "media": 115,
-    "baixa": 231,
+    "alta": 85,
+    "media": 123,
+    "baixa": 256,
     "neutra": 8,
-    "total": 412
+    "total": 472
   },
   "donutWeek": {
-    "alta": 114,
-    "media": 406,
-    "baixa": 613,
-    "neutra": 34,
-    "total": 1167
+    "alta": 149,
+    "media": 398,
+    "baixa": 634,
+    "neutra": 21,
+    "total": 1202
   },
   "team": {
-    "perDay": 24,
-    "perWeek": 69,
+    "perDay": 28,
+    "perWeek": 71,
     "avgAssigneesPerTask": 1,
     "load": "MÉDIA"
   }
