@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-08-28T19:20:07.882Z",
+  "generatedAt": "2026-08-28T23:15:08.882Z",
   "header": {
     "dateLabel": "Sexta-feira, 28 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 41754,
-    "admJudicial": 28155,
+    "totalProcessos": 41760,
+    "admJudicial": 28161,
     "cumprSentenca": 13597,
     "subtarefasDia": 1333,
-    "subtarefasSemana": 2772,
+    "subtarefasSemana": 2767,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -35,7 +35,7 @@
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 332,
+      "count": 328,
       "complexity": "baixa",
       "perPerson": 18
     },
@@ -53,7 +53,7 @@
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 97,
+      "count": 98,
       "complexity": "baixa",
       "perPerson": 5
     },
@@ -65,7 +65,7 @@
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 84,
+      "count": 85,
       "complexity": "alta",
       "perPerson": 5
     },
@@ -100,15 +100,15 @@
       "perPerson": 1
     },
     {
-      "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 5,
-      "complexity": "media",
+      "status": "ANALISAR DESPACHO",
+      "count": 3,
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
-      "status": "ANALISAR DESPACHO",
-      "count": 4,
-      "complexity": "baixa",
+      "status": "MANIFESTAR SOBRE PROVAS",
+      "count": 3,
+      "complexity": "media",
       "perPerson": 0
     },
     {
@@ -132,11 +132,11 @@
     "total": 1333
   },
   "donutWeek": {
-    "alta": 485,
-    "media": 1722,
-    "baixa": 544,
+    "alta": 486,
+    "media": 1720,
+    "baixa": 540,
     "neutra": 21,
-    "total": 2772
+    "total": 2767
   },
   "team": {
     "perDay": 74,
