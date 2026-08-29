@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T17:25:49.450Z",
+  "generatedAt": "2026-08-29T21:22:53.854Z",
   "header": {
     "dateLabel": "Sábado, 29 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -9,7 +9,7 @@
     "admJudicial": 3336,
     "cumprSentenca": 3479,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1897,
+    "subtarefasSemana": 1940,
     "colaboradores": 17
   },
   "tasksDay": [],
@@ -21,16 +21,16 @@
       "perPerson": 28
     },
     {
+      "status": "VERIFICAR ANDAMENTO",
+      "count": 301,
+      "complexity": "baixa",
+      "perPerson": 18
+    },
+    {
       "status": "OBRIGAÇÃO DE FAZER",
       "count": 271,
       "complexity": "baixa",
       "perPerson": 16
-    },
-    {
-      "status": "VERIFICAR ANDAMENTO",
-      "count": 261,
-      "complexity": "baixa",
-      "perPerson": 15
     },
     {
       "status": "PROSSEGUIMENTO",
@@ -76,7 +76,7 @@
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 49,
+      "count": 50,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -106,7 +106,7 @@
     },
     {
       "status": "ANALISAR SENTENÇA PROC./IMPROC.",
-      "count": 32,
+      "count": 33,
       "complexity": "media",
       "perPerson": 2
     },
@@ -142,7 +142,7 @@
     },
     {
       "status": "LITISPENDÊNCIA",
-      "count": 1,
+      "count": 2,
       "complexity": "baixa",
       "perPerson": 0
     },
@@ -168,14 +168,14 @@
   },
   "donutWeek": {
     "alta": 169,
-    "media": 679,
-    "baixa": 1012,
+    "media": 680,
+    "baixa": 1054,
     "neutra": 37,
-    "total": 1897
+    "total": 1940
   },
   "team": {
     "perDay": 0,
-    "perWeek": 112,
+    "perWeek": 114,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }
