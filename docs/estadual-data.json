@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-28T23:15:08.882Z",
+  "generatedAt": "2026-08-29T01:56:53.889Z",
   "header": {
     "dateLabel": "Sexta-feira, 28 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
     "totalProcessos": 41760,
-    "admJudicial": 28161,
-    "cumprSentenca": 13597,
+    "admJudicial": 28164,
+    "cumprSentenca": 13594,
     "subtarefasDia": 1333,
     "subtarefasSemana": 2767,
     "colaboradores": 18
