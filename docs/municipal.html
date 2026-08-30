@@ -97,14 +97,14 @@ body{display:flex;align-items:center;justify-content:center;}
   <div class="kpi gold"><div class="kpi-lbl">Total de Processos</div><div class="kpi-val">6.815</div><div class="kpi-sub">Portfólio total do núcleo</div></div>
   <div class="kpi blue"><div class="kpi-lbl">ADM / Judicial</div><div class="kpi-val">3.336</div><div class="kpi-sub">49% do total</div></div>
   <div class="kpi amber"><div class="kpi-lbl">Cumpr. de Sentença</div><div class="kpi-val">3.479</div><div class="kpi-sub">51% do total</div></div>
-  <div class="kpi red"><div class="kpi-lbl">Subtarefas do Dia</div><div class="kpi-val">339</div><div class="kpi-sub">Aba Tarefas do Dia</div></div>
+  <div class="kpi red"><div class="kpi-lbl">Subtarefas do Dia</div><div class="kpi-val">334</div><div class="kpi-sub">Aba Tarefas do Dia</div></div>
   <div class="kpi cyan"><div class="kpi-lbl">Subtarefas da Semana</div><div class="kpi-val">1.994</div><div class="kpi-sub">Aba Tarefas da Semana</div></div>
   <div class="kpi green"><div class="kpi-lbl">Colaboradores Ativos</div><div class="kpi-val">17</div><div class="kpi-sub">~20 subtarefas/dia cada</div></div>
 </div>
 
 <div class="main">
   <div class="panel">
-    <div class="p-hdr"><span class="dot"></span>TAREFAS DO DIA — 339 SUBTAREFAS</div>
+    <div class="p-hdr"><span class="dot"></span>TAREFAS DO DIA — 334 SUBTAREFAS</div>
     <div class="day-list">
     <div class="tr m">
       <div class="t-name">ACOMPANHAR PROCESSOS</div>
@@ -127,13 +127,6 @@ body{display:flex;align-items:center;justify-content:center;}
       <div class="tcx cxl">BAIXA</div>
       <div class="tteam">~2/pessoa</div>
     </div>
-    <div class="tr h">
-      <div class="t-name">CONTRARRAZOAR</div>
-      <div class="btrack"><div class="bfill bh" style="width:32%"></div></div>
-      <div class="tnum" style="color:#C4544A">25</div>
-      <div class="tcx cxh">ALTA</div>
-      <div class="tteam">~1/pessoa</div>
-    </div>
     <div class="tr l">
       <div class="t-name">IMPUGNAR CONTESTAÇÃO</div>
       <div class="btrack"><div class="bfill bl" style="width:31%"></div></div>
@@ -145,6 +138,13 @@ body{display:flex;align-items:center;justify-content:center;}
       <div class="t-name">ATUALIZAR CÁLCULOS</div>
       <div class="btrack"><div class="bfill bh" style="width:30%"></div></div>
       <div class="tnum" style="color:#C4544A">23</div>
+      <div class="tcx cxh">ALTA</div>
+      <div class="tteam">~1/pessoa</div>
+    </div>
+    <div class="tr h">
+      <div class="t-name">CONTRARRAZOAR</div>
+      <div class="btrack"><div class="bfill bh" style="width:26%"></div></div>
+      <div class="tnum" style="color:#C4544A">20</div>
       <div class="tcx cxh">ALTA</div>
       <div class="tteam">~1/pessoa</div>
     </div>
@@ -274,12 +274,12 @@ body{display:flex;align-items:center;justify-content:center;}
       </div>
     </div>
     <div class="r-panel">
-      <div class="p-hdr"><span class="dot"></span>COMPLEXIDADE — DIA (339)</div>
+      <div class="p-hdr"><span class="dot"></span>COMPLEXIDADE — DIA (334)</div>
       <div style="display:flex;align-items:center;gap:12px">
         <canvas id="donutDay" width="120" height="120" style="flex-shrink:0"></canvas>
         <div style="flex:1">
-          <div class="leg-row"><div class="ldot" style="background:#C4544A"></div><div class="lname">Alta</div><div class="lval">62</div><div class="lpct" style="color:#C4544A">18%</div></div>
-          <div class="leg-row"><div class="ldot" style="background:#D4854A"></div><div class="lname">Média</div><div class="lval">100</div><div class="lpct" style="color:#D4854A">29%</div></div>
+          <div class="leg-row"><div class="ldot" style="background:#C4544A"></div><div class="lname">Alta</div><div class="lval">57</div><div class="lpct" style="color:#C4544A">17%</div></div>
+          <div class="leg-row"><div class="ldot" style="background:#D4854A"></div><div class="lname">Média</div><div class="lval">100</div><div class="lpct" style="color:#D4854A">30%</div></div>
           <div class="leg-row"><div class="ldot" style="background:#5BAD75"></div><div class="lname">Baixa</div><div class="lval">165</div><div class="lpct" style="color:#5BAD75">49%</div></div>
           <div class="leg-row"><div class="ldot" style="background:#aaa"></div><div class="lname">Neutra</div><div class="lval">12</div><div class="lpct" style="color:#aaa">4%</div></div>
         </div>
@@ -358,7 +358,7 @@ function makeDonut(id, data, value, label) {
     setTimeout(function(){ drawCenter(ctx,canvas.width,canvas.height,value,label); },60);
   });
 }
-makeDonut("donutDay",  [62,100,165,12],  "339",   "subtarefas");
+makeDonut("donutDay",  [57,100,165,12],  "334",   "subtarefas");
 makeDonut("donutWeek", [175,683,1099,37], "1.994", "subtarefas");
 </script>
 </body>

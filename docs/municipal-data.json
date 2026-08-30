@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T12:41:08.915Z",
+  "generatedAt": "2026-08-30T17:48:57.063Z",
   "header": {
     "dateLabel": "Domingo, 30 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -8,7 +8,7 @@
     "totalProcessos": 6815,
     "admJudicial": 3336,
     "cumprSentenca": 3479,
-    "subtarefasDia": 339,
+    "subtarefasDia": 334,
     "subtarefasSemana": 1994,
     "colaboradores": 17
   },
@@ -32,12 +32,6 @@
       "perPerson": 2
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 25,
-      "complexity": "alta",
-      "perPerson": 1
-    },
-    {
       "status": "IMPUGNAR CONTESTAÇÃO",
       "count": 24,
       "complexity": "baixa",
@@ -46,6 +40,12 @@
     {
       "status": "ATUALIZAR CÁLCULOS",
       "count": 23,
+      "complexity": "alta",
+      "perPerson": 1
+    },
+    {
+      "status": "CONTRARRAZOAR",
+      "count": 20,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -293,11 +293,11 @@
     }
   ],
   "donutDay": {
-    "alta": 62,
+    "alta": 57,
     "media": 100,
     "baixa": 165,
     "neutra": 12,
-    "total": 339
+    "total": 334
   },
   "donutWeek": {
     "alta": 175,
