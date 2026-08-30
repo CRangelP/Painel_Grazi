@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T17:48:57.063Z",
+  "generatedAt": "2026-08-30T21:44:06.191Z",
   "header": {
     "dateLabel": "Domingo, 30 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
@@ -9,7 +9,7 @@
     "admJudicial": 28166,
     "cumprSentenca": 13595,
     "subtarefasDia": 492,
-    "subtarefasSemana": 2338,
+    "subtarefasSemana": 2323,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -101,9 +101,9 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 637,
+      "count": 639,
       "complexity": "baixa",
-      "perPerson": 35
+      "perPerson": 36
     },
     {
       "status": "ANALISAR RPV",
@@ -113,7 +113,7 @@
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 279,
+      "count": 280,
       "complexity": "alta",
       "perPerson": 16
     },
@@ -148,14 +148,14 @@
       "perPerson": 5
     },
     {
-      "status": "REVISAR PARA PROTOCOLAR",
-      "count": 76,
-      "complexity": "baixa",
-      "perPerson": 4
-    },
-    {
       "status": "MANIFESTAR LITISPENDÊNCIA",
       "count": 62,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
+      "status": "REVISAR PARA PROTOCOLAR",
+      "count": 58,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -204,15 +204,15 @@
     "total": 492
   },
   "donutWeek": {
-    "alta": 756,
+    "alta": 757,
     "media": 630,
-    "baixa": 910,
+    "baixa": 894,
     "neutra": 42,
-    "total": 2338
+    "total": 2323
   },
   "team": {
     "perDay": 27,
-    "perWeek": 130,
+    "perWeek": 129,
     "avgAssigneesPerTask": 1,
     "load": "MÉDIA"
   }
