@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-31T19:43:46.129Z",
+  "generatedAt": "2026-08-31T23:04:06.032Z",
   "header": {
     "dateLabel": "Segunda-feira, 31 de Agosto de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 41856,
-    "admJudicial": 28266,
-    "cumprSentenca": 13588,
-    "subtarefasDia": 826,
-    "subtarefasSemana": 1920,
+    "totalProcessos": 41861,
+    "admJudicial": 28275,
+    "cumprSentenca": 13584,
+    "subtarefasDia": 825,
+    "subtarefasSemana": 1918,
     "colaboradores": 18
   },
   "tasksDay": [
     {
       "status": "ANALISAR RPV",
-      "count": 297,
+      "count": 296,
       "complexity": "media",
-      "perPerson": 17
+      "perPerson": 16
     },
     {
       "status": "VERIFICAR ANDAMENTO",
@@ -107,13 +107,13 @@
   "tasksWeek": [
     {
       "status": "ANALISAR RPV",
-      "count": 504,
+      "count": 503,
       "complexity": "media",
       "perPerson": 28
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 494,
+      "count": 493,
       "complexity": "baixa",
       "perPerson": 27
     },
@@ -204,17 +204,17 @@
   ],
   "donutDay": {
     "alta": 188,
-    "media": 339,
+    "media": 338,
     "baixa": 295,
     "neutra": 4,
-    "total": 826
+    "total": 825
   },
   "donutWeek": {
     "alta": 612,
-    "media": 576,
-    "baixa": 703,
+    "media": 575,
+    "baixa": 702,
     "neutra": 29,
-    "total": 1920
+    "total": 1918
   },
   "team": {
     "perDay": 46,
