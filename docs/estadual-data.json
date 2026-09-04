@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-04T12:02:21.171Z",
+  "generatedAt": "2026-09-04T17:12:57.424Z",
   "header": {
     "dateLabel": "Sexta-feira, 4 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42214,
-    "admJudicial": 28696,
-    "cumprSentenca": 13515,
+    "totalProcessos": 42278,
+    "admJudicial": 28766,
+    "cumprSentenca": 13509,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1317,
+    "subtarefasSemana": 1444,
     "colaboradores": 18
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 375,
+      "count": 410,
       "complexity": "baixa",
-      "perPerson": 21
+      "perPerson": 23
     },
     {
       "status": "ANALISAR RPV",
@@ -28,19 +28,25 @@
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
-      "count": 200,
+      "count": 207,
       "complexity": "alta",
-      "perPerson": 11
+      "perPerson": 12
+    },
+    {
+      "status": "REALIZAR CÁLCULOS",
+      "count": 130,
+      "complexity": "alta",
+      "perPerson": 7
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 88,
+      "count": 104,
       "complexity": "baixa",
-      "perPerson": 5
+      "perPerson": 6
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 86,
+      "count": 87,
       "complexity": "media",
       "perPerson": 5
     },
@@ -51,12 +57,6 @@
       "perPerson": 5
     },
     {
-      "status": "REALIZAR CÁLCULOS",
-      "count": 74,
-      "complexity": "alta",
-      "perPerson": 4
-    },
-    {
       "status": "VERIFICAR SENTENÇA",
       "count": 56,
       "complexity": "alta",
@@ -64,38 +64,44 @@
     },
     {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 43,
+      "count": 45,
       "complexity": "alta",
-      "perPerson": 2
+      "perPerson": 3
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 25,
+      "count": 28,
       "complexity": "baixa",
-      "perPerson": 1
+      "perPerson": 2
     },
     {
       "status": "EMENDAR INICIAL",
-      "count": 13,
+      "count": 14,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
       "status": "CONTRARRAZOAR",
-      "count": 11,
+      "count": 13,
       "complexity": "alta",
       "perPerson": 1
     },
     {
-      "status": "ANALISAR DESPACHO",
+      "status": "MANIFESTAR SOBRE PROVAS",
       "count": 7,
+      "complexity": "media",
+      "perPerson": 0
+    },
+    {
+      "status": "ANALISAR DESPACHO",
+      "count": 6,
       "complexity": "baixa",
       "perPerson": 0
     },
     {
-      "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 5,
-      "complexity": "media",
+      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
+      "count": 2,
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -105,14 +111,8 @@
       "perPerson": 0
     },
     {
-      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 1,
-      "complexity": "baixa",
-      "perPerson": 0
-    },
-    {
       "status": "Outros",
-      "count": 12,
+      "count": 14,
       "complexity": "neutra",
       "perPerson": 1
     }
@@ -125,15 +125,15 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 384,
-    "media": 325,
-    "baixa": 596,
-    "neutra": 12,
-    "total": 1317
+    "alta": 451,
+    "media": 328,
+    "baixa": 651,
+    "neutra": 14,
+    "total": 1444
   },
   "team": {
     "perDay": 0,
-    "perWeek": 73,
+    "perWeek": 80,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }
