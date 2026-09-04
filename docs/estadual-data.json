@@ -1,24 +1,24 @@
 {
-  "generatedAt": "2026-09-04T17:12:57.424Z",
+  "generatedAt": "2026-09-04T21:09:35.466Z",
   "header": {
     "dateLabel": "Sexta-feira, 4 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42278,
-    "admJudicial": 28766,
-    "cumprSentenca": 13509,
+    "totalProcessos": 42309,
+    "admJudicial": 28799,
+    "cumprSentenca": 13507,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1444,
+    "subtarefasSemana": 1460,
     "colaboradores": 18
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 410,
+      "count": 381,
       "complexity": "baixa",
-      "perPerson": 23
+      "perPerson": 21
     },
     {
       "status": "ANALISAR RPV",
@@ -34,15 +34,15 @@
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 130,
+      "count": 134,
       "complexity": "alta",
       "perPerson": 7
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 104,
+      "count": 124,
       "complexity": "baixa",
-      "perPerson": 6
+      "perPerson": 7
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
@@ -52,7 +52,7 @@
     },
     {
       "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 85,
+      "count": 86,
       "complexity": "baixa",
       "perPerson": 5
     },
@@ -64,19 +64,19 @@
     },
     {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 45,
+      "count": 46,
       "complexity": "alta",
       "perPerson": 3
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 28,
+      "count": 46,
       "complexity": "baixa",
-      "perPerson": 2
+      "perPerson": 3
     },
     {
       "status": "EMENDAR INICIAL",
-      "count": 14,
+      "count": 15,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -125,15 +125,15 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 451,
+    "alta": 456,
     "media": 328,
-    "baixa": 651,
+    "baixa": 662,
     "neutra": 14,
-    "total": 1444
+    "total": 1460
   },
   "team": {
     "perDay": 0,
-    "perWeek": 80,
+    "perWeek": 81,
     "avgAssigneesPerTask": 0,
     "load": "BAIXA"
   }
