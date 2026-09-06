@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-06T16:31:24.509Z",
+  "generatedAt": "2026-09-06T20:57:05.172Z",
   "header": {
     "dateLabel": "Domingo, 6 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42312,
+    "totalProcessos": 42311,
     "admJudicial": 28802,
-    "cumprSentenca": 13507,
+    "cumprSentenca": 13506,
     "subtarefasDia": 6,
-    "subtarefasSemana": 2039,
+    "subtarefasSemana": 2016,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -64,12 +64,6 @@
       "perPerson": 8
     },
     {
-      "status": "REVISAR PARA PROTOCOLAR",
-      "count": 130,
-      "complexity": "baixa",
-      "perPerson": 7
-    },
-    {
       "status": "MANIFESTAR LITISPENDÊNCIA",
       "count": 124,
       "complexity": "baixa",
@@ -80,6 +74,12 @@
       "count": 117,
       "complexity": "alta",
       "perPerson": 7
+    },
+    {
+      "status": "REVISAR PARA PROTOCOLAR",
+      "count": 107,
+      "complexity": "baixa",
+      "perPerson": 6
     },
     {
       "status": "IMPUGNAR CONTESTAÇÃO",
@@ -146,13 +146,13 @@
   "donutWeek": {
     "alta": 632,
     "media": 387,
-    "baixa": 1003,
+    "baixa": 980,
     "neutra": 17,
-    "total": 2039
+    "total": 2016
   },
   "team": {
     "perDay": 0,
-    "perWeek": 113,
+    "perWeek": 112,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
