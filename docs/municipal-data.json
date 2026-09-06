@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T11:34:32.765Z",
+  "generatedAt": "2026-09-06T16:31:24.509Z",
   "header": {
     "dateLabel": "Domingo, 6 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
@@ -8,16 +8,16 @@
     "totalProcessos": 6822,
     "admJudicial": 3324,
     "cumprSentenca": 3498,
-    "subtarefasDia": 196,
-    "subtarefasSemana": 1469,
+    "subtarefasDia": 186,
+    "subtarefasSemana": 1459,
     "colaboradores": 17
   },
   "tasksDay": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 111,
+      "count": 101,
       "complexity": "media",
-      "perPerson": 7
+      "perPerson": 6
     },
     {
       "status": "VERIFICAR ANDAMENTO",
@@ -119,9 +119,9 @@
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 425,
+      "count": 415,
       "complexity": "media",
-      "perPerson": 25
+      "perPerson": 24
     },
     {
       "status": "VERIFICAR ANDAMENTO",
@@ -264,20 +264,20 @@
   ],
   "donutDay": {
     "alta": 4,
-    "media": 123,
+    "media": 113,
     "baixa": 68,
     "neutra": 1,
-    "total": 196
+    "total": 186
   },
   "donutWeek": {
     "alta": 166,
-    "media": 509,
+    "media": 499,
     "baixa": 767,
     "neutra": 27,
-    "total": 1469
+    "total": 1459
   },
   "team": {
-    "perDay": 12,
+    "perDay": 11,
     "perWeek": 86,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
