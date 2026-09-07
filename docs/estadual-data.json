@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-07T18:27:13.101Z",
+  "generatedAt": "2026-09-07T21:50:45.640Z",
   "header": {
     "dateLabel": "Segunda-feira, 7 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42315,
-    "admJudicial": 28810,
-    "cumprSentenca": 13502,
+    "totalProcessos": 42339,
+    "admJudicial": 28831,
+    "cumprSentenca": 13505,
     "subtarefasDia": 642,
-    "subtarefasSemana": 2030,
+    "subtarefasSemana": 2035,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -137,19 +137,19 @@
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 157,
+      "count": 155,
       "complexity": "alta",
       "perPerson": 9
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 149,
+      "count": 148,
       "complexity": "baixa",
       "perPerson": 8
     },
     {
       "status": "MANIFESTAR LITISPENDÊNCIA",
-      "count": 145,
+      "count": 146,
       "complexity": "baixa",
       "perPerson": 8
     },
@@ -166,16 +166,16 @@
       "perPerson": 6
     },
     {
+      "status": "REVISAR PARA PROTOCOLAR",
+      "count": 101,
+      "complexity": "baixa",
+      "perPerson": 6
+    },
+    {
       "status": "VERIFICAR SENTENÇA",
       "count": 99,
       "complexity": "alta",
       "perPerson": 6
-    },
-    {
-      "status": "REVISAR PARA PROTOCOLAR",
-      "count": 94,
-      "complexity": "baixa",
-      "perPerson": 5
     },
     {
       "status": "EMENDAR INICIAL",
@@ -228,11 +228,11 @@
     "total": 642
   },
   "donutWeek": {
-    "alta": 633,
+    "alta": 631,
     "media": 394,
-    "baixa": 986,
+    "baixa": 993,
     "neutra": 17,
-    "total": 2030
+    "total": 2035
   },
   "team": {
     "perDay": 36,
