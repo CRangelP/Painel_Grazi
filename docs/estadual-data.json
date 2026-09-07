@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-07T13:23:07.340Z",
+  "generatedAt": "2026-09-07T18:27:13.101Z",
   "header": {
     "dateLabel": "Segunda-feira, 7 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
     "totalProcessos": 42315,
-    "admJudicial": 28807,
-    "cumprSentenca": 13505,
+    "admJudicial": 28810,
+    "cumprSentenca": 13502,
     "subtarefasDia": 642,
-    "subtarefasSemana": 2031,
+    "subtarefasSemana": 2030,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -137,7 +137,7 @@
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 158,
+      "count": 157,
       "complexity": "alta",
       "perPerson": 9
     },
@@ -228,11 +228,11 @@
     "total": 642
   },
   "donutWeek": {
-    "alta": 634,
+    "alta": 633,
     "media": 394,
     "baixa": 986,
     "neutra": 17,
-    "total": 2031
+    "total": 2030
   },
   "team": {
     "perDay": 36,
