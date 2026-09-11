@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-09-11T17:22:58.486Z",
+  "generatedAt": "2026-09-11T21:26:19.015Z",
   "header": {
     "dateLabel": "Sexta-feira, 11 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42619,
-    "admJudicial": 29215,
-    "cumprSentenca": 13401,
+    "totalProcessos": 42622,
+    "admJudicial": 29221,
+    "cumprSentenca": 13398,
     "subtarefasDia": 7,
-    "subtarefasSemana": 1445,
+    "subtarefasSemana": 1486,
     "colaboradores": 18
   },
   "tasksDay": [
@@ -41,7 +41,7 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 278,
+      "count": 275,
       "complexity": "baixa",
       "perPerson": 15
     },
@@ -59,21 +59,21 @@
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 111,
+      "count": 122,
       "complexity": "baixa",
-      "perPerson": 6
+      "perPerson": 7
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 107,
+      "count": 115,
       "complexity": "alta",
       "perPerson": 6
     },
     {
       "status": "VERIFICAR SENTENÇA",
-      "count": 98,
+      "count": 99,
       "complexity": "alta",
-      "perPerson": 5
+      "perPerson": 6
     },
     {
       "status": "CONTADORIA",
@@ -95,13 +95,13 @@
     },
     {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 42,
+      "count": 45,
       "complexity": "alta",
-      "perPerson": 2
+      "perPerson": 3
     },
     {
       "status": "CONTRARRAZOAR",
-      "count": 40,
+      "count": 44,
       "complexity": "alta",
       "perPerson": 2
     },
@@ -113,19 +113,13 @@
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 23,
-      "complexity": "baixa",
-      "perPerson": 1
-    },
-    {
-      "status": "ANALISAR DESPACHO",
-      "count": 12,
+      "count": 26,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
       "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 11,
+      "count": 24,
       "complexity": "baixa",
       "perPerson": 1
     },
@@ -136,8 +130,14 @@
       "perPerson": 1
     },
     {
+      "status": "ANALISAR DESPACHO",
+      "count": 11,
+      "complexity": "baixa",
+      "perPerson": 1
+    },
+    {
       "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 5,
+      "count": 7,
       "complexity": "media",
       "perPerson": 0
     },
@@ -156,15 +156,15 @@
     "total": 7
   },
   "donutWeek": {
-    "alta": 491,
-    "media": 314,
-    "baixa": 627,
+    "alta": 507,
+    "media": 316,
+    "baixa": 650,
     "neutra": 13,
-    "total": 1445
+    "total": 1486
   },
   "team": {
     "perDay": 0,
-    "perWeek": 80,
+    "perWeek": 83,
     "avgAssigneesPerTask": 1,
     "load": "BAIXA"
   }
