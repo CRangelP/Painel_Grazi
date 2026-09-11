@@ -1,77 +1,71 @@
 {
-  "generatedAt": "2026-09-11T12:06:09.453Z",
+  "generatedAt": "2026-09-11T17:22:58.486Z",
   "header": {
     "dateLabel": "Sexta-feira, 11 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — MUNICIPAL"
   },
   "kpis": {
-    "totalProcessos": 6815,
-    "admJudicial": 3299,
-    "cumprSentenca": 3516,
+    "totalProcessos": 6816,
+    "admJudicial": 3295,
+    "cumprSentenca": 3521,
     "subtarefasDia": 0,
-    "subtarefasSemana": 1396,
+    "subtarefasSemana": 1387,
     "colaboradores": 17
   },
   "tasksDay": [],
   "tasksWeek": [
     {
       "status": "ACOMPANHAR PROCESSOS",
-      "count": 530,
+      "count": 519,
       "complexity": "media",
       "perPerson": 31
     },
     {
       "status": "OBRIGAÇÃO DE FAZER",
-      "count": 148,
+      "count": 147,
       "complexity": "baixa",
       "perPerson": 9
     },
     {
       "status": "PROSSEGUIMENTO",
-      "count": 145,
+      "count": 146,
       "complexity": "baixa",
       "perPerson": 9
     },
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 100,
+      "count": 93,
       "complexity": "baixa",
-      "perPerson": 6
+      "perPerson": 5
     },
     {
       "status": "PAGAMENTO / ALVARÁ / CONTRACHEQUE",
-      "count": 82,
+      "count": 79,
       "complexity": "baixa",
       "perPerson": 5
     },
     {
       "status": "MANIFESTAR HIPO",
-      "count": 60,
+      "count": 64,
       "complexity": "baixa",
       "perPerson": 4
     },
     {
-      "status": "ANALISAR RPV / PRECATÓRIO",
-      "count": 49,
-      "complexity": "media",
-      "perPerson": 3
+      "status": "CONTRARRAZOAR",
+      "count": 60,
+      "complexity": "alta",
+      "perPerson": 4
     },
     {
-      "status": "CONTRARRAZOAR",
-      "count": 45,
-      "complexity": "alta",
+      "status": "ANALISAR RPV / PRECATÓRIO",
+      "count": 48,
+      "complexity": "media",
       "perPerson": 3
     },
     {
       "status": "CONTADORIA",
-      "count": 40,
+      "count": 39,
       "complexity": "baixa",
-      "perPerson": 2
-    },
-    {
-      "status": "PEDIR SEQUESTRO",
-      "count": 32,
-      "complexity": "media",
       "perPerson": 2
     },
     {
@@ -81,8 +75,14 @@
       "perPerson": 2
     },
     {
+      "status": "PEDIR SEQUESTRO",
+      "count": 27,
+      "complexity": "media",
+      "perPerson": 2
+    },
+    {
       "status": "RECURSO",
-      "count": 24,
+      "count": 21,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -94,19 +94,25 @@
     },
     {
       "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 10,
+      "count": 9,
       "complexity": "baixa",
       "perPerson": 1
     },
     {
+      "status": "REPROTOCOLAR",
+      "count": 7,
+      "complexity": "baixa",
+      "perPerson": 0
+    },
+    {
       "status": "MANIFESTAR SOBRE PROVAS",
-      "count": 8,
+      "count": 6,
       "complexity": "media",
       "perPerson": 0
     },
     {
       "status": "ATUALIZAR CÁLCULOS",
-      "count": 4,
+      "count": 5,
       "complexity": "alta",
       "perPerson": 0
     },
@@ -114,12 +120,6 @@
       "status": "ANALISAR SENTENÇA PROC./IMPROC.",
       "count": 3,
       "complexity": "media",
-      "perPerson": 0
-    },
-    {
-      "status": "REPROTOCOLAR",
-      "count": 3,
-      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -135,15 +135,15 @@
       "perPerson": 0
     },
     {
-      "status": "DECURSO DE PRAZO",
+      "status": "CUMPRIMENTO DE SENTENÇA",
       "count": 2,
-      "complexity": "baixa",
+      "complexity": "alta",
       "perPerson": 0
     },
     {
-      "status": "CUMPRIMENTO DE SENTENÇA",
-      "count": 1,
-      "complexity": "alta",
+      "status": "DECURSO DE PRAZO",
+      "count": 2,
+      "complexity": "baixa",
       "perPerson": 0
     },
     {
@@ -161,11 +161,11 @@
     "total": 0
   },
   "donutWeek": {
-    "alta": 74,
-    "media": 625,
-    "baixa": 644,
+    "alta": 88,
+    "media": 606,
+    "baixa": 640,
     "neutra": 53,
-    "total": 1396
+    "total": 1387
   },
   "team": {
     "perDay": 0,
