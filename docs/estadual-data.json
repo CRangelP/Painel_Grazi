@@ -1,33 +1,33 @@
 {
-  "generatedAt": "2026-09-17T17:47:26.915Z",
+  "generatedAt": "2026-09-17T21:50:01.815Z",
   "header": {
     "dateLabel": "Quinta-feira, 17 de Setembro de 2026",
     "panelTitle": "NÚCLEO PROFESSORES — ESTADUAL"
   },
   "kpis": {
-    "totalProcessos": 42877,
-    "admJudicial": 29515,
+    "totalProcessos": 42900,
+    "admJudicial": 29538,
     "cumprSentenca": 13359,
-    "subtarefasDia": 679,
-    "subtarefasSemana": 1494,
+    "subtarefasDia": 676,
+    "subtarefasSemana": 1516,
     "colaboradores": 18
   },
   "tasksDay": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 130,
+      "count": 128,
       "complexity": "baixa",
       "perPerson": 7
     },
     {
       "status": "ANALISAR RPV",
-      "count": 115,
+      "count": 114,
       "complexity": "media",
       "perPerson": 6
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 77,
+      "count": 80,
       "complexity": "baixa",
       "perPerson": 4
     },
@@ -39,7 +39,7 @@
     },
     {
       "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 49,
+      "count": 48,
       "complexity": "baixa",
       "perPerson": 3
     },
@@ -75,7 +75,7 @@
     },
     {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 22,
+      "count": 20,
       "complexity": "alta",
       "perPerson": 1
     },
@@ -113,21 +113,21 @@
   "tasksWeek": [
     {
       "status": "VERIFICAR ANDAMENTO",
-      "count": 390,
+      "count": 391,
       "complexity": "baixa",
       "perPerson": 22
     },
     {
       "status": "ANALISAR RPV",
-      "count": 224,
+      "count": 222,
       "complexity": "media",
       "perPerson": 12
     },
     {
       "status": "REVISAR PARA PROTOCOLAR",
-      "count": 143,
+      "count": 156,
       "complexity": "baixa",
-      "perPerson": 8
+      "perPerson": 9
     },
     {
       "status": "VERIFICAR POSS. DE RECURSO",
@@ -137,7 +137,7 @@
     },
     {
       "status": "REALIZAR CÁLCULOS",
-      "count": 104,
+      "count": 105,
       "complexity": "alta",
       "perPerson": 6
     },
@@ -148,15 +148,15 @@
       "perPerson": 5
     },
     {
-      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
-      "count": 76,
-      "complexity": "baixa",
-      "perPerson": 4
+      "status": "IMPUGNAR CONTESTAÇÃO",
+      "count": 82,
+      "complexity": "media",
+      "perPerson": 5
     },
     {
-      "status": "IMPUGNAR CONTESTAÇÃO",
-      "count": 76,
-      "complexity": "media",
+      "status": "DOCUMENTAÇÃO / PENDÊNCIA",
+      "count": 77,
+      "complexity": "baixa",
       "perPerson": 4
     },
     {
@@ -166,27 +166,27 @@
       "perPerson": 4
     },
     {
+      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
+      "count": 54,
+      "complexity": "baixa",
+      "perPerson": 3
+    },
+    {
       "status": "VERIFICAR DECISÃO MONO",
-      "count": 53,
+      "count": 51,
       "complexity": "alta",
       "perPerson": 3
     },
     {
-      "status": "MANIFESTAR HIPOSSUFICIÊNCIA",
-      "count": 53,
-      "complexity": "baixa",
-      "perPerson": 3
+      "status": "CONTRARRAZOAR",
+      "count": 20,
+      "complexity": "alta",
+      "perPerson": 1
     },
     {
       "status": "MANIFESTAR SOBRE PROVAS",
       "count": 19,
       "complexity": "media",
-      "perPerson": 1
-    },
-    {
-      "status": "CONTRARRAZOAR",
-      "count": 19,
-      "complexity": "alta",
       "perPerson": 1
     },
     {
@@ -209,28 +209,28 @@
     },
     {
       "status": "Outros",
-      "count": 10,
+      "count": 12,
       "complexity": "neutra",
       "perPerson": 1
     }
   ],
   "donutDay": {
-    "alta": 162,
-    "media": 161,
+    "alta": 160,
+    "media": 160,
     "baixa": 349,
     "neutra": 7,
-    "total": 679
+    "total": 676
   },
   "donutWeek": {
     "alta": 381,
-    "media": 319,
-    "baixa": 784,
-    "neutra": 10,
-    "total": 1494
+    "media": 323,
+    "baixa": 800,
+    "neutra": 12,
+    "total": 1516
   },
   "team": {
     "perDay": 38,
-    "perWeek": 83,
+    "perWeek": 84,
     "avgAssigneesPerTask": 1,
     "load": "ALTA"
   }
